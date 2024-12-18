@@ -10,7 +10,7 @@ const nextConfig = {
     REACT_APP_ENV: process.env.REACT_APP_ENV || 'development',
   },
   webpack: (config, { isServer }) => {
-    // Add jQuery globally to the project
+    // Add jQuery globally to the project 
     config.plugins.push(
       new webpack.ProvidePlugin({
         $: "jquery",
