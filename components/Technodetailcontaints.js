@@ -73,7 +73,8 @@ const Technodetailcontaints = ({ title, subtitle, content, technoloy_icon, setIs
                     </div>
                 </div>
                 {content && (
-                    <div className='techno_content' dangerouslySetInnerHTML={{ __html: content }}></div>
+                <div className='techno_content' dangerouslySetInnerHTML={{ __html: content }}>
+                </div>
                 )}
             </div>
         </div>

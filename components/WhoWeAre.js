@@ -21,11 +21,9 @@ const WhoWeAre = ({
               {certified_list.map((column, index) => (
                 <li key={index}>
                   {column.a_cl_image && (
-                    <Image
+                    <img
                       src={column.a_cl_image.url}
                       alt={column.a_cl_title}
-                      width={80}
-                      height={80}
                     />
                   )}
                   <h4>{column.a_cl_title}</h4>
@@ -46,11 +44,9 @@ const WhoWeAre = ({
               {goal_and_vision_section.map((column, index) => (
                 <li key={index}>
                   {column.a_gv_icon && (
-                    <Image
+                    <img
                       src={column.a_gv_icon.url}
                       alt={column.a_gv_title}
-                      width={80}
-                      height={80}
                     />
                   )}
                   <h3>{column.a_gv_title}</h3>

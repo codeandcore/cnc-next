@@ -190,21 +190,17 @@ const Life = ({
                   <div className="right">
                     {life_codeandcore_medium_images && (
                       <div className="comman img2">
-                        <Image
+                        <img
                           src={liferightTopImages[rightTopImageIndex].url}
                           alt="Right Top Image"
-                          width={350}
-                          height={230}
                         />
                       </div>
                     )}
                     {life_codeandcore_small_images && (
                       <div className="comman img3">
-                        <Image
+                        <img
                           src={liferightBottomImages[rightBottomImageIndex].url}
                           alt="Right Bottom Image"
-                          width={230}
-                          height={170}
                         />
                       </div>
                     )}
