@@ -30,13 +30,26 @@ const ServicesMenu = ({
 
   const handleMenuClick = (e, url, name) => {
     try {
+      const submenus = document.querySelectorAll(".submenu");
+      submenus.forEach((submenu) => {
+        submenu.style.display = 'none';
+      });
+  
       if (typeof handleLinkClick === 'function') {
         handleLinkClick(url, name, e);
       }
+  
+      setTimeout(() => {
+        submenus.forEach((submenu) => {
+          submenu.style.display = ''; 
+        });
+      }, 100);
+  
     } catch (error) {
       console.error('Error handling menu click:', error);
     }
   };
+  
 
   const renderMenuLinks = (menuItems, baseUrl = '/services') => {
     if (!menuItems || !Array.isArray(menuItems)) return null;

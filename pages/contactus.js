@@ -80,7 +80,6 @@ export default function ContactUs({ homePage, contactPage }) {
         <meta name="twitter:description" content={contactPage && contactPage.yoast_head_json.twitter_description} />
         <meta property="og:locale" content={contactPage && contactPage.yoast_head_json.og_locale} />
 
-        {/* Structured Data (JSON-LD) */}
         <script type="application/ld+json">
           {JSON.stringify(contactPage && contactPage.yoast_head_json.schema)}
         </script>

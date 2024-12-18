@@ -43,12 +43,27 @@ const IndustryMenu = ({
 
   const handleNavigation = (originalUrl, e) => {
     const cleanUrl = normalizeUrl(originalUrl);
+  
+    const submenus = document.getElementsByClassName("submenu");
+    for (let i = 0; i < submenus.length; i++) {
+      submenus[i].style.display = 'none';
+    }
+  
     window.scrollTo({
       top: 0,
       behavior: 'auto'
     });
+  
     handleLinkClick(cleanUrl, e);
+  
+    setTimeout(() => {
+      for (let i = 0; i < submenus.length; i++) {
+        submenus[i].style.display = 'flex';
+      }
+    }, 100);
   };
+  
+  
 
   return (
     <>
@@ -71,7 +86,6 @@ const IndustryMenu = ({
         <div className="left_col">
           {industry_menu.industry_title && (
             <Link
-              
               href={normalizeUrl(industry_menu.industry_title.url)}
               className="link"
               onClick={(e) => handleNavigation(industry_menu.industry_title.url, e)}
@@ -100,9 +114,7 @@ const IndustryMenu = ({
                   >
                     <span>
                       {menu.icon && (
-                        <Image 
-                          height={100}
-                          width={100} 
+                        <img
                           src={menu.icon.url} 
                           alt={menu.icon.alt || 'Menu Icon'} 
                         />

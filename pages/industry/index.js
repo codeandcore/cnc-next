@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import OurApproach from '@/components/OurApproach';
+// import OurApproach from '@/components/OurApproach';
 import CaseStudies from '@/components/CaseStudies';
 import OurAwards from '@/components/OurAwards';
 import HireUs from '@/components/HireUs';
 import ClientsSay from '@/components/ClientsSay';
 import IndustryBanner from '@/components/IndustryBanner';
 import IndustrysList from '@/components/IndustrysList';
+import dynamic from 'next/dynamic';
+
+
+const OurApproach = dynamic(() => import('@/components/OurApproach'), { 
+  ssr: false,
+  loading: () => null 
+})
+
 
 // Constants
 const INDUSTRY_PAGE_ID = 710;
