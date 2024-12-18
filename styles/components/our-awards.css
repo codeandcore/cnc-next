@@ -1,0 +1,27 @@
+.our_awards{text-align: center;padding: 100px 0px;}
+.ourawardgray{background-color: #F8F8F8;}
+.our_awards .wrapper{justify-content: center;}
+.our_awards h2{text-transform: uppercase;}
+.our_awards p{color: var(--darktheme);margin-top: 16px;}
+.our_awards ul{width: 100%;margin-top: 46px;align-items: flex-end;}
+
+@media only screen and (max-width:1599px) {
+    .our_awards ul{justify-content: center;}
+    .our_awards ul li{max-width: 18%;margin: 0px 10px;}
+
+}
+@media only screen and (max-width:1279px) {
+    .our_awards { padding: 50px 0px; }
+
+}
+@media only screen and (max-width:1279px) {
+    .our_awards { padding: 50px 0px; }
+    .our_awards ul li { max-width: 17%; }
+}
+@media only screen and (max-width:767px) {
+    .our_awards ul { margin-top: 20px; }
+    .our_awards ul li { max-width: 26%; margin-bottom: 5px; }
+    .our_awards ul li img{    max-height: 60px;}
+    .our_awards { padding: 30px 0px 25px; }
+
+}

@@ -1,0 +1,171 @@
+.whyChoose_us{padding: 120px 0px;}
+.whyChoose_us .top_title{margin-bottom: 50px;}
+.whyChoose_us .top_title h2{width: 345px;}
+.whyChoose_us .top_title p{width: 737px;color: var(--darktheme)}
+
+.whyChoose_us .col{min-height:100px;width: 100%;border-radius: 20px;position: relative;padding: 20px 40px;display: flex;background: rgb(37,25,68); background: linear-gradient(173deg, rgba(37,25,68,1) 3%, rgba(41,51,76,1) 100%);overflow: hidden;transition: 0.2s ease all;}
+.whyChoose_us .col::after,.whyChoose_us .col::before{content: '';position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-repeat: no-repeat;background-size: 100% 100%;}
+.whyChoose_us .col::after{transition: 3s ease all;opacity: 0.5;}
+.whyChoose_us .col:hover::after{transform: scale(1.3);opacity: 1;}
+.whyChoose_us .col::before{background: rgb(138,92,208); background: linear-gradient(180deg, rgba(138,92,208,0.6) 0%, rgba(1,27,91,1) 96%);opacity: 0;transition: 0.2s ease all;}
+.whyChoose_us .col:hover:before,.whyChoose_us .col.active:before{opacity: 1;}
+.whyChoose_us .col .textin{display: flex;justify-content: space-between;align-items: flex-end;position: relative;z-index: 9;width: 100%;}
+.whyChoose_us .col .textin h4{font-size: 31px; font-weight: 600;color: var(--white);line-height: 1;}
+.whyChoose_us .col .textin img{max-width: 100%;}
+.whyChoose_us .col.small{height: 170px;}
+.whyChoose_us .col.big{height: 320px;}
+.whyChoose_us .col h3{font-size: 75px;font-weight: bold;color: var(--white);line-height: 75px;}
+.whyChoose_us .col p{font-size: 28px;font-weight: 600;color: var(--white);    line-height: 25px;position: relative;z-index: 2;}
+.whyChoose_us .col.col2 h3{font-weight: 600;}
+
+.whyChoose_us .top_inner{}
+.whyChoose_us .top_inner .colin:first-child{width: 27.5%;}
+.whyChoose_us .top_inner .colin:nth-child(2){width: 38.25%;}
+.whyChoose_us .top_inner .colin:nth-child(3){width: 31.5%;}
+.whyChoose_us .top_inner .col_in{}
+
+
+.whyChoose_us .top_inner .col_in .col{width: calc(100% - 253px);}
+.whyChoose_us .top_inner .col_in .col+.col{width: 233px;}
+
+.whyChoose_us .bottom_inner{margin-top: 20px;}
+.whyChoose_us div.col8{width: 40.375%;}
+.whyChoose_us div.col9{width:25.75%;}
+.whyChoose_us div.col10{width:31.5%;}
+
+.whyChoose_us .col1,.whyChoose_us .col3,.whyChoose_us .col6{margin-bottom: 20px;}
+.whyChoose_us .col2 p,.whyChoose_us .col4 p,.whyChoose_us .col9 p{font-size: 28px;line-height: 38px;font-weight: 400;}
+.whyChoose_us .col3{align-items: center;}
+.whyChoose_us .col3 .textin img{max-width: fit-content;}
+.whyChoose_us .col4 {align-items: center;}
+.whyChoose_us .col5 .textin{flex-direction: column;flex-wrap: wrap;}
+.whyChoose_us .col5 .textin p,.whyChoose_us .col8 .textin p{font-size: 20px;}
+.whyChoose_us .col5 .textin h3,.whyChoose_us .col6 .textin h3,.whyChoose_us .col8 .textin h3{font-size: 64px;}
+.whyChoose_us .col5 .textin .rightt{width: 100%;}
+.whyChoose_us .col7 { align-items: center; }
+.whyChoose_us .col7 .textin h4{max-width: 350px;margin: 0 auto 25px;}
+.whyChoose_us .col7 .textin { text-align: center; flex-direction: column; align-items: center;    margin-top: 50px;}
+.whyChoose_us .col10 .textin { align-items: center; }
+.whyChoose_us .btn{background-color: #1D1030;color: var(--white);font-size: 18px;font-weight: 400;cursor: pointer;    position: absolute; right: -20px; bottom: 7px;}
+.whyChoose_us .col1::after {background-image: url(../../public/images/wc_bg1.png);}
+.whyChoose_us .col4::after {background-image: url(../../public/images/wc_bg4.png);}
+.whyChoose_us .col5::after {background-image: url(../../public/images/wc_bg5.png);}
+.whyChoose_us .col6::after {background-image: url(../../public/images/wc_bg6.png);}
+.whyChoose_us .col7::after {background-image: url(../../public/images/wc_bg7.png);}
+.whyChoose_us .col8::after {background-image: url(../../public/images/wc_bg8.png);}
+
+.whyChoose_us .col.col1.big .textin ,.whyChoose_us .col.col4 .textin,.whyChoose_us .col.col5 .textin{ align-items: flex-start; }
+.whyChoose_us .col.col1.big h3{font-size: 64px;}
+.whyChoose_us .col.col1.big .rightt ,.whyChoose_us .col.col4 .rightt,.whyChoose_us .col.col5 .rightt {    position: absolute; bottom: 4px; right: -5px;    text-align: right;}
+.whyChoose_us .col.col5 {padding:20px 25px;}
+.whyChoose_us .col.col5 .textin p{font-size: 22px;line-height: 1.37;}
+
+.whyChoose_us .col.col4 .textin{height: 100%;}
+.whyChoose_us .col.col6.small .textin { align-items: center; }
+.whyChoose_us .col.col6.small .textin p,.whyChoose_us .col.col4 .textin p { font-size: 34px; line-height: 1.34;font-weight: 600;}
+.whyChoose_us .bottom_inner .col .textin {align-items: center;}
+.whyChoose_us .bottom_inner .col .textin p{font-size: 34px;line-height: 46px;font-weight: 600;}
+.whyChoose_us .col.col10  .textin h4{    font-size: 28px; line-height: 1.4;}
+
+
+@media only screen and (max-width: 1750px) {
+    .whyChoose_us .col.col1.big h3 { font-size: 56px; }
+    .whyChoose_us .col p { font-size: 24px; }
+    .whyChoose_us .col.col4 .textin p, .whyChoose_us .col.col6.small .textin p { font-size: 30px; }
+    .whyChoose_us .col.col5 {padding:20px 25px;}
+
+}
+@media only screen and (max-width: 1599px) {
+    .whyChoose_us .col2 p, .whyChoose_us .col4 p, .whyChoose_us .col9 p { font-size: 20px; line-height: 30px; }
+    .whyChoose_us .col p { font-size: 20px; }
+    .whyChoose_us .col .textin h4 { font-size: 30px; }
+    .whyChoose_us .col3 .textin img { max-width: 240px; }
+    .whyChoose_us .col { padding: 20px; }
+    .whyChoose_us .col.col10 .textin h4 { font-size: 24px; }
+    .whyChoose_us .col.col4 .textin p, .whyChoose_us .col.col6.small .textin p { font-size: 28px; }
+    .whyChoose_us .btn { right: -5px; }
+
+}
+@media only screen and (max-width: 1399px) {
+    .whyChoose_us .col3 .textin img { max-width: 210px; }
+    .whyChoose_us .col p { font-size: 18px; }
+    .whyChoose_us .col.col1.big h3 { font-size: 52px; }
+    .whyChoose_us .col.col1.big .rightt, .whyChoose_us .col.col4 .rightt, .whyChoose_us .col.col5 .rightt { text-align: right; }
+    .whyChoose_us .bottom_inner .col .textin p { font-size: 30px; line-height: 1.4; }
+    .whyChoose_us .btn { right: -5px; padding: 0px 25px; line-height: 52px; }
+    .whyChoose_us .col.col4 .textin p { font-size: 22px; }
+    .whyChoose_us .col.col6.small .textin p{font-size: 27px;}
+
+
+}
+@media only screen and (max-width: 1279px) {
+    .whyChoose_us { padding: 60px 0px; }
+    .whyChoose_us .col5 .textin h3, .whyChoose_us .col6 .textin h3, .whyChoose_us .col8 .textin h3 { font-size: 40px;    line-height:55px; }
+    .whyChoose_us .col .textin img { max-width: 60px; }
+    .whyChoose_us .col p { font-size: 16px; }
+    .whyChoose_us .col5 .textin p, .whyChoose_us .col8 .textin p { font-size: 16px; }
+    .whyChoose_us .top_inner .col_in .col { width: calc(100% - 205px); }
+    .whyChoose_us .top_inner .col_in .col+.col { width: 192px; }
+    .whyChoose_us .col3 .textin img { max-width: 140px !important; }
+    .whyChoose_us .col h3 { font-size: 40px; line-height: 55px;}
+    .whyChoose_us .col.small { height: 140px; }
+    .whyChoose_us .col.big { height: 300px; }
+    .whyChoose_us .col .textin h4 { font-size: 24px; }
+    .whyChoose_us .col.col1.big h3 { font-size: 40px; }
+    .whyChoose_us .col.col6.small .textin p { font-size: 22px; }
+    .whyChoose_us .col.col4 .textin p { font-size: 18px; }
+    .whyChoose_us .col3 .textin img { max-width: 90px !important; }
+    .whyChoose_us .bottom_inner .col .textin p { font-size: 24px; line-height: 1.4; }
+    .whyChoose_us .col.col10 .textin h4 { font-size: 17px; }
+
+}
+@media only screen and (max-width: 1023px) {
+    .whyChoose_us .top_inner .colin { width: 49% !important; }
+    .whyChoose_us .top_inner .colin:nth-child(2){order: 1;margin-top: 20px;}
+    .whyChoose_us .inner  {position: relative;}
+    .whyChoose_us .bottom_inner { position: absolute; bottom: 0; right: 0; width: 49%; }
+    .whyChoose_us .bottom_inner .col {width: 100% !important;margin-bottom: 20px;}
+    .whyChoose_us .bottom_inner .col:last-child{margin-bottom: 0;}
+    .whyChoose_us .col p { font-size: 14px; }
+    .whyChoose_us .col.col6.small .textin p { font-size: 26px; }
+
+
+}
+@media only screen and (max-width: 767px) {
+    .whyChoose_us { padding:30px 0px 20px; }
+    .whyChoose_us .top_title h2 { width: 100%;margin-bottom: 10px;}
+    .whyChoose_us .top_title { margin-bottom: 30px; }
+    .whyChoose_us .top_inner .colin { width: 100% !important; }
+    .whyChoose_us .col.big { height: auto; }
+    .whyChoose_us .col.small { height: auto; }
+    .whyChoose_us .col p { font-size: 16px; line-height: 1.5; }
+    .whyChoose_us .col{margin-bottom: 10px !important;width: 100% !important;}
+    .whyChoose_us .bottom_inner { position: relative; width: 100%; }
+    .whyChoose_us .top_inner .colin:nth-child(2) { order: initial; margin-top: 0; }
+    .whyChoose_us .bottom_inner { margin-top: 0; }
+    .whyChoose_us .col3 .textin img { max-width: 140px !important; }
+    .whyChoose_us .col5 .textin { align-items: flex-start; }
+    .whyChoose_us .col5 .textin .rightt{text-align: right;}
+    .whyChoose_us .col .textin img { max-width: 74px; }
+    .whyChoose_us .col5 .textin .rightt { position: absolute; bottom: 0; }
+    .whyChoose_us .top_title p{width: 300px;color: var(--darktheme)}
+    .whyChoose_us .col.col1.big h3 { font-size: 30px;line-height: 1;}
+    .whyChoose_us .col.col1.big .rightt, .whyChoose_us .col.col4 .rightt, .whyChoose_us .col.col5 .rightt { bottom: 0; position: relative; right: 0; text-align: right; }
+    .whyChoose_us .col.col5 .textin p { font-size: 18px; line-height: 1.37; max-width: calc(100% - 60px); }
+    .whyChoose_us .col.col6.small .textin p { font-size: 18px; }
+    .whyChoose_us .bottom_inner .col .textin {  flex-wrap: wrap; }
+    .whyChoose_us .bottom_inner .col.col10  .textin{    align-items: center; flex-wrap: wrap; width: 100%;}
+    .whyChoose_us .btn { right: 0; position: relative; }
+    .whyChoose_us .bottom_inner .col .textin p { font-size: 18px; line-height: 1.4; }
+    .whyChoose_us .col3 .textin img { max-width: 70px !important; }
+    .whyChoose_us .col .textin img { max-width: 55px; }
+    .whyChoose_us .col7 .textin h4 { margin: 0 auto 10px; max-width: 350px; }
+    .whyChoose_us .col7 .textin img { max-width: 120px; }
+    .whyChoose_us .col7 .textin { margin-top: 20px; }
+
+
+}
+@media only screen and (max-width: 374px) {
+    .whyChoose_us .col3 .textin img { max-width: 90px !important; }
+
+}

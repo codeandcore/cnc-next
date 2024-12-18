@@ -1,0 +1,53 @@
+.stack_technologies{position: relative;min-height:700px;padding: 86px 0px 100px;}
+.stack_technologies .wrapper{align-items: flex-start;}
+.stack_technologies .left_col{width: 550px;padding-right: 97px;}
+.stack_technologies .right_col{width:calc(100% - 550px);}
+.stack_technologies h2{color: var(--white);margin-bottom: 25.74px;text-transform: uppercase;}
+.stack_technologies p{margin-bottom:22px;}
+.stack_technologies .right_col>div{width: calc(50% - 12.5px);}
+.stack_technologies .colr{padding-top: 90.26px;}
+.stack_technologies .colin{background-color: #121113;border-radius: 20px;padding: 30px;width:100%;margin-bottom: 35px;}
+.stack_technologies .colin h3{color: var(--white);font-size: 24px;font-weight: 600;line-height: 34px;padding-bottom: 14px;border-bottom: 1px solid #C7C7C7;}
+.stack_technologies .colin a{width: 50%;display: flex;justify-content: flex-start;align-items: center;margin-top: 25px;font-weight: 400;line-height: 24px;}
+.stack_technologies .colin a img{margin-right: 9px;transition: 0.2s ease all;    max-width: 30px; max-height: 30px;}
+.stack_technologies .colin a:hover img {filter: brightness(0) saturate(100%) invert(45%) sepia(88%) saturate(3930%) hue-rotate(224deg) brightness(100%) contrast(95%);}
+.stack_technologies .colin a:hover{color: var(--Purple);}
+
+
+.informationen-section h2 { font-size: 30px; }
+.informationen-section .whatsapp-share { position: relative !important; right: 10px !important; top: 0px !important; text-align: center; border: 2px solid #8a5631; padding: 10px 10px; color: #8a5631; display: block; width: fit-content; margin: 0 auto; margin-right: 0; margin-top: -130px; margin-bottom: 20px; }
+
+
+@media only screen and (max-width: 1750px) {
+    .stack_technologies .left_col { width: 470px; padding-right: 20px; }
+    .stack_technologies .right_col { width: calc(100% - 470px); }
+    .stack_technologies .colin { padding: 22px 20px; }
+    .stack_technologies .colin a { margin-top: 20px; font-weight: 400; line-height: 20px; font-size: 16px; }
+
+}
+@media only screen and (max-width: 1279px) {
+    .stack_technologies .right_col>div { width: 100%; }
+    .stack_technologies .colr { padding-top: 0; }
+    .stack_technologies { min-height: 700px; padding: 50px 0px; }
+
+
+}
+@media only screen and (max-width: 1023px) {
+    .stack_technologies .left_col { width: 100%; padding-right: 0; margin-bottom: 20px; }
+    .stack_technologies .right_col { width: 100%; }
+    .stack_technologies .right_col>div { width: calc(50% - 12.5px); }
+
+}
+
+@media only screen and (max-width: 767px) {
+    #loadingDiv .swing-image img {    max-width: 90px;}
+    .stack_technologies .right_col>div { width: 100%; }
+    .stack_technologies { padding: 30px 0px; }
+    .stack_technologies h2{margin-bottom: 10px;}
+    .stack_technologies .colin { padding: 22px 20px; margin-bottom: 10px; }
+    .stack_technologies .colin h3 { font-size: 20px; line-height: 28px; margin-bottom: 5px; padding-bottom: 5px; }
+    .stack_technologies .colin a{width: 100%;    margin-top: 10px; font-size: 14px;}
+    .stack_technologies .colin a img { margin-right: 10px; max-width: 22px; }
+    .stack_technologies .right_col .colr .colin:last-child{margin-bottom: 0px;}
+
+}

@@ -1,0 +1,65 @@
+.our_approach{background-color: var(--black);min-height: 400px;padding: 120px 0px;}
+.our_approach h2{color: var(--white);margin-bottom: 14px;}
+.our_approach .top_col {align-items: flex-end;padding-bottom: 55px;border-bottom: 1px dashed var(--white);}
+.our_approach .top_col ul{width: 100%;justify-content: flex-end;}
+.our_approach .top_col ul li{background-color: #111111;color: var(--white);font-size: 16px;font-weight: 500;    font-size: 14px; line-height: 45px; color: var(--white); position: relative; padding: 0px 19.71px; border-radius: 80px; overflow: hidden;transition: 0.2s ease all;cursor: pointer;}
+.our_approach .top_col ul li:not(:last-child){margin-right: 10px;}
+.our_approach .top_col ul li:hover,
+.our_approach .top_col ul li.active{background-color: var(--Purple);}
+.our_approach .top_col .left_col,
+.our_approach .bottom_col .img{width: 604px;padding-right: 60px;}
+.our_approach .bottom_col .img{}
+.our_approach .bottom_col .text,
+.our_approach .top_col .right_col{width: calc(100% - 604px);}
+
+.our_approach .bottom_col{padding-top: 36px;}
+.our_approach .bottom_col .colin{display: none;}
+.our_approach .bottom_col .colin.active{display: flex;}
+.our_approach .bottom_col .colin .img{opacity: 0;transition: 0.4s ease all;}
+.our_approach .bottom_col .colin .img img{    max-width: 340px; margin: 0 auto; display: block;}
+.our_approach .bottom_col .colin.active .img{opacity: 1;}
+.our_approach .bottom_col .img{padding: 22px 100px;}
+.our_approach .bottom_col .text{padding:50px 0px 50px 62px;border-left: 1px dashed var(--white);}
+.our_approach .bottom_col h3{font-size: 40px;font-weight: 900;color: var(--white);line-height: 1;margin-bottom: 20px;margin-bottom: 20px;}
+.our_approach .bottom_col ul{justify-content: flex-start;margin-top:30px;}
+.our_approach .bottom_col ul li{padding-left: 20px; color: var(--white); font-size: 18px; font-weight: 400; line-height: 30px; margin-bottom: 16px;background-image: url(../../public/images/dot.png);background-repeat: no-repeat;background-position: left center;width: 43%;}
+
+@media only screen and (max-width:1599px) {
+    .our_approach .top_col .left_col, .our_approach .bottom_col .img { width: 40%; padding-right: 20px; }
+    .our_approach .bottom_col .text, .our_approach .top_col .right_col { width: 60%; }
+    .our_approach .bottom_col .img { padding: 22px 0; text-align: center; }
+    .our_approach .top_col ul li:not(:last-child) { margin-right: 5px; }
+    .our_approach .top_col ul li { font-size: 14px; padding: 0px 11px; border-radius: 80px; }
+}
+@media only screen and (max-width:1399px) {
+    .our_approach .bottom_col .text, .our_approach .top_col .right_col { width: 64%; }
+    .our_approach .top_col .left_col, .our_approach .bottom_col .img { width: 35%; padding-right: 40px; }
+    .our_approach { padding: 60px 0px; }
+    .our_approach .bottom_col .text { padding: 30px 0px 30px 40px; }
+}
+@media only screen and (max-width:1279px) {
+    .our_approach .top_col .left_col{width: 100%;}
+    .our_approach .top_col .right_col { width: 100%; justify-content: flex-start; margin-top: 20px; }
+    .our_approach .top_col { padding-bottom: 25px; }
+    .our_approach .bottom_col { padding-top: 25px; }
+    .our_approach .bottom_col .img { width: 25%; padding-right: 20px; }
+    .our_approach .bottom_col .text { padding: 20px 0px 20px 25px; width: 75%; }
+    .our_approach .bottom_col h3 { font-size: 35px; margin-bottom: 20px; margin-bottom: 10px; }
+    .our_approach .bottom_col ul { margin-top: 20px; }
+    .our_approach .bottom_col ul li { padding-left: 18px; font-size: 16px; line-height: 20px; margin-bottom: 15px; width: 45%; }
+    .our_approach { padding: 40px 0px; }
+}
+@media only screen and (max-width:1279px){
+    .our_approach .top_col ul li {margin-bottom: 10px; }
+}
+@media only screen and (max-width:767px){
+    .our_approach .top_col .left_col, .our_approach .bottom_col .img { width: 100%; padding-right: 0; }
+    .our_approach .top_col ul li { font-size: 12px; padding: 0px 10px; border-radius: 80px; line-height: 30px; }
+    .our_approach .bottom_col .img img { max-width: 150px; }
+    .our_approach .bottom_col .img { padding: 0; margin-bottom: 20px; }
+    .our_approach .bottom_col .text { padding: 0; width: 100%; padding-top: 0px; border: none;}
+    .our_approach .bottom_col h3 { font-size: 24px; }
+    .our_approach .bottom_col ul li { padding-left: 18px; font-size: 14px; line-height: 20px; margin-bottom: 8px; width: 100%; }
+    .our_approach .bottom_col .colin .img img{    max-width: 180px;}
+
+}

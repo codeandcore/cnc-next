@@ -1,0 +1,46 @@
+.technolist_sec{padding: 120px 0px 0;}
+.technolist_sec .colin{margin-bottom: 100px;}
+.technolist_sec .colin h2{line-height: 74px;border-bottom:1.5px dashed #000000;padding-bottom: 24px;width: 100%;}
+.technolist_sec .left_col{width:550px;padding: 29px 25px 0 0;}
+.technolist_sec .left_col p{color: var(--black);font-weight: 500;}
+.technolist_sec .all_link{padding: 10px 0 0 46px;width:calc(100% - 550px);border-left:1.5px dashed #000000;}
+.technolist_sec .all_link a{width: 33.33%;display: flex;justify-content: flex-start;align-items: center;margin-top: 30px;font-weight:500;font-size: 21px;color: var(--black);line-height: 1.5;}
+.technolist_sec .all_link a img{margin-right:18px;transition: 0.2s ease all;width: 60px;}
+.technolist_sec .all_link a:hover{color: var(--Purple);}
+
+@media only screen and (max-width: 1599px) {
+    .technolist_sec{padding: 80px 0px 0;}
+    .technolist_sec .left_col { width: 30%; padding: 30px 15px 0 0; }
+    .technolist_sec .all_link { padding: 10px 0 0 25px; width:70%; }
+
+}
+@media only screen and (max-width:1399px) {
+    .technolist_sec .colin{margin-bottom:80px;}
+    .technolist_sec .colin h2 { line-height: 1; padding-bottom: 20px; }
+    .technolist_sec .all_link { padding:10px 0 0 20px; }
+    .technolist_sec .all_link a img { margin-right: 10px; width: 45px; }
+    .technolist_sec .all_link a { margin-top: 25px; line-height: 45px; font-size: 20px; }
+}
+@media only screen and (max-width:1279px) {
+    .technolist_sec .left_col { width: 40%; padding: 30px 15px 0 0; }
+    .technolist_sec .all_link { padding: 10px 0 0 25px; width:60%; }
+    .technolist_sec .all_link a { width: 50%; }
+
+}
+@media only screen and (max-width:1023px) {
+    .technolist_sec .left_col { width: 100%; padding: 20px 0 0 0; }
+    .technolist_sec .all_link{width: 100%;border: none;}
+}
+@media only screen and (max-width:767px) {
+    .technolist_sec { padding: 30px 0px 0; }
+    .technolist_sec .colin h2 { padding-bottom: 10px; }
+    .technolist_sec .colin{margin-bottom:30px;}
+    .technolist_sec .left_col { padding:10px 0 0 0; }
+    .technolist_sec .all_link { padding: 0; }
+    .technolist_sec .all_link a{margin-top: 12px; line-height: 24px; font-size: 16px;width:50%;}
+    .technolist_sec .all_link a img { margin-right: 10px; width:24px;}
+
+
+
+
+}

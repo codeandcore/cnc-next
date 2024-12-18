@@ -1,0 +1,75 @@
+.our_employee_sec{background-color: var(--lightblue);padding: 100px 0px 84px;}
+.our_employee_experience {width: 713px;}
+.our_employee_experience h2{line-height: 65px;margin-bottom: 50px;font-size: 53px;}
+.our_employee_experience .colin{width: 100%;padding-bottom: 30px;}
+.our_employee_experience .colin img{    display: inline-block; margin-right: 5px;}
+.our_employee_experience .colin .img{position: relative;height: 430px;border-radius: 10px;overflow: hidden;margin-bottom: 20px;}
+.our_employee_experience .colin h3{font-size: 22px;font-weight: 400;color: var(--black);line-height: 30px;margin-bottom: 8px;}
+.our_employee_experience .colin p{color: var(--black);line-height: 27px;}
+
+.our_employee_experience .nextprev_sec { justify-content: flex-start;}
+.our_employee_experience .nextprev_sec>div{    align-items: center; background-color: var(--lightblue); border: 1px solid var(--black); border-radius: 50%; cursor: pointer; display: flex; height: 57px; justify-content: center; transition: all .2s ease; width: 57px;}
+.our_employee_experience .nextprev_sec>div:hover{background-color: var(--black);}
+.our_employee_experience .nextprev_sec>div:hover img{filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5675%) hue-rotate(246deg) brightness(107%) contrast(101%);}
+.our_employee_experience .nextprev_sec>div.next{transform: scale(-1);margin-left: 17.88px;}
+.our_employee_sec .our_technology_stack .colin .all_link {padding-right: 0px !important; }
+
+
+.our_employee_experience .owl-carousel .owl-item img{width: auto;display: initial;}
+.our_employee_experience .owl-theme .owl-dots{display: none !important;}
+
+.our_technology_stack{width: 801px;}
+.our_technology_stack h2{margin-bottom: 50px;font-size: 44px;line-height: 65px;}
+.our_technology_stack .colin{background-color:var(--white);border-radius: 10px;width:100%;margin-bottom:20px;padding: 18px 30px 9px 30px;transition: 0.3s ease all;}
+.our_technology_stack .colin.active{padding:30px 30px 30px 30px}
+.our_technology_stack .colin h3{color: var(--black);font-size: 24px;font-weight: 600;line-height: 34px;padding-bottom: 9px;position: relative;transition: 0.3s ease all;cursor: pointer;}
+.our_technology_stack .colin h3 img { position: absolute; right: 0px; top: 7px; transition: 0.3s ease all; }
+.our_technology_stack .colin.active h3 {border-bottom: 1px solid var(--black);padding-bottom: 14px;}
+.our_technology_stack .colin.active h3 img { transform: rotate(45deg); }
+.our_technology_stack .colin .all_link {justify-content: flex-start;    max-height: 0; overflow: hidden; transition: 0.3s ease all; padding-right: 85px; }
+.our_technology_stack .colin .all_link.expanded { max-height: 500px; transition: 0.1s ease all; }
+.our_technology_stack .colin a{width: 33.33%;display: flex;justify-content: flex-start;align-items: center;margin-top:15px;font-weight: 500;line-height: 24px;color: var(--black)}
+.our_technology_stack .colin a img{margin-right: 9px;transition: 0.2s ease all;max-width: 30px;max-height: 30px;}
+/* filter: brightness(0) saturate(100%) invert(0%) sepia(81%) saturate(3560%) hue-rotate(255deg) brightness(92%) contrast(91%); */
+.our_technology_stack .colin a:hover img {filter: brightness(0) saturate(100%) invert(49%) sepia(97%) saturate(3745%) hue-rotate(221deg) brightness(96%) contrast(103%);}
+.our_technology_stack .colin a:hover{color: var(--Purple);}
+
+@media only screen and (max-width: 1750px) {
+    .our_employee_experience { width: 45%; }
+    .our_technology_stack { width: 52%; }
+}
+@media only screen and (max-width:1599px) {
+    .our_employee_experience h2 ,.our_technology_stack h2{ line-height: 55px; margin-bottom: 30px; font-size: 40px; }
+    .our_employee_experience .colin .img { height: 360px; }   
+}
+@media only screen and (max-width:1279px) {
+    .our_employee_experience .colin .img { height: 260px; }
+    .our_technology_stack .colin .all_link { padding-right: 0; }
+    .our_technology_stack .colin a { width: 50%; }
+}
+@media only screen and (max-width:1023px) {
+    .our_employee_sec { padding: 50px 0px 50px; }
+    .our_employee_experience { width: 100%; }
+    .our_technology_stack { width: 100%; margin-top: 30px; }
+}
+@media only screen and (max-width:767px) {
+    .our_employee_sec { padding: 30px 0px 31px; }
+    .our_employee_experience h2, .our_technology_stack h2 { line-height: 42px; margin-bottom: 20px; font-size: 34px; }
+    .our_employee_experience .colin .img { height: 170px; }
+    .our_employee_experience .colin h3 { font-size: 16px; line-height: 20px; margin-bottom: 10px; }
+    .our_employee_experience .colin img { margin-right: 5px; width: 15px !important; }
+    .our_employee_experience .colin p { line-height: 22px;}
+    .our_employee_experience .colin { width: 100%; padding-bottom:15px; }
+    .our_employee_experience h2, .our_technology_stack h2 { line-height: 38px; margin-bottom: 20px; font-size: 26px; }
+    .our_employee_experience .nextprev_sec>div { width: 35px; height: 35px; }
+    .our_employee_experience .nextprev_sec>div.next { margin-left: 10px;}
+    .our_employee_experience .nextprev_sec>div img { width: 10px; }
+    .our_technology_stack .colin.active { padding: 12px 12px 12px 12px; }
+    .our_technology_stack .colin h3 { font-size: 16px; line-height: 28px; padding-bottom: 6px; padding-right: 30px;}
+    .our_technology_stack .colin { margin-bottom: 10px; padding: 12px 12px 6px 12px; }
+    .our_technology_stack .colin h3 img { right: 0; top: 3px; width: 20px; }
+    .our_technology_stack .colin a { width: 100%; margin-top: 6px; font-size: 16px; }
+    .our_technology_stack .colin a img{width: 20px;}
+    .our_employee_sec .owl-dots{margin-top: 0px !important;}
+
+}

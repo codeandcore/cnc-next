@@ -1,0 +1,84 @@
+.jobopenings{background-color: var(--black);padding: 108px 0 120px;}
+.jobopenings .wrapper h2{color: var(--white);font-size: 74px;line-height: 1;margin-bottom: 25px;}
+.jobopenings .wrapper h2 span{font-size: 18px;line-height: 30px;font-weight: 500;    display: inline-block; vertical-align: top;}
+.jobopenings .wrapper>p{margin-bottom: 64px;}
+.jobopenings .colin{padding:38px 48px 68px;border-radius: 20px;border: 1px solid #3C3C3C;background-color: #111;overflow: hidden;position: relative;margin-bottom: 40px;}
+.jobopenings .colin:last-child{margin-bottom: 0;}
+.jobopenings .colin .img{width: 79px;height: 79px;background-image: url(../../public/images/iconmirror.png);    display: flex; justify-content: center; align-items: center; }
+.jobopenings .colin .text{padding-left: 21px;}
+.jobopenings .colin .text h3{color: var(--white);font-size: 22px;line-height: 30px;font-weight: 600;margin-bottom: 4px;}
+.jobopenings .colin .text span{color: #8D8C8C;font-size: 16px;font-weight: 400;line-height: 20px;}
+.jobopenings .colin .top_col {margin-bottom: 29px;}
+.jobopenings .colin .top_col .btn,.jobopenings .wrap .btn { color: var(--white); cursor: pointer;}
+.jobopenings .colin .top_col .btn div,.jobopenings .wrap .btn div{background-color:var(--white); border: 1px solid #fff;}
+.jobopenings .wrap .btn:hover div{background-color:var(--white) !important}
+.jobopenings .wrap .btn:hover div img{filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(7500%) hue-rotate(40deg) brightness(90%) contrast(108%) !important;}
+.jobopenings .colin .top_col .btn div img ,.jobopenings .wrap .btn div img{filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(7500%) hue-rotate(40deg) brightness(90%) contrast(108%);}
+.jobopenings .colin .top_col .btn:hover div,.jobopenings .wrap .btn div{background-color:var(--black);}
+.jobopenings .colin .top_col .btn:hover div img,
+.jobopenings .wrap .btn div img{filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7494%) hue-rotate(183deg) brightness(112%) contrast(93%);}
+
+
+.jobopenings .wrap .btn{margin-top: 63px; position: relative; bottom: -26px;}
+.jobopenings .colin label{font-size: 16px;line-height: 30px;color: var(--white);font-weight: 400;display: block;}
+.jobopenings .colin>.btn { position: absolute; bottom: -97px; left: 0; right: 0; margin: 0 auto; width: 166px; height: 166px; border-radius: 50%; font-size: 13px; font-weight: 600; text-transform: uppercase; padding: 0; text-align: center; padding-top:0px;padding-bottom: 80px;     display: flex; justify-content: center;border: none;cursor: pointer;transform: scale(1) !important;}
+.jobopenings .colin>.btn em{    color: #fff; line-height: normal;}
+.jobopenings .colin>.btn img { margin-left: 7px; position: relative; top:0px; transform: scale(-1);}
+.jobopenings .colin>.btn.active img,.jobopenings .colin>.btn:hover img {transform: scale(1);}
+.jobopenings .col{background-color: #EFF1FF;border-radius: 20px;padding: 35px 40px;}
+.jobopenings .col:not(:first-child){margin-top: 30px;}
+.jobopenings .col h4{color:var(--black);font-size: 22px;line-height: 30px;font-weight: bold;margin-bottom: 17px;}
+.jobopenings .col h3{margin-bottom: 15px;}
+.jobopenings .col p,.jobopenings .col p a{color:var(--black);font-size: 16px;font-weight: 400;}
+.jobopenings .col p a{line-height: 24px;margin-bottom:0px;text-decoration: underline;transition: 0.3s ease all;}
+.jobopenings .col p a:hover{text-decoration: none;color: var(--Purple);}
+.jobopenings .col p:last-child a{margin-bottom: 0px;}
+.jobopenings .col ul{}
+.jobopenings .col ul li{padding-left: 17px;color:var(--black);font-size: 16px;font-weight: 400;line-height: 24px;margin-bottom: 9px;background-image: url(../../public/images/dot.png);background-repeat: no-repeat;background-position: left center;}
+.jobopenings .wrap {margin-top: 51px; overflow: hidden; transition: max-height 0.5s ease-out; max-height: 0; }
+.jobopenings .expanded{ max-height: 2000px; overflow: initial;}
+.jobopenings .connect_with{margin: 0 auto;    text-align: center;}
+.jobopenings .connect_with p{line-height: 36px;}
+.jobopenings .connect_with p a { line-height: 36px; font-size: 22px; font-weight: bold; text-decoration: underline; }
+
+@media only screen and (max-width:1750px) {
+    .jobopenings .wrapper h2{font-size: 64px;}
+}
+@media only screen and (max-width:1399px) {
+    .jobopenings .wrap .btn { margin-top: 10px; }
+
+}
+@media only screen and (max-width:1023px) {
+    .jobopenings { padding: 70px 0 80px; }
+    .jobopenings .wrapper>p br{display: none;}
+    .jobopenings .colin { padding: 30px 30px 68px; margin-bottom: 40px; }
+
+}
+@media only screen and (max-width:767px) {
+    .jobopenings { padding: 30px 0px; }
+    .jobopenings .wrapper h2 { font-size: 30px; }
+    .jobopenings .wrapper>p { margin-bottom: 25px; }
+    .jobopenings .colin { padding: 15px 10px 50px; margin-bottom: 20px; }
+    .jobopenings .colin .img { width: 60px; height: 60px; background-size: 100% 100%; }
+    .jobopenings .colin .text { padding-left: 0; width: 100%; }
+    .jobopenings .colin .text h3 { font-size: 16px; line-height: 20px; margin-bottom: 4px; }
+    .jobopenings .colin .top_col .btn{font-size: 12px; padding: 0px 10px; line-height: 40px; position: absolute; right: 15px; top: 20px;}
+    
+    .jobopenings .wrap .btn{font-size: 12px; padding: 0px 10px; line-height: 40px;bottom: 0;}
+    .jobopenings .colin label { font-size: 14px; line-height: 22px; }
+    .jobopenings .wrap { margin-top: 20px; }
+    .jobopenings .col { padding: 15px; }
+    .jobopenings .col h4 { font-size: 20px; line-height: 22px; margin-bottom: 10px; }
+    .jobopenings .col p, .jobopenings .col p a {     font-size: 13px; font-weight: 500; word-break: break-all; line-height: 20px;}
+    .jobopenings .col:not(:first-child) { margin-top: 10px; }
+    .jobopenings .col ul li { padding-left: 15px;font-size: 13px; font-weight: 500;line-height: 18px; background-position: left top 6px;}
+    .jobopenings .expanded { max-height: 3000px; }
+    .jobopenings .colin>.btn { bottom: -82px; width: 130px; height: 130px; font-size: 11px; padding-top: 16px; }
+    .jobopenings .colin>.btn img { width: 10px; }
+    .jobopenings .connect_with p br{display: none;}
+    .jobopenings .connect_with p { line-height: 20px; }
+    .jobopenings .connect_with p a{    font-size: 16px;line-height: 20px;}
+    body .jobopenings .col p a{margin-bottom: 0px;}
+    
+
+}

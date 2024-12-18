@@ -1,0 +1,72 @@
+.our_clientssay{background-color: var(--black);padding: 100px 0px;}
+.our_clientssay .left_col{width: 598px;padding-right: 136px;}
+.our_clientssay .left_col h2{text-transform: uppercase;}
+.our_clientssay h2{color: var(--white);margin-bottom: 18px;}
+.our_clientssay p{font-size: 24px;line-height: 34px;font-weight: 400;margin-bottom: 26px;}
+.our_clientssay .btn.btnarrow {color: var(--white);}
+.our_clientssay .btn.btnarrow div{border: 1px solid var(--white);background-color:var(--white);}
+.our_clientssay .btn.btnarrow div img{filter: brightness(0) saturate(100%) invert(0) sepia(100%) saturate(0) hue-rotate(18deg) brightness(100%) contrast(103%);}
+.our_clientssay .btn.btnarrow:hover div {background-color: transparent;}
+.our_clientssay .btn.btnarrow:hover div img{    filter: none;}
+.our_clientssay .right_col{width: calc(100% - 598px);position: relative;}
+.our_clientssay .right_col::after{content: '';position: absolute;left: -90px;top: 0;background-image: url(../../public/images/quata.png);background-repeat: no-repeat;background-size: 100% 100%;width: 61px;height: 49px;}
+.our_clientssay .clintlist {padding-top:40px;margin-top: 40px;justify-content: flex-start;border-top: 1px solid var(--white);}
+.our_clientssay .clintlist ul{justify-content: flex-start;margin-right: 18px;}
+.our_clientssay .clintlist ul li{width: 61px; height: 61px; border-radius: 50%; display: flex; justify-content: center; align-items: center;position: relative;z-index: 9999999;overflow: hidden;}  
+.our_clientssay .clintlist ul li img{height: 100%;}
+.our_clientssay .clintlist ul li+li{margin-left: -10px;z-index: 8;}
+.our_clientssay .clintlist h4{font-size: 24px;color: var(--white);line-height:28px;}
+.our_clientssay .clintlist label{color: var(--white);font-size: 18px;line-height: 28px;}
+.our_clientssay .clintlist label a{color: var(--white);font-size: 18px;line-height: 28px;color: #4095e7;margin-left: 5px;}
+.our_clientssay .clintlist label a:hover{text-decoration: underline;}
+.our_clientssay .clintlist label span{color: var(--Purple); margin-left: 5px;}
+.our_clientssay .nextprev_sec{    justify-content: flex-end; position: absolute; bottom: 10px; right: 0;z-index: 9;}
+
+.our_clientssay .nextprev_sec>div{width: 40px;height: 40px;border-radius:50%;border: 1px solid var(--white);display: flex;justify-content: center;align-items: center;cursor: pointer;transition: 0.2s ease all;background-color: transparent;}
+.our_clientssay .nextprev_sec>div img{filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5675%) hue-rotate(246deg) brightness(107%) contrast(101%);width: 9px;}
+.our_clientssay .nextprev_sec>div:hover{background-color: var(--white);}
+.our_clientssay .nextprev_sec>div:hover img{filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(0%) hue-rotate(18deg) brightness(100%) contrast(103%);}
+.our_clientssay .nextprev_sec>div.next{transform: scale(-1);margin-left: 17.88px;}
+
+.our_clientssay .col h2{    font-size: 38px; line-height: 1.2;}
+.our_clientssay .right_col .owl-item{opacity: 0;}
+.our_clientssay .right_col .owl-item.active{opacity: 1;}
+
+
+@media only screen and (max-width: 1750px) {
+    .our_clientssay .left_col { width: 45%; padding-right: 7%; }
+    .our_clientssay .right_col { width: 55%; }
+    .our_clientssay .col h2 { font-size: 34px; }
+
+}
+@media only screen and (max-width:1279px) {
+    .our_clientssay .left_col { width: 40%; padding-right: 3%; }
+    .our_clientssay .right_col { width: 60%; }
+
+}
+@media only screen and (max-width:1023px) {
+    .our_clientssay .left_col { width: 100%; padding-right: 5%;margin-bottom: 20px; }
+    .our_clientssay .right_col { width: 100%; }
+    .our_clientssay .col h2 { font-size: 30px; }
+    .our_clientssay{padding: 60px 0;}
+}
+@media only screen and (max-width:767px) {
+    .our_clientssay { padding: 30px 0px; }
+    .our_clientssay .left_col { padding-right: 0; margin-bottom: 20px; }
+    .our_clientssay h2 br{display: none;}
+    .our_clientssay h2 { font-size: 22px; margin-bottom: 10px;line-height: 1.5;}
+    .our_clientssay p { font-size: 14px; line-height: 24px; margin-bottom: 15px;}
+    .our_clientssay .clintlist { padding-top: 20px; margin-top: 20px; }
+    .our_clientssay .clintlist ul li { width: 40px; height: 40px; }
+    .our_clientssay .text{margin-top: 0px;}
+    .our_clientssay .clintlist h4 { font-size: 20px; line-height: 26px; }
+    .our_clientssay .clintlist label { font-size: 14px; line-height: 24px; }
+    .our_clientssay .nextprev_sec { bottom: 0; right: 0; position: relative; justify-content: flex-start; margin-top: 16px; }
+    .our_clientssay .nextprev_sec>div { width: 35px; height: 35px; }
+    .our_clientssay .nextprev_sec>div.next{margin-left: 12px;}
+    .our_clientssay .col h2 { font-size: 18px;line-height: 1.4; }
+    
+}
+@media only screen and (max-width:374px) {
+    .our_clientssay .text{margin-top: 10px;}
+}

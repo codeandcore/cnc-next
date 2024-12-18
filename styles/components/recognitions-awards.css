@@ -1,0 +1,53 @@
+.recognitions_awards{background-color: var(--black);padding: 100px 0px;}
+.recognitions_awards h2{line-height: 71px;color: var(--white);margin-bottom: 30px;}
+.recognitions_awards .top_col{}
+.recognitions_awards .top_col .left_col{width: 590px;}
+.recognitions_awards .top_col .left_col span{    text-decoration: none; font-weight: 600; display: inline-block;cursor: pointer;}
+.recognitions_awards .top_col .left_col span.active{  color: var(--black);background-color: var(--white);}
+.recognitions_awards .top_col .left_col span.btnmix::after{display: none;}
+.recognitions_awards .top_col p{width: 772px;}
+.recognitions_awards .btnmix{    background-color: transparent; color: var(--white); margin-left: 10px; min-width: 128px; text-align: center; border: 1px solid var(--white);}
+.recognitions_awards .btnmix:hover,.recognitions_awards .btnmix.active {color: var(--black);background-color: var(--white);}
+.recognitions_awards .btnmix:last-child::before { transform: translateX(0%) scale(-1); opacity: 0;}
+.recognitions_awards .btnmix:last-child:hover::before { opacity: 1;}
+
+.recognitions_awards .inner{align-items: flex-start;}
+.recognitions_awards .inner .col{width: 20%;text-align: center;margin-top: 80px;}
+.recognitions_awards .owl-carousel .col{width: 100%;}
+.recognitions_awards .inner img{width: auto !important;margin: 0 auto;}
+.recognitions_awards .inner p{line-height: 25px;max-width: 100%; margin: 20px auto 0;}
+.indastry_slider.inner .col>span{display: flex; height: 160px; justify-content: center; align-items: flex-end;}
+.Award_slider.inner .col>span { display: flex; height: 120px; justify-content: center; align-items: center; }
+.recognitions_awards .Award_slider.inner p{line-height: 25px;max-width: 100%; margin: 15px auto 0;}
+body .recognitions_awards .owl-carousel.owl-theme .owl-nav { justify-content: center; } 
+
+@media only screen and (max-width:1599px) {
+    .recognitions_awards .top_col p { width: 52%; }
+
+}
+@media only screen and (max-width:1399px) {
+    .recognitions_awards .top_col p { width: 50%; }
+}
+@media only screen and (max-width:1279px) {
+    .recognitions_awards .top_col .left_col { width: 50%; }
+    .recognitions_awards .top_col p { width: 50%; }
+    .recognitions_awards h2 { line-height: 51px; margin-bottom: 30px; }
+}
+@media only screen and (max-width:1023px) {
+    .recognitions_awards .top_col .left_col { width: 100%; margin-bottom: 20px;}
+    .recognitions_awards h2 { line-height: 40px; margin-bottom: 20px; }
+    .recognitions_awards .top_col p { width: 100%; }
+    .recognitions_awards .inner .col { width: 20%; margin-top: 30px; padding: 0px 15px; }
+    .indastry_slider.inner .col>span { height: 100px; }
+    .Award_slider.inner .col>span { height: 50px; }
+    .recognitions_awards { padding: 60px 0px; }
+}
+@media only screen and (max-width:767px) {
+    .recognitions_awards { padding: 30px 0px; }
+    .recognitions_awards .inner .col { width: 100%; margin-top: 20px; padding: 0px 10px; }
+    .indastry_slider.inner .col>span { height: 70px; width: 70px; display: block; margin: 0 auto; }
+    .recognitions_awards .inner img{ height: auto; width:100px; display: block; margin: 0 auto; }
+    .recognitions_awards .inner p { line-height: 20px; max-width: 150px; margin: 10px auto 0; }
+    .recognitions_awards .Award_slider.inner p { line-height: 20px; max-width: 170px; margin: 0 auto 0; }
+
+}

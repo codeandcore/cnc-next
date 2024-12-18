@@ -1,0 +1,39 @@
+.questions_answered{padding: 100px 0 70px;}
+.questions_answered .wrapper{align-items: flex-start;}
+.questions_answered .left_col{width: 513px;}
+.questions_answered .right_col{width: 963px;}
+.questions_answered h2{line-height: 60px;margin-bottom: 20px;}
+.questions_answered h3{font-size: 24px;font-weight: 600;line-height: 33px;margin:20px 0;padding-right: 85px;position: relative;cursor: pointer;transition: 0.2s ease all;}
+.questions_answered h3 img{position: absolute;right:20px;top: 7px;transition:0.3s ease all;}
+.questions_answered h3.active img{transform: rotate(45deg);}
+.questions_answered h3:hover,.questions_answered h3.active{color: var(--Purple);}
+.questions_answered h3:hover,.questions_answered h3.active{filter: brightness(0) saturate(100%) invert(36%) sepia(90%) saturate(808%) hue-rotate(210deg) brightness(97%) contrast(101%);}
+
+.questions_answered p{color: var(--black);}
+.questions_answered .colin:not(:last-child){border-bottom: 1px solid #000000;}
+.questions_answered .colin p{max-height: 0;overflow: hidden;transition: 0.3s ease all;padding-right: 85px;}
+.questions_answered .colin p.expanded{max-height: 500px;margin-bottom: 30px;transition: 0.1s ease all;}
+
+@media only screen and (max-width:1599px) {
+    .questions_answered .left_col { width: 40%; }
+    .questions_answered .right_col { width: 60%; }
+    .questions_answered h3 { font-size: 22px; padding-right: 45px; }
+}
+@media only screen and (max-width:1279px) {
+    .questions_answered { padding: 50px 0 40px; }
+}
+@media only screen and (max-width:1023px) {
+    .questions_answered .left_col { width: 100%; }
+    .questions_answered h2 { line-height: 1.3; margin-bottom: 20px; }
+    .questions_answered .right_col { width: 100%; }
+}
+@media only screen and (max-width:767px) {
+    .questions_answered { padding: 30px 0 30px; }
+    .questions_answered h2 { line-height: 1.2; margin-bottom: 10px; }
+    .questions_answered h2 br{display: none;}
+    .questions_answered h3 { font-size: 18px; padding-right: 35px; line-height: 1.2; margin: 15px 0; }
+    .questions_answered h3 img { right: 0px; top: 7px; width: 17px; }
+    .questions_answered .colin p { padding-right: 0;}
+    .questions_answered .colin p.expanded{margin-bottom: 15px;}
+
+}

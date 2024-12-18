@@ -1,0 +1,13 @@
+.casestuding_exploredata{padding: 50px 0px 110px;}
+.casestuding_exploredata .wrapper>.btn {margin: 0 auto; display: block; width: fit-content; color:var(--white); width: fit-content; border: none; outline: none; font-weight: bold;transition: 0.3s ease all;cursor: pointer;font-size: 18px;}
+.casestuding_exploredata .loaderdata { filter: none !important; width: 100%; text-align: center; margin-bottom: 20px;    animation: none; }
+.casestuding_exploredata .loaderdata img{animation: rotate-animation .8s linear infinite; }
+
+@media only screen and (max-width:1399px) {
+    .casestuding_exploredata { padding: 50px 0px 60px; }
+}
+@media only screen and (max-width:1023px) {
+    .casestuding_exploredata { padding: 0px 0px 40px; }
+    .casestuding_exploredata .wrapper>.btn{font-size: 16px;}
+
+}

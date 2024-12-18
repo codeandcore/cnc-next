@@ -1,0 +1,64 @@
+.who_weare_sec{background-color: var(--lightblue);padding: 80px 0px 100px;}
+.who_weare_sec .our_story{width: 611px;}
+.who_weare_sec .our_story span{color:var(--darktheme);font-size: 20px;font-weight: 600;display: block;margin-bottom: 10px;}
+.who_weare_sec .our_story h2{font-size: 64px;line-height: 77px;}
+.who_weare_sec .our_story ul{margin-top: 121px;padding-right: 58px;}
+.who_weare_sec .our_story ul li{width: 28%;text-align: center;}
+.who_weare_sec .our_story ul li img{max-width: 130px;margin: 0 auto;margin-bottom: 20px;}
+.who_weare_sec .we_are{width: 868px;}
+.who_weare_sec .we_are h3{font-size: 36px;color: var(--black);line-height: 46px;font-weight: 600;margin-bottom: 20px;}
+.who_weare_sec .we_are>p{color: var(--black);margin-bottom: 20px;padding-right: 46px;}
+.who_weare_sec .we_are ul{margin-top: 70px;}
+.who_weare_sec .we_are ul li{width:calc(50% - 70px);}
+.who_weare_sec .we_are ul li p{color: var(--black);}
+.vision_background{min-height: 800px;position: relative;}
+
+@media only screen and (max-width: 1750px) {
+    .who_weare_sec .our_story h2 { font-size: 54px; line-height: 66px; }
+    .who_weare_sec .our_story { width: 40%; }
+    .who_weare_sec .we_are { width: 55%; }
+    .vision_background { min-height: 760px;}
+
+}
+@media only screen and (max-width:1599px) {
+    .who_weare_sec .our_story h2 { font-size: 40px; line-height: 55px; }
+    .who_weare_sec .our_story ul { margin-top: 70px; padding-right: 0; }
+    .who_weare_sec .our_story ul li { width: 32%; }
+    .vision_background { min-height: 620px;}
+
+}
+@media only screen and (max-width:1399px) {
+    .who_weare_sec .we_are ul li { width: calc(50% - 30px); }
+    .who_weare_sec .we_are h3 { font-size: 36px; line-height: 46px; margin-bottom: 10px; }
+    .who_weare_sec .our_story ul li img { max-width: 100px; }
+    .who_weare_sec .our_story ul li { width: 33%; }
+    .who_weare_sec .we_are ul { margin-top: 40px; }
+    .vision_background { min-height: 560px;}
+}
+@media only screen and (max-width:1279px) {
+    .who_weare_sec .our_story ul li img { max-width: 80px; max-height: 80px; }
+    .who_weare_sec .our_story ul li { width: 33%; font-size: 13px; }
+    .who_weare_sec .we_are ul li { width: calc(50% - 10px); }
+    .vision_background { min-height: 490px;}
+}
+@media only screen and (max-width:1023px) {
+    .who_weare_sec .our_story { width: 100%; }
+    .who_weare_sec .our_story ul { margin-top: 40px; padding-right: 0; margin-bottom: 40px; }
+    .who_weare_sec .we_are { width: 100%; }
+    .vision_background { min-height: 370px;}
+}
+@media only screen and (max-width:767px) {
+    .who_weare_sec { padding: 30px 0px 40px; }
+    .who_weare_sec .our_story h2 { font-size: 28px; line-height: 35px; }
+    .who_weare_sec .our_story ul { margin-top: 30px; margin-bottom: 30px;justify-content: center;}
+    .who_weare_sec .our_story ul li { width: 50%; font-size: 14px; }
+    .who_weare_sec .our_story ul li:not(:last-child){margin-bottom: 20px;}
+    .who_weare_sec .our_story ul li img { margin-bottom: 5px; }
+    .who_weare_sec .we_are h3 { font-size: 28px; line-height: 32px; margin-bottom: 10px; }
+    .who_weare_sec .we_are>p { margin-bottom: 10px; padding-right: 0; }
+    .who_weare_sec .we_are ul { margin-top: 30px; }
+    .who_weare_sec .we_are ul { margin-top: 0; }
+    .who_weare_sec .we_are ul li { width: 100%; margin-top: 20px; }
+    .who_weare_sec .we_are ul li img { width: 50px; }
+    .vision_background { min-height: 150px;}
+}

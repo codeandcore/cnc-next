@@ -1,0 +1,54 @@
+.career_banner{background-image: url(../../public/images/career_bg.jpg);padding-top: 245px;background-repeat: no-repeat;background-size: cover;}
+.career_banner .inner {align-items: flex-start;}
+.career_banner .col_right{width:calc(100% - 681px);}
+.career_banner .col_left {width: 681px;padding-right: 92px;}
+.career_banner h1{margin-bottom: 24px;text-transform: uppercase;}
+.perks_benefits h2{text-transform: uppercase;}
+.career_banner h3{color: var(--white);font-size: 38px;line-height: 34px;}
+.career_banner .see_all{width: 163px;height: 163px;border-radius: 50%;text-align: center; padding: 55px 0px;font-size: 15px; font-weight: bold;margin-top: 42px;    display: flex; justify-content: center; align-items: center; flex-direction: column; overflow: hidden !important;position: relative;cursor: pointer;}
+.career_banner .see_all:after { animation: rotate-animation 25s linear infinite; background-image: url(../../public/images/btn_bg.png); background-repeat: no-repeat; background-size: 100% 100%; content: ""; height: 190px; opacity: .6; position: absolute; transition: all .2s ease; width: 190px; z-index: -1; }
+.career_banner .col_left .see_all em{font-style: normal;}
+.career_banner .col_left .see_all em{font-style: normal;}
+.career_banner .col_right .inner{margin-top: 62px;}
+.career_banner .col_right .project_colanimate{min-width: auto;width:183px;height: 80px;margin: 0;min-height:auto;    display: flex; justify-content: center; align-items: center;}
+
+
+@media only screen and (max-width: 1750px) {
+    .career_banner { padding-top: 200px; }
+}
+@media only screen and (max-width:1599px) {
+    .career_banner .col_left { width: 40%; padding-right: 20px; }
+    .career_banner .col_right { width: 58%; }
+    .career_banner .col_right .project_colanimate { width: 170px; }
+    .career_banner .col_right .inner { margin-top: 40px; } 
+}
+@media only screen and (max-width:1399px) {
+    .career_banner { padding-top: 180px; }
+    .career_banner .see_all { width: 123px; height: 123px; padding: 43px 0px; font-size: 13px; margin-top: 30px; }
+    .career_banner .col_right .project_colanimate { width: 155px; }
+    .career_banner .col_right .project_colanimate img{max-width: 100px;}
+}
+@media only screen and (max-width:1279px) {
+    .career_banner p br{display: none;}
+    .career_banner h3 { font-size: 32px; line-height: 32px; }
+    .career_banner .col_right .project_colanimate { width: 135px; height: 70px; }
+}
+@media only screen and (max-width:1023px) {
+    .career_banner .col_left { width: 50%; padding-right: 20px; }
+    .career_banner .col_right { width: 50%; }
+    .career_banner .col_right .project_colanimate { width: 47%; height: 70px; margin-bottom: 20px; }
+    .perks_benefits h2 { font-size: 48px; }
+    .perks_benefits { padding: 90px 0px 30px; }
+}
+@media only screen and (max-width:767px) {
+    .career_banner { padding-top: 140px; }
+    .career_banner .col_left { width: 100%; padding-right: 0; }
+    .career_banner h1 { margin-bottom: 10px; }
+    .career_banner .see_all { width: 90px; height: 90px; padding: 28px 0px; font-size: 10px; margin-top: 20px; }
+    .career_banner .col_right { width: 100%; margin-top: 20px; }
+    .career_banner h3 { font-size: 24px; line-height: 28px; }
+    .career_banner .col_right .inner { margin-top: 30px; }
+    .career_banner .col_right .project_colanimate { width: 47%; height: 60px; margin-bottom: 13px; }
+    .career_banner .col_right .project_colanimate img { max-width: 90px; }
+
+}

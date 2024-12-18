@@ -1,0 +1,64 @@
+.industry_banner{background-image: url(../../public/images/career_bg.jpg);background-repeat: no-repeat;background-size: cover;position: relative;}
+.industry_banner .wrapper{padding:265px 0 200px;}
+.industry_banner .left_col{width: 658px;}
+.industry_banner .left_col h1{margin-bottom: 27px;}
+.industry_banner .awards_logo{padding: 0px;margin-top:21px;background-image: none;}
+.industry_banner .awards_logo{justify-content: flex-start;}
+.industry_banner .awards_logo li{    max-width: 28%; margin-right: 8%;margin-bottom: 44px;}
+.industry_banner .awards_logo li:nth-child(3n){margin-right: 0;}
+
+
+
+.oversection{position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index:0;overflow: hidden;}
+.oversection::after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-image: url(../../public/images/blue_layer.png); background-repeat: no-repeat; background-size: 100% 100%; z-index: 3;     opacity:0.5;}
+.oversection .animation_sec{display: flex;justify-content: flex-end;flex-wrap: wrap;width: 100vw;position: absolute;right: 0%;top:0%;transform-style: preserve-3d;transform: translate3d(0% , -10% , 0 );    will-change: transform;left: 0;margin: 0 auto;}
+.oversection .animation_sec.test{transition: 2s ease all;}
+.oversection .animation_sec .animation{width: 241px;margin-right: 20px;}
+.oversection .animation_sec .animation:last-child{margin-right:0px;}
+.oversection .animation_sec .animation img { display: block; width: 100%; }
+
+.oversection .anim_1,.oversection .anim_10{animation:anim1 100s linear infinite;}
+@keyframes anim1 { 0%, 100% { transform: translateY(0%); } 50% { transform: translateY(-50%); } }
+.oversection .anim_2,.oversection .anim_8{animation:anim2 100s linear infinite;}
+@keyframes anim2 { 0%, 100% { transform: translateY(-50%); } 50% { transform: translateY(0%); } }
+.oversection .anim_3,.oversection .anim_9{animation:anim3 100s linear infinite;}
+@keyframes anim3 { 0%, 100% { transform: translateY(0%); } 50% { transform: translateY(-50%); } }
+.oversection .anim_4,.oversection .anim_6{animation:anim4 130s linear infinite;}
+@keyframes anim4 { 0%, 100% { transform: translateY(-50%); } 50% { transform: translateY(0%); } }
+.oversection .anim_5,.oversection .anim_7{animation:anim5 135s linear infinite;}
+@keyframes anim5 { 0%, 100% { transform: translateY(0%); } 50% { transform: translateY(-60%); } }
+
+.industry_banner .right_col{display: none;}
+
+@media only screen and (max-width:1750px){
+    .industry_banner .wrapper { padding: 220px 40px 60px; }
+}
+@media only screen and (max-width:1599px){
+    .oversection .animation_sec .animation{width: 200px;margin-right: 20px;}
+}
+@media only screen and (max-width:1399px){
+    .oversection::after { opacity: 0.7; }
+}
+@media only screen and (max-width:1279px){
+    .industry_banner .wrapper { padding: 220px 20px 60px; }
+    .oversection .animation_sec .animation{width: 150px;margin-right:15px;}
+    .oversection::after { opacity: 0.85; }
+}
+@media only screen and (max-width:1023px){
+    .oversection::after { opacity: 0.9; }
+    .industry_banner .left_col { width: 60%; }
+    .industry_banner .awards_logo li { max-width: 29%; margin-right: 6%; margin-bottom: 25px; }
+}
+@media only screen and (max-width:767px){
+    .oversection::after { opacity: 1; }
+    .industry_banner .left_col { width: 100%; }
+    .industry_banner .wrapper { padding: 90px 20px 20px; }
+    .industry_banner .awards_logo li { max-width:30%; margin:0 1.5% 7px;}
+    .industry_banner .awards_logo { justify-content: center; }
+    .industry_banner .left_col h1 { margin-bottom: 10px; }
+    .oversection .animation_sec { width: 520px; left: -70px; margin: 0 auto; }
+    .oversection{display: none !important;}
+    .industry_banner .right_col { display: block; width: calc(100% + 40px); margin-left: -20px;margin-top: 10px;}
+    .industry_banner .right_col img{display: block;width: 100%;}
+
+}

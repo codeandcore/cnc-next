@@ -1,0 +1,94 @@
+.services_list{padding: 120px 0 120px;}
+.services_list .top_col{align-items: flex-start;margin-bottom: 60px;}
+.services_list .top_col p{color:var(--black);max-width: 870px;}
+.services_list h2 {font-size: 74px; line-height: 1; }
+.services_list h2 span{font-size: 18px; line-height: 30px; font-weight: 500; display: inline-block; vertical-align: top;}
+
+.services_accordion{}
+.services_accordion .colin{border-top: 1px solid var(--black);opacity: 0;transition: 0.3s ease all;}
+.services_accordion .colin.fade-in{opacity: 1;}
+.services_accordion .colin:last-child{border-bottom: 1px solid var(--black);}
+.services_accordion .top_title{justify-content: flex-start;position: relative;padding:38px 28px;cursor: pointer;}
+.services_accordion .top_title.active{border-bottom: 1px solid var(--Purple);}
+.services_accordion .top_title h3{font-size: 40px;font-weight: 900;color: var(--black);}
+.services_accordion .top_title.active h3{color: var(--Purple);}
+.services_accordion .top_title span{width: 78px;height: 78px;margin-right: 50px;}
+.services_accordion .top_title span img{max-height:60px}
+.services_accordion .top_title.active span img{filter: none;}
+.services_accordion .top_title>.btnarrow{position: absolute;right: 10px;top: 0;cursor: pointer;bottom: 0;margin: auto;transition: 0.2s ease all;}
+/* .services_accordion .top_title>.btnarrow div { width: 69px; height: 69px; margin-left: 0;display: flex;justify-content: center;align-items: center; } */
+.services_accordion .top_title>.btnsimple{     align-items: center; background-color: transparent; border: 1px solid var(--black); border-radius: 50%; cursor: pointer; display: flex; height: 59px; justify-content: center; transition: all .2s ease; width: 59px; position: absolute; right: 0; transform: rotate(-90deg);}
+.services_accordion .top_title.active>.btnsimple{transform: rotate(90deg);}
+.services_accordion .top_title>.btnsimple:hover{background-color: var(--black);}
+.services_accordion .top_title>.btnsimple:hover img{filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(5675%) hue-rotate(246deg) brightness(107%) contrast(101%);}
+.services_accordion .wrap{align-items: flex-start;max-height: 0px;overflow: hidden;transition: 0.4s ease all;}
+.services_accordion .wrap.expanded{max-height: 4000px;padding: 70px 0px;}
+.services_accordion .img{width: 420px;height: 430px;background-size: cover;background-repeat: no-repeat;background-position: center;}
+.services_accordion .text{width: calc(100% - 420px);padding-left: 50px;}
+.services_accordion .col{justify-content: flex-start;align-items: flex-start;position: relative;padding: 40px 0px;}
+.services_accordion .col:first-child{padding-top: 0px;}
+.services_accordion .col:not(:last-child){border-bottom: 1px solid #D9D9D9;}
+.services_accordion .col span{color: #8F8F8F;font-size: 18px;font-weight: 600;width: 47px;line-height: 33px;}
+.services_accordion .col h4{width: 311px;font-size: 24px;font-weight: 900;}
+.services_accordion .col p{width: calc(100% - 358px);padding-right: 100px;color: var(--black);}
+.services_accordion .col .btn {margin-left: 360px; line-height: 25px; margin-top: 5px; }
+.services_accordion .col .btn div{margin-left: 5px;}
+.services_accordion .col .btn div img{width: 8px;}
+.services_list>.wrapper>.btn { background-color: #DED7E8; color: var(--black); display: block;width: fit-content;margin: auto;margin-top: 59px;}
+
+
+@media only screen and (max-width:1599px) {
+    .services_list { padding: 70px 0 70px; }
+    .services_list h2 { font-size: 60px; }
+    .services_list .top_col p { max-width: 730px; }
+    .services_list .top_col { margin-bottom: 40px; }
+    .services_accordion .top_title { padding: 30px 20px; }
+    .services_accordion .top_title span { width: 50px; height: 50px; margin-right: 20px;}
+    .services_accordion .top_title>.btnarrow div { width: 59px; height: 59px; }
+}
+@media only screen and (max-width:1399px) {
+    .services_list .top_col p { max-width: 800px; }
+    .services_accordion .top_title span { width: 40px; height: 40px; }
+    .services_accordion .top_title h3 { font-size: 35px; }
+    .services_accordion .top_title>.btnarrow div { width: 50px; height: 50px; }
+    .services_accordion .top_title>.btnarrow div img{width: 20px;}
+    .services_accordion .wrap.expanded { padding: 50px 0px; }
+    .services_accordion .img { width: 350px; height: 360px; }
+    .services_accordion .text { width: calc(100% - 350px); padding-left: 50px; }
+    .services_accordion .col h4 { width: 270px; font-size: 20px; }
+    .services_accordion .col p { width: calc(100% - 320px); padding-right: 40px; }
+    .services_accordion .col .btn { margin-left: 318px; }
+
+    
+}
+@media only screen and (max-width:1279px) {
+    .services_list .top_col p { max-width: 100%; margin-top: 20px; }
+    .services_accordion .top_title h3 { font-size: 30px; }
+    .services_accordion .col p { width: 100%; padding-right: 50px; }
+    .services_accordion .col span { font-size: 18px; width: 37px; line-height: 29px; }
+    .services_accordion .col h4 { width: calc(100% - 50px); font-size: 20px; }
+    .services_accordion .col { padding: 20px 0px; }
+    .services_accordion .col .btn { margin-left:0; }
+}
+@media only screen and (max-width:767px) {
+    .services_list h2 { font-size: 33px; }
+    .services_list { padding: 30px 0; }
+    .services_list .top_col { margin-bottom: 20px; }
+    .services_accordion .top_title span { width: 30px; height: 30px; margin-right: 10px; }
+    .services_accordion .top_title { padding: 15px 0px; }
+    .services_accordion .top_title h3 { font-size: 20px; width: calc(100% - 76px); }
+    .services_accordion .col h4 { width: 100%; font-size: 20px; }
+    .services_accordion .top_title>.btnarrow { right: 0; }
+    .services_accordion .top_title>.btnarrow div { width: 35px; height: 35px; }
+    .services_accordion .top_title>.btnarrow div img { width: 14px; }
+    .services_accordion .wrap.expanded { padding: 20px 0px; }
+    .services_accordion .img { width: 100%; height: 280px; margin-bottom: 20px; }
+    .services_accordion .text { width: 100%; padding-left: 0; }
+    .services_accordion .col span { font-size: 14px; width: 22px; line-height: 29px; }
+    .services_accordion .col p { width: 100%; padding-right: 0; margin-top: 5px; padding-bottom: 10px; }
+    .services_accordion .col .btn { top: auto; bottom: 10px; }
+    .services_list>.wrapper>.btn { margin-top: 20px; }
+    .services_accordion .top_title>.btnsimple{ height: 36px;width: 36px;}
+    .services_accordion .top_title>.btnsimple img { width: 9px; }
+
+}

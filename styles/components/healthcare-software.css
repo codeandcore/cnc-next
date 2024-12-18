@@ -1,0 +1,47 @@
+.healthcare_software{padding: 100px 0 60px;}
+.healthcare_software .top_col{max-width: 1340px;}
+.healthcare_software .top_col h2{margin-bottom: 20px;}
+.healthcare_software .top_col p{color: var(--black);font-size: 24px;}
+.healthcare_software .wrap{justify-content:center;margin-top: 50px;align-items: normal;}
+.healthcare_software .col{border-radius: 20px;padding: 50px 26px 24px; width:20.19%; background-color: var(--white); transition: 0.2s ease all;text-align: center;}
+.healthcare_software .col:not(:last-child){margin-right: 5%;}
+.healthcare_software .col:hover{box-shadow: 0px 0px 20px #0000001a;}
+.healthcare_software .col img{display: block;margin: 0 auto 20px;}
+.healthcare_software .col h3{font-size: 26px;font-weight: bold;margin-bottom: 10px;line-height: 1.5;}
+.healthcare_software .col p{line-height: 1.6; color: #000;}
+
+@media only screen and (max-width:1599px) {
+    .healthcare_software .col { width: 23%; }
+    .healthcare_software .col:not(:last-child) { margin-right: 2%; }
+    .healthcare_software .col h3 { font-size: 24px; }
+}
+@media only screen and (max-width:1399px) {
+    .healthcare_software{padding: 80px 0 80px;}
+    .healthcare_software .top_col p { font-size: 20px; }
+    .healthcare_software .wrap{margin-top: 40px;}
+    .healthcare_software .col { margin-bottom: 30px;   padding: 40px 20px 24px;}    
+    .healthcare_software .col h3 { font-size: 21px;}
+
+}
+@media only screen and (max-width:1279px) {
+    .healthcare_software{padding: 60px 0 60px;}
+    .healthcare_software .col { padding: 30px 14px 30px;width: 24%;}
+    .healthcare_software .col:not(:last-child) { margin-right: 1%; }
+    .healthcare_software .col img { margin: 0 auto 12px; max-width: 75px; }
+    .healthcare_software .col h3 { font-size: 18px; }
+
+}
+@media only screen and (max-width:1023px) {
+    .healthcare_software .col { width: 43%;}
+
+}
+@media only screen and (max-width:767px) {
+    .healthcare_software { padding: 40px 0;}
+    .healthcare_software .top_col p { font-size: 16px; line-height: 1.5;}
+    .healthcare_software .top_col h2 { margin-bottom: 10px;}
+    .healthcare_software .wrap { margin-top: 20px;}
+    .healthcare_software .col { border-radius: 12px; margin-bottom: 20px; padding: 40px 20px 30px; width: 100%;box-shadow: 0px 0px 20px #0000001a; }
+    .healthcare_software .col:last-child{margin-bottom: 0px;}
+    .healthcare_software .col h3 { font-size: 20px; margin-bottom: 8px; }
+    
+}

@@ -1,0 +1,32 @@
+.healthcare_sector{background-color: #eff1ff;padding: 100px 0 60px;background-image: url(../../public/images/healthcare_bg.png);background-size: cover;background-repeat: no-repeat;background-position: bottom center;}
+.healthcare_sector .top_col h2{margin-bottom: 20px;}
+.healthcare_sector .top_col p{color: var(--black);font-size: 24px;}
+.healthcare_sector .wrap{justify-content: space-between;margin-top: 60px;align-items: normal;}
+.healthcare_sector .col{border-radius: 20px; margin-bottom: 40px; padding: 40px 36px 40px 40px; width: calc(50% - 20px); background-color: var(--white); border: 1px solid var(--white);  transition: 0.2s ease all;}
+.healthcare_sector .col:hover{box-shadow: 0px 0px 20px #0000001a;border-color:var(--Purple);}
+.healthcare_sector .col h3{font-size: 28px;font-weight: bold;margin-bottom: 15px;}
+.healthcare_sector .col p{font-size: 20px; line-height: 1.5; color: #000;}
+
+@media only screen and (max-width:1399px) {
+    .healthcare_sector{padding: 80px 0 50px;}
+    .healthcare_sector .top_col p { font-size: 20px; }
+    .healthcare_sector .wrap{margin-top: 40px;}
+    .healthcare_sector .col { margin-bottom: 30px; padding: 30px; width: calc(50% - 15px); }
+    .healthcare_sector .col h3 { font-size: 24px; margin-bottom: 10px; }
+    .healthcare_sector .col p { font-size: 18px; }
+}
+@media only screen and (max-width:1279px) {
+    .healthcare_sector{padding: 60px 0 30px;}
+}
+@media only screen and (max-width:1023px) {
+    .healthcare_sector .col { margin-bottom: 20px; width: 100%; }
+}
+@media only screen and (max-width:767px) {
+    .healthcare_sector { padding: 40px 0; }
+    .healthcare_sector .top_col p { font-size: 16px; line-height: 1.5; }
+    .healthcare_sector .top_col h2 { margin-bottom: 10px; }
+    .healthcare_sector .wrap { margin-top: 20px; }
+    .healthcare_sector .col { border-radius: 12px; margin-bottom: 15px; padding: 15px; width: 100%; }
+    .healthcare_sector .col h3 { font-size: 20px; margin-bottom: 8px; }
+    .healthcare_sector .col p { font-size: 16px; }
+}

@@ -1,0 +1,17 @@
+.awards_logo{align-items: flex-end;margin-top: 44.5px;padding: 53.5px 0px 90.31px;background-image: url(../../public/images/lineban.png);background-repeat: no-repeat;    background-position: top center;}
+.awards_logo li{ max-width: 16.5%;}
+.awards_logo li img {margin: 0 auto; object-fit: cover; min-width: 100%;}
+
+
+
+@media only screen and (max-width: 1750px) {    
+    .awards_logo { margin-top: 25px; padding: 30px 0px 30px; }
+    .awards_logo li { max-width: 14.5%; }
+}
+@media only screen and (max-width:1399px) {
+    .awards_logo { margin-top: 20px; padding: 20px 0px 20px; }
+}
+@media only screen and (max-width:767px) {
+    .awards_logo { justify-content: center; }
+    .awards_logo li { max-width: 31%; margin: 0px 1.1% 1.1%;}
+}

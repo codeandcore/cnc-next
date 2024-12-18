@@ -1,0 +1,101 @@
+.hireto_meetyou{padding: 80px 0 90px;position: relative;}
+.hireto_meetyou .wrapper{justify-content: center;}
+.hireto_meetyou h2{color: var(--white);line-height: 75px;text-transform: uppercase;text-align: center;width: 100%;}
+.hireto_meetyou h3{font-size: 30px;line-height: 41px;margin-top: 5px;color:var(--white);font-weight: 500;text-align: center;}
+.hireto_meetyou .allbtn {  position: relative; width: 100%; height: 60px;     display: flex; justify-content: center; text-align: center; align-items: center; margin: auto;margin-top: 50px;}
+.hireto_meetyou .allbtn>.btn{position: absolute;z-index:0;left: 0;top: 0;right: 0;margin: 0 auto;width: fit-content;padding: 0px 65.5px;  position: relative; top: 0; margin-top: 0; margin: 0;}
+.hireto_meetyou .allbtn>.btn.hide{opacity: 0;pointer-events: none;}
+.hireto_meetyou ul {justify-content: center;opacity: 0;pointer-events: none;transition: 0.3s ease all;transform: scale(0);transform-origin: center;position: absolute;width: 100%;top: 0;}
+.hireto_meetyou ul li:not(:last-child){margin-right: 18px;}
+.hireto_meetyou ul li>div{padding: 0px 40px;    font-size: 18px; font-weight: 600; display: inline-block; color: var(--white);cursor: pointer;}
+.hireto_meetyou .allbtn>.btn{ font-size: 18px; font-weight: 600; display: inline-block; color: var(--white);cursor: pointer;}
+.hireto_meetyou .allbtn>.btn+.btn{margin-left: 20px;}
+.hireto_meetyou .allbtn ul.show{opacity: 1;transform: scale(1);pointer-events: all;}
+.hireto_meetyou .video{    position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover;}
+.hireto_meetyou .btn:after{width: 360px;height: 360px;}
+
+.hireto_meetyou .allbtn>.btn img,.hireto_meetyou .allbtn>.btn br{display: none;}
+
+
+
+/* popup */
+.hire_popup { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background-color: #000000c9; z-index: 99999999; display: flex; justify-content: center; align-items: center; opacity: 0;pointer-events: none;transition: 0.4s ease all;}
+.hire_popup.open{opacity: 1;pointer-events: all;}
+.hire_popup .inner{width: 840px; background-color: #fff; border-radius: 20px;padding-bottom: 25px;position: relative;z-index: 2;}
+.hire_popup .contents { width: 100%; min-height: 31vh; max-width: calc(100% - 100px); margin: 0 auto;}
+.hire_popup .top_ban{padding: 30px 50px 20px;background-color: #000;border-radius: 20px 20px 0px 0px;margin-bottom: 25px;background-image: url(../../public/images/popupban.jpg);}
+.hire_popup h2 { font-size: 34px; line-height: 48px; color: #fff;margin-bottom: 12px;}
+
+.hire_popup h3{width: 100%;font-size: 20px;font-weight: 600;color: var(--black);margin-bottom: 20px;font-family: var(--inter);}
+/* .hire_popup label{font-size: 16px;line-height: 31px;font-weight: 400;font-family: var(--inter);color:#000;position: relative;border: 1px solid #B9B9B9;padding: 14px 19.25px;border-radius: 30px;cursor: pointer;margin:0px 10px 20px 10px;} */
+.hire_popup label { font-size: 16px; line-height: 20px; font-weight: 400; font-family: var(--inter); color: #000; position: relative; border: 1px solid #B9B9B9; padding: 10px 19.25px; border-radius: 30px; cursor: pointer; margin: 0px 10px 10px 10px; }
+.hire_popup label:nth-child(4n){margin-right: 0px;}
+.hire_popup label input{position: absolute;opacity: 0;}
+.hire_popup label:has(input:checked){color: var(--white);background-color: var(--Purple);border-color: var(--Purple);}
+.hire_popup .in{height: 58px;width: 100%;border: none;border-bottom: 1px solid #000;font-size: 16.82px;font-weight: 400;color:#000;resize: none;margin-bottom: 30px;font-family: var(--inter);}
+.hire_popup .in::placeholder{color:#000;}
+.hire_popup textarea.in{height:72px;}
+.hire_popup .colin{width:100%}
+.hire_popup .colin .in{width: calc(50% - 17px);}
+.hire_popup .in:focus{border-color: var(--Purple);}
+.hire_popup .in.error{border-color: #f00 !important;}
+.hire_popup .sub { outline: none; font-size: 18px; color: var(--white); width: 191px; border: none; margin: 0 auto; cursor: pointer;}
+.hire_popup .col{position: relative;padding-bottom: 25px;width: calc(100% + 10px);margin-left: -10px;}
+.hire_popup .error-msg{    width: 100%; color: red; position: absolute; bottom: 10px;left: 0;}
+.hire_popup .close { position: absolute; right: -10px; top: -10px; width: 40px; height: 40px; background-color: #fff; display: flex; justify-content: center; align-items: center; border-radius: 50%; border: 3px solid var(--Purple); font-size: 25px; color:var(--Purple); line-height: 34px; cursor: pointer; padding-bottom: 4px; font-weight: 900; padding-left: 1px;transition: 0.2s ease all;}
+.hire_popup .close:hover{transform: scale(0.8);}
+body.popup-open{overflow: hidden !important;}
+.hire_popup {display: block !important;overflow: auto;}
+.hire_popup .inner{margin:100px auto;}
+
+@media only screen and (max-width:1750px) {    
+    .hireto_meetyou ul li>div { padding: 0px 30px;font-size: 18px; }
+    .hireto_meetyou .allbtn>.btn{font-size: 16px; }
+    .hire_popup .in { height: 50px; font-size: 16px; margin-bottom: 15px; }
+    .hire_popup textarea.in { height: 60px; }
+    
+    
+}
+@media only screen and (max-width:1599px) {
+    .hireto_meetyou ul li>div { padding: 0px 26px; font-size: 16px; }
+}
+@media only screen and (max-width:1399px) {
+    .hireto_meetyou ul li:not(:last-child) { margin-right: 10px; }
+    .hireto_meetyou ul li>div { padding: 0px 20px; font-size: 16px; }
+}
+@media only screen and (max-width:1279px) {
+    .hireto_meetyou ul li>div { padding: 0px 11px; font-size: 14px; }
+    .hireto_meetyou h2,.hireto_meetyou h3 { text-align: center; }
+}
+@media only screen and (max-width:1023px) {
+    .hireto_meetyou ul{justify-content: center;}
+    .hireto_meetyou ul li{margin-bottom: 10px;}
+    .hire_popup .inner { width: calc(100% - 40px); }
+    .hireto_meetyou h3{font-size: 24px; line-height: 1.5;}
+
+}
+@media only screen and (max-width:767px) {
+    .hireto_meetyou { padding: 30px 0 150px; }
+    .hireto_meetyou h2 { line-height: 1.5;}
+    .hireto_meetyou h3 { font-size: 14px; }
+    .hireto_meetyou .allbtn { margin-top: 20px; height: 60px; }
+    .hireto_meetyou ul li{margin-bottom: 5px;}
+    .hire_popup .inner { width: calc(100% - 30px); }
+    .hire_popup .top_ban { padding: 20px 15px 20px; margin-bottom: 15px; background-size: 100% 100%; }
+    .hire_popup h2 { font-size: 25px; line-height: 38px; margin-bottom: 8px; }
+    .hire_popup .contents { width: 100%; max-height: 45vh; overflow: auto; max-width: calc(100% - 30px); margin: 0 auto; padding-right: 5px; }
+    .hire_popup .colin .in { width: 100%; height: 40px; margin-bottom: 10px; font-size: 14px; }
+    .hire_popup textarea.in { height: 60px; font-size: 14px; margin-bottom: 15px; }
+    .hire_popup .inner { padding-bottom: 20px; }
+    .hire_popup h3 { font-size: 16px; margin-bottom: 12px; }
+    .hire_popup label { font-size: 13px; line-height: 20px; padding: 9px 8px; margin: 0px 3px 10px 3px; }
+    .hire_popup .col { padding-bottom: 15px; width: calc(100% + 6px); margin-left: -3px; }
+    .hire_popup .close { right: -5px; }
+    .hireto_meetyou .allbtn>.btn { padding: 6px 45px; }
+    .hire_popup .error-msg { bottom: 8px; left: 3px; font-size: 11px; }
+
+}
+@media only screen and (max-width:375px){
+    .hireto_meetyou ul li>div { padding: 0px 12px; font-size: 10px; }
+    .hireto_meetyou .allbtn>.btn { padding: 5px 30px; }
+}

@@ -1,0 +1,71 @@
+.life_section{background-color: var(--black);padding: 101px 0px 91px;background-repeat: no-repeat;background-position: center;background-size: 100% 101%;}
+.life_section h2{color: var(--white);line-height: 67px;margin-bottom: 61.42px;}
+.life_section .client_plateform{width: 100%;}
+.life_section .client_plateform .item{margin-right: 48px;text-transform: uppercase;}
+.life_section .client_plateform .item img { margin-right: 18.86px; }
+.life_section .top_colin{}
+.life_section .top_colin .colinl{width: 47.813%;position: relative;}
+.life_section .top_colin .colinl .btn{position: absolute; right: 0; top: 74px; }
+.life_section .top_colin .colinr{width: 47.813%;}
+.life_section .top_colin .left{width: 46.276%;height: 479px;}
+.life_section .top_colin .right{width:41.18%;padding-top: 26px;}
+.life_section .top_colin .comman{position: relative;}
+.life_section .top_colin .comman img{position: absolute; bottom: 0; right: 0; z-index: 1;}
+.life_section .top_colin .comman::after{width: 100%;height: 100%;content: '';left: 15px;top: 13px;border-radius: 30px;border: 1px solid #4197EA;position: absolute;z-index: -1px}
+.life_section .top_colin .img2{width: 100%;height: 228px;}
+.life_section .top_colin .img3{width:235px;height:170px;top: 40px;left: -45px;}
+.life_section .bottom_text span{font-size: 24px;line-height: 14px;font-weight: 600;color: var(--white);display: block;margin-bottom: 22px;text-transform: uppercase;}
+.life_section .bottom_text h2{margin-bottom: 10px;}
+.life_section .bottom_text {color:var(--white);margin-top: 15px;}
+
+/* lifebanner */
+.life_section.lifebanner {padding-top: 164px;}
+.life_section.lifebanner .top_colin .btn{display: none !important;}
+
+
+@media only screen and (max-width: 1599px) {
+    .life_section .top_colin .left { height: 390px;}
+    .life_section .top_colin .img2 { height: 188px; }   
+    .life_section .bottom_text h2{line-height: 1.2; margin-top: 18px;}
+    
+}
+@media only screen and (max-width: 1399px) {
+    .life_section .top_colin .left { height: 370px; }
+}
+@media only screen and (max-width: 1365px) {
+    .life_section .top_colin .left { height: 360px; }
+    .life_section .top_colin .img2 { height: 168px; }
+
+}
+@media only screen and (max-width: 1279px) {
+    .life_section h2 { line-height: 1.3; margin-bottom: 10px; }
+    .life_section .top_colin .colinl .btn { position: relative; top: 0; display: block; width: fit-content; margin: auto; margin-right: 0; margin-bottom: 10px; }
+    .life_section .top_colin .left { height: 300px; }
+    .life_section .top_colin .img2 { height: 138px;     right: 20px;}
+    .life_section .top_colin .right { width: 40%; }
+    .life_section .top_colin .img3 { width: 100%; height: 130px; top: 40px; left: auto; right: 20px; }
+    .life_section .bottom_text{margin-top: 30px;}
+
+}
+@media only screen and (max-width: 1023px) {
+    .life_section .top_colin .left { height: 220px;}
+    .life_section .top_colin .img2 { height: 98px; right: 20px; }
+    .life_section .top_colin .img3 { height: 100px; }
+    .life_section .top_colin .comman:after{border-radius: 10px; left: 5px; top: 5px;}
+
+}
+@media only screen and (max-width: 767px) {
+    .life_section .top_colin .colinl,.life_section .top_colin .colinr { width: 100%; }
+    .life_section h2 {  margin-bottom: 10px; font-size: 24px;  }
+    .life_section h2 br{display: none;}
+    .life_section { padding: 30px 0px; }
+    .life_section .top_colin .left {width:calc(50% - 5px); height: auto; right: 0;top: 0;}
+    .life_section .top_colin .right{width:calc(50% - 5px);}
+    .life_section .top_colin .img2,.life_section .top_colin .img3 { height: auto; right: 0;top: 0;}
+    .life_section .top_colin .colinr { max-width:310px; margin: 0 auto; }
+    .life_section .top_colin .comman img { position: relative; bottom: 0; right: 0; z-index: 1; width: 100%; }
+    .life_section .top_colin .comman::after{display: none;}
+    .life_section .bottom_text span { font-size: 18px; line-height: 22px; margin-bottom: 5px; } 
+    .life_section.lifebanner {padding-top: 115px;}
+    .life_section .top_colin .colinl .btn { margin-right: auto; margin-bottom: 10px; margin-left: 0; }
+}

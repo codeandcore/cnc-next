@@ -1,0 +1,26 @@
+.techno_banner{padding-top: 347px;background-image: url(../../public/images/techno_bg.jpg);background-repeat: no-repeat;background-size: cover;position: relative;}
+.techno_banner:after { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 100%; box-shadow: 50vw 0px 100vw inset #00000096; }
+.techno_banner .video{position: absolute;left: 0;top:0;width: 100%;height:100%;object-fit: cover;}
+.techno_banner .inner h1{margin-bottom: 27px;}
+.techno_banner .inner p{max-width: 589px;}
+.techno_banner .awards_logo{padding: 0px;padding-bottom: 54px;margin-top:225px;background-image: none;}
+.techno_banner .awards_logo li{width: 12%;}
+.techno_banner .awards_logo li img {margin: 0 auto; object-fit: cover; min-width: 100%;}
+
+
+@media only screen and (max-width: 1750px) {
+    .techno_banner { padding-top: 290px; } 
+    .techno_banner .awards_logo { padding-bottom: 54px; margin-top: 125px; }
+}
+@media only screen and (max-width:1399px) {
+    .techno_banner { padding-top: 250px; }
+    .techno_banner .awards_logo { padding-bottom: 40px; margin-top: 85px; }
+}
+@media only screen and (max-width:767px) {
+    .techno_banner { padding-top: 120px; }
+    .techno_banner .inner h1 { margin-bottom: 20px; }
+    .techno_banner .awards_logo { padding-bottom: 20px; margin-top: 20px; }
+    .techno_banner .awards_logo li { width: 31%; margin-bottom: 10px;        height: 42px; }
+    .techno_banner .awards_logo li img { object-fit: contain; max-height: 100%; display: block; }
+
+}

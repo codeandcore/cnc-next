@@ -1,0 +1,79 @@
+.tab_section{margin: 97.74px 0px 111.5px;}
+.tab_section .tabtitle{width: calc(100% - 750px);padding-top: 55px;padding-right: 30px;}
+.tab_section .tabcontaints{width: 750px;min-height:800px;position: relative;}
+.tab_section .tabcontaint {position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;opacity: 0;transition: 0.2s ease all;}
+.tab_section .tabcontaint.active{opacity: 1;}
+.tab_section .tabcontaint img{max-width: 100%;    height: 100%; object-fit: contain; }
+.tab_section .tablink{padding-left: 97px;position: relative;margin-bottom: 18px; display: flex; flex-wrap: wrap; align-items: center;}
+.tab_section .tablink h2{margin-bottom:0 !important;cursor: pointer; transition: 0.2s ease all;font-size: 40px;line-height: 1;}
+.tab_section .tablink h2:hover,.tab_section .tablink.active h2{ color: var(--Purple) !important;}
+.tab_section .tablink .text>a:not(.btn){background-color: var(--lightblue); border-radius: 5px; color: var(--darktheme); display: inline-block; font-size: 16px; font-style: normal; font-weight: 500; line-height: 40px; margin-bottom: 12px; margin-right: 15px; padding: 0 16px; vertical-align: top;}
+.tab_section .tablink .text>a:not(.btn):hover{color:var(--Purple);box-shadow: 0px 0px 4px #00000017;}
+.tab_section .tablink .text p{color: var(--darktheme);}
+.tab_section .tablink .number{position: absolute; left: 0; width: 48px; top: 0; line-height: 1; font-size: 40px; font-weight: 900; color: #ccc;}
+.tab_section .tablink .number::after{content: ''; position: absolute; left: calc(100% + 10px); height: 2px; background-color: #C7C7C7; width: 30px; top: 0; bottom: 0; margin: auto; }
+.tab_section .tablink .text{max-height:0;overflow: hidden;transition: 0.4s ease all;}
+.tab_section .tablink.active .text{max-height: 500px;margin-top: 20px; width: 100%;}
+
+@media only screen and (max-width: 1750px) {
+
+
+}
+@media only screen and (max-width: 1599px) {
+    .tab_section .tablink .number { width: 38px; line-height: 40px; font-size: 30px; }
+    .tab_section .tabcontaints { width: 50%; min-height: 670px; }
+    .tab_section .tabtitle { width: 50%; padding-top: 30px; padding-right: 20px; }
+    .tab_section .tabtitle h2{ font-size: 40px; }
+    .tab_section .tablink .text>a:not(.btn) { font-size: 16px; line-height: 40px; margin-right: 10px; padding: 0px 16px; margin-bottom: 10px; }
+
+
+
+
+}
+@media only screen and (max-width: 1399px) {
+    .tab_section { margin: 60px 0px; }
+    .tab_section .tablink { padding-left: 52px; }
+    .tab_section .tablink .number { width: 30px; line-height: 40px; font-size: 24px; }
+    .tab_section .tablink .number::after { left: 33px; width: 15px; }
+    .tab_section .tablink .text>a:not(.btn) { font-size: 15px; }
+    .tab_section .tabtitle h2 { font-size: 34px;line-height: 40px;}
+
+
+}
+@media only screen and (max-width: 1365px) {
+
+}
+@media only screen and (max-width: 1279px) {
+    .tab_section .tabtitle h2 { font-size: 30px;  }
+
+}
+@media only screen and (max-width: 1023px) {
+
+    .tab_section .wrapper{flex-wrap: wrap-reverse;}
+    .tab_section .tabtitle { width: 100%; padding-top: 0; padding-right: 0; }
+    .tab_section .tabcontaints { width: 100%; min-height: 370px; margin-bottom: 30px; }
+    .tab_section .tabtitle h2 { font-size: 30px;  margin-bottom: 10px; }
+    .tab_section .tabcontaint img {max-width: 440px;}
+
+
+}
+@media only screen and (max-width: 767px) {
+    .tab_section { margin:0;}
+    .tab_section .wrapper{padding: 0;}
+    .tab_section .tabcontaint img { max-width: 250px; }
+    .tab_section .tabcontaints { min-height: 250px; margin-bottom: 20px; display: none;}
+    .tab_section .tabtitle h2 { font-size: 18px; line-height: 30px; margin-bottom: 10px; }
+    .tab_section .tablink { padding-left: 40px; padding-left: 0; margin-bottom: 0; padding:12px 20px; background-color: #fff;}
+    .tab_section .tablink:first-child{padding-top: 20px !important;}
+    .tab_section .tablink:last-child{padding-bottom: 20px !important;}
+    .tab_section .tablink.active {margin-bottom: 0; padding: 12px 20px; background-color: #f5f5f5a3;}
+    .tab_section .tablink .text>a:not(.btn) { font-size: 11px; line-height: 30px; padding: 0px 10px; margin-bottom: 5px; margin-right: 5px; } 
+    .tab_section .tablink .number {position: relative;line-height:normal; font-size: 18px;}
+    .tab_section .tablink .text p{margin: 10px 0;}
+    .tab_section .tablink .number::after {display: none;}
+}
+
+@media only screen and (max-width: 374px) {
+    .tab_section .tablink .number{font-size: 16px; width: 25px; }
+    .tab_section .tabtitle h2{font-size: 16px;}
+}
