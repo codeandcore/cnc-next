@@ -1,3 +1,4 @@
+const env = process.env.NODE_ENV;
 const fetchFromAPI = async (endpoint, options = {}) => {
   try {
     const res = await fetch(endpoint, {

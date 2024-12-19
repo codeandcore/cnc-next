@@ -248,10 +248,15 @@ export default function Homepage({ pageData, contactData  }) {
 
 export async function getStaticProps() {
   try {
+    const env = process.env.NODE_ENV;
     const [homePageData, generalSettingsData, contactData] = await Promise.all([
       fetchHomePage(),
       fetchGeneralSettings(),
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/1282`)
+      // fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/1282`)
+      fetch(
+        env !== "development"
+            ? `/data/pages/home`
+            : `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/1282`)
         .then((res) => res.json())
     ]);
 
