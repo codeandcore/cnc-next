@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
+// import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 import MapIcon from '../public/images/map.png';
 
 const MapContainer = ({ google, latitude, longitude }) => {
@@ -53,7 +53,7 @@ const MapContainer = ({ google, latitude, longitude }) => {
 
   return (
     <div className="map-container">
-      <Map
+      {/* <Map
         google={google}
         zoom={20}
         style={{ width: '100%', height: '100%' }}
@@ -70,11 +70,12 @@ const MapContainer = ({ google, latitude, longitude }) => {
         styles={darkMapStyle}
       >
         <Marker position={{ lat: latitude, lng: longitude }} icon={icon} />
-      </Map>
+      </Map> */}
     </div>
   );
 };
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyCgyqxIH4ckL8EAkXPisbmcM-5vJJPK5oo',
-})(MapContainer);
+// export default GoogleApiWrapper({
+//   apiKey: 'AIzaSyCgyqxIH4ckL8EAkXPisbmcM-5vJJPK5oo',
+// })(MapContainer);
+export default MapContainer

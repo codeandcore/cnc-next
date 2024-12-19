@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import OwlCarousel from 'react-owl-carousel2';
-import 'react-owl-carousel2/lib/styles.css'; 
-import 'react-owl-carousel2/src/owl.theme.default.css'; 
+// import OwlCarousel from 'react-owl-carousel2';
+// import 'react-owl-carousel2/lib/styles.css'; 
+// import 'react-owl-carousel2/src/owl.theme.default.css'; 
 import ArrowsIcon from '../public/images/arrow_ss1.svg';
 import Image from 'next/image';
 
@@ -108,7 +108,7 @@ const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
         </div>
         <div className='inner'>
           <div className='contries_wrap'>
-            <div className='contries_title'>
+            {/* <div className='contries_title'>
               <OwlCarousel ref={thumbsCarouselRef} options={thumbsOptions}>
                 {countries_list.map((country, index) => (
                   <div
@@ -122,9 +122,9 @@ const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
                   </div>
                 ))}
               </OwlCarousel>
-            </div>
+            </div> */}
           </div>
-          <div className='contries_contain'>
+          {/* <div className='contries_contain'>
             <OwlCarousel ref={mainCarouselRef} options={mainOptions}>
               {countries_list.map((country, index) => (
                 <div key={index} className="colin d_flex">
@@ -158,7 +158,7 @@ const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
                 </div>
               ))}
             </OwlCarousel>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

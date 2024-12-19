@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { ssr: false });
+// const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { ssr: false });
 
 
 const CaseStudies = ({ 
@@ -68,7 +68,7 @@ const CaseStudies = ({
             {case_studies_subtitle && <p>{case_studies_subtitle}</p>}
           </div>
 
-          <div className="inner">
+          {/* <div className="inner">
             {case_studies_list && (
               <OwlCarousel options={options} ref={owlCarouselRef}>
               <>
@@ -193,7 +193,7 @@ const CaseStudies = ({
               </>
               </OwlCarousel>
             )}
-          </div>
+          </div> */}
         </div>
       )}
     </>

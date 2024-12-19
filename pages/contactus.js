@@ -6,9 +6,9 @@ import ContactBanner from '@/components/ContactBanner';
 import ContactForm from '@/components/ContactForm';
 import ProjectCountries from '@/components/ProjectCountries';
 import Image from 'next/image';
-import 'react-owl-carousel2/lib/styles.css';
-import 'react-owl-carousel2/src/owl.theme.default.css'; 
-import "react-owl-carousel2/src/owl.carousel.css";
+// import 'react-owl-carousel2/lib/styles.css';
+// import 'react-owl-carousel2/src/owl.theme.default.css'; 
+// import "react-owl-carousel2/src/owl.carousel.css";
 
 export async function getServerSideProps() {
   try {
