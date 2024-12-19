@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Select2 from 'react-select2-wrapper';
-import 'react-select2-wrapper/css/select2.css'; 
+// import Select2 from 'react-select2-wrapper';
+// import 'react-select2-wrapper/css/select2.css'; 
 import he from 'he';
 import AwardsLogo from './AwardsLogo';
 import Image from 'next/image';
@@ -108,21 +108,21 @@ const CasestudingBanner = ({
         <div className="wrap d_flex d_flex_js">
           <div className="selectcol">
             <h3>Industries</h3>
-            <Select2
+            {/* <Select2
               data={generateIndustryOptions()}
               value={selectedIndustry}
               options={{ placeholder: 'All Industries' }}
               onSelect={(e) => handleIndustryChange(e.target.value)}
-            />
+            /> */}
           </div>
           <div className="selectcol">
             <h3>Services</h3>
-            <Select2
+            {/* <Select2
               data={generateServicesOptions()}
               value={selectedService}
               options={{ placeholder: 'All Services' }}
               onSelect={(e) => handleServiceChange(e.target.value)}
-            />
+            /> */}
           </div>
           <span
             className="loaderdata"
