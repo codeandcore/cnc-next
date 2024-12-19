@@ -3,8 +3,6 @@ const path = require("path");
 const generateJson = require("./api/generateJson");
 const { kv } = require("@vercel/kv");
 const cache = require("./cache");
-const axios = require("axios");
-const xml2js = require("xml2js");
 
 const app = express();
 
