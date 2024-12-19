@@ -131,9 +131,13 @@ const IndustryDetails = ({ industryData, className }) => {
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;
+  const env = process.env.NODE_ENV;    
+
 
   try {
-    const endpoint = `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`;
+    const endpoint = env !== "development"
+      ? `/data/pages/${slug}`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
     const response = await fetch(endpoint, {
       next: { revalidate: 3600 }
     });

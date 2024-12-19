@@ -94,7 +94,10 @@ export async function getServerSideProps({ params }) {
   let blogData = null;
   let initialHireUsData = null;
   try {
-    const res = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/posts?slug=${slug}`);
+    const res = await fetch(env !== "development"
+      ? `/data/pages/${slug}`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/posts?slug=${slug}`
+    );
     const data = await res.json();
     blogData = data.length > 0 ? data[0] : null; 
 

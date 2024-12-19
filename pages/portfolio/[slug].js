@@ -103,13 +103,14 @@ export async function getServerSideProps(context) {
   const env = process.env.NODE_ENV;    
   let additionalPageData = null
   try {
-    const caseStudyResponse = await fetch(
-      `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/case_study/?slug=${slug}`
-    );
+    const caseStudyResponse = await fetch(env !== "development"
+      ? `/data/pages/${slug}`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/case_study/?slug=${slug}`);
     const caseStudyData = await caseStudyResponse.json();
 
-    const pageDataResponse = await fetch(
-      `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages`
+    const pageDataResponse = await fetch(env !== "development"
+        ? `/data/pages`
+        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages`
     );
 
     const additionalPageResponse = await fetch(env !== "development"
