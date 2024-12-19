@@ -100,18 +100,21 @@ const CasestudingDetail = ({
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;
+  const env = process.env.NODE_ENV;    
   let additionalPageData = null
   try {
     const caseStudyResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/case_study/?slug=${slug}`
+      `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/case_study/?slug=${slug}`
     );
     const caseStudyData = await caseStudyResponse.json();
 
     const pageDataResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages`
+      `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages`
     );
 
-    const additionalPageResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`);
+    const additionalPageResponse = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     additionalPageData = await additionalPageResponse.json();
     
     const pageData = await pageDataResponse.json();

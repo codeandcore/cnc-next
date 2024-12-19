@@ -68,27 +68,29 @@ const RefundPolicy = ({ pageData, initialHireUsData, contactData }) => {
 };
 
 export const getServerSideProps = async (context) => {
-  const env = process.env.REACT_APP_ENV;
-  const isDevelopment = env === 'development';
+  const env = process.env.NODE_ENV;    
 
-  const pageUrl = isDevelopment
-    ? `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/2191`
-    : `/data/pages/refund-policy`;
+  const pageUrl = env !== "development"
+  ? `/data/pages/refund-policy`
+  : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2191`
 
   let pageData = null;
   let contactData = null;
   let initialHireUsData = null;
 
   try {
+    const env = process.env.NODE_ENV;    
     const pageResponse = await fetch(pageUrl);
     pageData = await pageResponse.json();
 
-    const contactResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/data/pages/contact`);
+    const contactResponse = await fetch(env !== "development"
+      ? `/data/pages/contactus`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`);
     contactData = await contactResponse.json();
 
-    const hireUsResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`
-    );
+    const hireUsResponse = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
 
     initialHireUsData = hireUsResponse.ok
       ? await hireUsResponse.json()

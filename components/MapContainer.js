@@ -46,10 +46,10 @@ const MapContainer = ({ google, latitude, longitude }) => {
     },
   ];
 
-  const icon = {
-    url: MapIcon,
-    scaledSize: new google.maps.Size(66, 77), 
-  };
+  // const icon = {
+  //   url: MapIcon,
+  //   scaledSize: new google.maps.Size(66, 77), 
+  // };
 
   return (
     <div className="map-container">

@@ -115,12 +115,17 @@ export default function LifeCnc({ initialCncData, initialCncPageData }) {
 }
 
 export async function getServerSideProps() {
-  
+  const env = process.env.NODE_ENV;    
   try {
-    const hireUsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`);
+    const hireUsResponse = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+
     const hireUsData = await hireUsResponse.json();
 
-    const otherComponentsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/1665`);
+    const otherComponentsResponse = await fetch(env !== "development"
+      ? `/data/pages/life-at-cnc`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1665`);
     const otherComponentsData = await otherComponentsResponse.json();
 
     return {

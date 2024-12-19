@@ -161,9 +161,13 @@ const ServicesDetails = ({
 
 export async function getServerSideProps(context) {
   const { slug } = context.params;
+  const env = process.env.NODE_ENV;      
+
 
   try {
-    const serviceEndpoint = `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/?slug=${slug}`;
+    const serviceEndpoint = env !== "development"
+      ? `/data/pages/${slug}`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`;
     const serviceRes = await fetch(serviceEndpoint);
     const serviceData = await serviceRes.json();
 

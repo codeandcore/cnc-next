@@ -119,23 +119,32 @@ export default function Career({
 }
 
 export async function getServerSideProps() {
+  const env = process.env.NODE_ENV;    
+
   try {
-    const homePageRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/46`);
-    const HomePage = await homePageRes.json();
+    // const homePageRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/46`);
+    // const HomePage = await homePageRes.json();
 
-    const contactPageRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/49`);
-    const ContactPage = await contactPageRes.json();
+    // const contactPageRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/49`);
+    // const ContactPage = await contactPageRes.json();
+    
 
-    const careerPageRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/655`);
+    const careerPageRes = await fetch(env !== "development"
+      ? `/data/pages/career`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/655`);
+
     const CareerpageData = await careerPageRes.json();
 
-    const otherComponentsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`);
+    const otherComponentsResponse = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+
     const initialCncData = await otherComponentsResponse.json();
 
     return {
       props: {
-        HomePage,
-        ContactPage,
+        // HomePage,
+        // ContactPage,
         CareerpageData,
         initialCncData
       }
@@ -144,8 +153,8 @@ export async function getServerSideProps() {
     console.error('Error fetching page data:', error);
     return {
       props: {
-        HomePage: null,
-        ContactPage: null,
+        // HomePage: null,
+        // ContactPage: null,
         CareerpageData: null,
         yoastData: null,
         initialCncData : null

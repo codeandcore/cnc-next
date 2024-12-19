@@ -5,11 +5,14 @@ import Head from 'next/head';
 
 const Warranty = ({ pageData, yoastData, initialHireUsData }) => {
   const [currentPageData, setCurrentPageData] = useState(pageData);
+  const env = process.env.NODE_ENV;    
 
 
   useEffect(() => {
     if (!currentPageData) {
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/3556`)
+      fetch(env !== "development"
+        ? `/data/pages/warranty`
+        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3556`)
         .then((response) => response.json())
         .then((data) => {
           setCurrentPageData(data);
@@ -90,11 +93,17 @@ const Warranty = ({ pageData, yoastData, initialHireUsData }) => {
 };
 
 export async function getServerSideProps() {
+  const env = process.env.NODE_ENV;    
+
   try {
-    const warrantyRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/3556`);
+    const warrantyRes = await fetch(env !== "development"
+      ? `/data/pages/warranty`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3556`);
     const pageData = await warrantyRes.json();
 
-    const hireUsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`);
+    const hireUsResponse = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     const initialHireUsData = await hireUsResponse.json();
 
     return {

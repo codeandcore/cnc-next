@@ -77,16 +77,21 @@ function Termsofuse({ hireUs, prefetchedData }) {
 }
 
 export async function getServerSideProps() {
-  const env = process.env.NEXT_PUBLIC_ENV;
+  const env = process.env.NODE_ENV;    
   let hireUs = null;
   let pageData = null;
+  
 
   try {
    
-    const resPage = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/3621`);
+    const resPage = await fetch(env !== "development"
+      ? `/data/pages/terms`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3621`);
     pageData = await resPage.json();
     
-    const resHome = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`);
+    const resHome = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     hireUs = await resHome.json();
 
    

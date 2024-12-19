@@ -88,15 +88,19 @@ const BlogDetails = ({ blogData , initialHireUsData }) => {
 };
 
 export async function getServerSideProps({ params }) {
+  const env = process.env.NODE_ENV;    
+
   const { slug } = params;
   let blogData = null;
   let initialHireUsData = null;
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/posts?slug=${slug}`);
+    const res = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/posts?slug=${slug}`);
     const data = await res.json();
     blogData = data.length > 0 ? data[0] : null; 
 
-    const hireUsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`);
+    const hireUsResponse = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     initialHireUsData = await hireUsResponse.json();
 
   } catch (error) {

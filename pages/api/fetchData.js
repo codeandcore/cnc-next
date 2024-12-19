@@ -1,12 +1,15 @@
+// Get the current environment
 const env = process.env.NODE_ENV;
+
+// Reusable function to fetch data from an API
 const fetchFromAPI = async (endpoint, options = {}) => {
   try {
     const res = await fetch(endpoint, {
       ...options,
-      next: { 
-        revalidate: options.revalidate || 3600, // 1 hour cache by default
-        tags: options.tags || ['api-fetch'] // Optional cache tags
-      }
+      next: {
+        revalidate: options.revalidate || 3600, // Default to 1 hour cache
+        tags: options.tags || ['api-fetch'],   // Default cache tags
+      },
     });
 
     if (res.ok) {
@@ -23,48 +26,46 @@ const fetchFromAPI = async (endpoint, options = {}) => {
 
 // Fetch General Settings
 export const fetchGeneralSettings = async () => {
-  const endpoints = [
-    `${process.env.NEXT_PUBLIC_API_URL}/options/all`,
-    `${process.env.NEXT_PUBLIC_API_URL}/general-setting`,
-    `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/settings`
-  ];
+  const endpoint = env !== "development"
+    ? `/data/general-setting`
+    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`;
 
-  for (const endpoint of endpoints) {
-    const result = await fetchFromAPI(endpoint, {
-      tags: ['general-settings']
-    });
-    if (result) return result;
-  }
+  const result = await fetchFromAPI(endpoint, {
+    tags: ['general-settings'],
+  });
 
-  return null;
+  return result || null;
 };
 
 // Fetch Home Page
 export const fetchHomePage = async () => {
-  const endpoint = process.env.NEXT_PUBLIC_ENV
-    ? `${process.env.NEXT_PUBLIC_API_URL}/pages/home`
-    : `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`;
+  const endpoint = env !== "development"
+    ? `/data/pages/home`
+    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
 
   return await fetchFromAPI(endpoint, {
-    tags: ['home-page']
+    tags: ['home-page'],
   });
 };
 
 // Fetch Contact Page
 export const fetchContactPage = async () => {
-  const endpoint = process.env.NEXT_PUBLIC_ENV
-    ? `${process.env.NEXT_PUBLIC_API_URL}/pages/contactus`
-    : `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/1282`;
+  const endpoint = env !== "development"
+    ? `/data/pages/contactus`
+    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`;
 
   return await fetchFromAPI(endpoint, {
-    tags: ['contact-page']
+    tags: ['contact-page'],
   });
 };
 
 // Fetch Career Page
 export const fetchCareerPage = async () => {
-  const endpoint = `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/655`;
+  const endpoint = env !== "development"
+    ? `/data/pages/career`
+    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/655`;
+
   return await fetchFromAPI(endpoint, {
-    tags: ['career-page']
+    tags: ['career-page'],
   });
 };

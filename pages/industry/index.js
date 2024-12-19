@@ -23,7 +23,7 @@ const CONTACT_PAGE_ID = 1282;
 
 async function fetchPageData(pageId) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/${pageId}`);
+    const response = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/${pageId}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch page with ID ${pageId}`);
     }

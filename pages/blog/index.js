@@ -69,15 +69,21 @@ const Blog = ({ initialBlogPageData, initialHireUsData ,initialBlogblogYoastData
 };
 
 export async function getServerSideProps() {
+  const env = process.env.NODE_ENV;    
+
   try {
     const blogResponse = await fetch(
       `${BASE_URL}/wp-json/wp/v2/pages/1219?_fields=acf`
     );
 
-    const blogYoast = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/1219`);
+    const blogYoast = await fetch(env !== "development"
+      ? `/data/pages/blog`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1219`
+    );
 
-    const hireUsResponse = await fetch(
-      `${BASE_URL}/wp-json/wp/v2/pages/7?_fields=acf`
+    const hireUsResponse = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
     );
     
 

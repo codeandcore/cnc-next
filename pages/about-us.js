@@ -10,7 +10,7 @@ import NewLook from "../components/NewLook";
 import RecognitionsAwards from "../components/RecognitionsAwards";
 import HireUs from "../components/HireUs";
 
-const AboutUs = ({ pageData, contactData }) => {
+const AboutUs = ({ pageData }) => {
   const hireUsData = pageData?.acf?.hireus_title
     ? pageData.acf
     : pageData?.acf
@@ -157,7 +157,7 @@ const AboutUs = ({ pageData, contactData }) => {
             hireus_subtitle={hireUsData.hireus_subtitle}
             hireus_button_text={hireUsData.hireus_button_text}
             hireus_list={hireUsData.hireus_list}
-            contactData={contactData}
+            // contactData={contactData}
           />
         )}
       </div>
@@ -166,23 +166,24 @@ const AboutUs = ({ pageData, contactData }) => {
 };
 
 export async function getServerSideProps() {
+  const env = process.env.NODE_ENV;    
+
   try {
     const pageResponse = await fetch(
       process.env.NODE_ENV !== "development"
         ? "/data/pages/about-us"
-        : `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/389`
+        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/389`
     );
     const pageData = await pageResponse.json();
 
-    const contactResponse = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/contact-page-url`
-    );
-    const contactData = await contactResponse.json();
+    // const contactResponse = await fetch(
+    //   `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/contact-page-url`
+    // );
+    // const contactData = await contactResponse.json();
 
     return {
       props: {
         pageData,
-        contactData,
       },
     };
   } catch (error) {
@@ -191,7 +192,6 @@ export async function getServerSideProps() {
     return {
       props: {
         pageData: null,
-        contactData: null,
       },
     };
   }

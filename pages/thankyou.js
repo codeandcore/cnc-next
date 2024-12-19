@@ -71,10 +71,16 @@ const Thankyou = ({ GeneralSetting , initialHireUsData}) => {
 };
 
 export const getServerSideProps = async () => {
-  const fetchGeneralSetting = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/options/all`);
+  const env = process.env.NODE_ENV;    
+
+  const fetchGeneralSetting = await fetch(env !== "development"
+    ? `/data/general-setting`
+    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`);
   const GeneralSetting = await fetchGeneralSetting.json();
 
-  const hireUsResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/7`);
+  const hireUsResponse = await fetch(env !== "development"
+    ? `/data/pages/home`
+    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
   const initialHireUsData = await hireUsResponse.json();
 
   return {

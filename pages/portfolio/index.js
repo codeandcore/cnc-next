@@ -168,13 +168,17 @@ export default function PortfolioHome({
 
 export async function getServerSideProps() {
   const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://wordpress-1074629-4621962.cloudwaysapps.com/";
+  const env = process.env.NODE_ENV;    
+  
 
   try {
     const caseStudyPageResponse = await fetch(`${BASE_URL}/wp-json/wp/v2/pages?slug=portfolio`);
     const caseStudyPageData = await caseStudyPageResponse.json();
     const initialCaseStudyPageData = caseStudyPageData[0] || null;
 
-    const additionalPageResponse = await fetch(`${BASE_URL}/wp-json/wp/v2/pages/7`);
+    const additionalPageResponse = await fetch(env !== "development"
+      ? `/data/pages/home`
+      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     const additionalPageData = await additionalPageResponse.json();
 
     return {

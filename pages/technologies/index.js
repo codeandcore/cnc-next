@@ -91,10 +91,10 @@ const Technologies = ({ pageData }) => {
 
 export async function getServerSideProps() {
   try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    // const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const pageId = '1842';
     
-    const res = await fetch(`${apiUrl}/wp/v2/pages/${pageId}`);
+    const res = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/${pageId}`);
     
     if (!res.ok) {
       throw new Error('Failed to fetch page data');

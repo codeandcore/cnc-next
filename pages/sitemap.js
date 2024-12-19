@@ -113,8 +113,12 @@ const Sitemap = ({
 };
 
 export async function getServerSideProps() {
+    const env = process.env.NODE_ENV;       
+
     try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/3470`);
+        const response = await fetch(env !== "development"
+            ? `/data/pages/sitemap`
+            : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3470`);
         const pageData = await response.json();
 
         return {

@@ -133,7 +133,7 @@ export async function getServerSideProps(context) {
   const { slug } = context.params;
 
   try {
-    const endpoint = `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/?slug=${slug}`;
+    const endpoint = `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`;
     const response = await fetch(endpoint, {
       next: { revalidate: 3600 }
     });

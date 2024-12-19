@@ -6,12 +6,17 @@ import Head from 'next/head';
 
 const Review = ({ initialReviewpage }) => {
   const [ReviewpageData, setReviewpageData] = useState(initialReviewpage);
+  const env = process.env.NODE_ENV;    
 
   useEffect(() => {
     const fetchReviewPageData = async () => {
       try {
         if (!ReviewpageData) {
-          const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/2896`);
+          const response = await fetch(
+            env !== "development"
+            ? `/data/pages/review`:
+            `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2896`
+            );
           const data = await response.json();
           setReviewpageData(data);
         }
@@ -98,8 +103,14 @@ const Review = ({ initialReviewpage }) => {
 };
 
 export async function getServerSideProps() {
+  const env = process.env.NODE_ENV;    
+
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/2896`);
+    const res = await fetch(
+      env !== "development"
+      ? `/data/pages/review`:
+      `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2896`
+      );
     const initialReviewpage = await res.json();
 
     return {
