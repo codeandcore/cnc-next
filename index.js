@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const generateJson = require("./api/generateJson");
 const { kv } = require("@vercel/kv");
 const cache = require("./cache");
 
@@ -10,7 +9,6 @@ const app = express();
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 
-app.use("/api/generateJson", generateJson);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/data/:type?/:fileName", async (req, res) => {
