@@ -2,11 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "/build"
-      }
+      "src": "package.json",
+      "use": "@vercel/next"
     },
     {
       "src": "index.js",
@@ -23,8 +20,12 @@
       "destination": "/index.js"
     },
     {
+      "source": "/(.*).xml",
+      "destination": "/index.js"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/$1"
     }
   ]
 }
