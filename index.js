@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 
+
 app.get("/data/:type?/:fileName", async (req, res) => {
   const { type, fileName } = req.params;
   let fileNameForKv;
@@ -39,4 +40,13 @@ app.get("/data/:type?/:fileName", async (req, res) => {
       .status(500)
       .json({ message: "Internal Server Error", error: error.message });
   }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+const PORT = process.env.PORT || 3002;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
