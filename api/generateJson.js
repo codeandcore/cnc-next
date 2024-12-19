@@ -9,8 +9,8 @@ const cache = require('../cache');
 console.log('generateJson.js loaded');
 
 const router = express.Router();
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json({ limit: "500mb" }));
+router.use(bodyParser.urlencoded({ extended: true, extended: true  }));
 
 const wordpressUrl = "https://wordpress-1074629-4621962.cloudwaysapps.com";
 
