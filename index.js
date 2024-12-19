@@ -19,14 +19,10 @@ app.get("/data/:type?/:fileName", async (req, res) => {
     } else {
       fileNameForKv = `${type}-${fileName}`;
     }
-
-    const cachedData = cache.get(fileNameForKv);
-    if (cachedData) {
-      return res.send(cachedData);
-    }
+    console.log("fileNameForKv",fileNameForKv);
 
     const datajson = await kv.get(fileNameForKv);
- 
+    console.log("datajson",datajson);
     if (!datajson) {
       return res.status(404).json({ message: "Data not found." });
     }
