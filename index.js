@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 
-
+console.log("testasdasd");
 app.get("/data/:type?/:fileName", async (req, res) => {
   const { type, fileName } = req.params;
   let fileNameForKv;
