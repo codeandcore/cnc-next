@@ -170,7 +170,7 @@ export async function getServerSideProps() {
 
   try {
     const pageResponse = await fetch(
-      process.env.NODE_ENV !== "development"
+      env !== "development"
         ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/about-us`
         : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/389`
     );
