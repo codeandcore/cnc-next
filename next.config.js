@@ -6,8 +6,8 @@ const nextConfig = {
   images: {
     domains: ['wordpress-1074629-4621962.cloudwaysapps.com'],
   }, 
-  env: {
-    REACT_APP_ENV: process.env.REACT_APP_ENV || 'development',
+  experimental: {
+    optimizeDeps: true,
   },
   webpack: (config, { isServer }) => {
     // Add jQuery globally to the project 
