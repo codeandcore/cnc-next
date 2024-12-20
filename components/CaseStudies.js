@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { ssr: false });
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 
 const CaseStudies = ({ 
