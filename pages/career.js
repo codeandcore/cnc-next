@@ -130,13 +130,13 @@ export async function getServerSideProps() {
     
 
     const careerPageRes = await fetch(env !== "development"
-      ? `/data/pages/career`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/career`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/655`);
 
     const CareerpageData = await careerPageRes.json();
 
     const otherComponentsResponse = await fetch(env !== "development"
-      ? `/data/pages/home`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/home`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
 
     const initialCncData = await otherComponentsResponse.json();

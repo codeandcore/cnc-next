@@ -77,12 +77,12 @@ export async function getServerSideProps() {
     );
 
     const blogYoast = await fetch(env !== "development"
-      ? `/data/pages/blog`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/blog`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1219`
     );
 
     const hireUsResponse = await fetch(env !== "development"
-      ? `/data/pages/home`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/home`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
     );
     

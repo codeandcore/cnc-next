@@ -255,7 +255,7 @@ export async function getStaticProps() {
       fetchGeneralSettings(),
       // fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/1282`)
       fetch(env !== "development"
-        ? `data/pages/contactus`
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
         : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`)
             
         .then((res) => res.json())

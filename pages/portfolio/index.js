@@ -177,7 +177,7 @@ export async function getServerSideProps() {
     const initialCaseStudyPageData = caseStudyPageData[0] || null;
 
     const additionalPageResponse = await fetch(env !== "development"
-      ? `/data/pages/home`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/home`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     const additionalPageData = await additionalPageResponse.json();
 
