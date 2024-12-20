@@ -91,7 +91,7 @@ const RecognitionsAwards = ({
           {a_Indastry_slider && activeTab === 'development' && a_Indastry_slider.length > 0 && (
             shouldShowSlider ? (
               <div className='indastry_slider inner'>
-                <OwlCarousel options={options}>
+                <OwlCarousel {...options}>
                   {a_Indastry_slider.map((indastry, index) => (
                     <div className='col' key={index}>
                       <span>
@@ -121,7 +121,7 @@ const RecognitionsAwards = ({
           {a_award_slider && activeTab === 'design' && a_award_slider.length > 0 && (
             AwardsShowSlider ? (
               <div className='Award_slider inner'>
-                <OwlCarousel options={options}>
+                <OwlCarousel {...options}>
                   {a_award_slider.map((Award, index) => (
                     <div className='col' key={index}>
                       <span>

@@ -65,7 +65,7 @@ const IndustriesSlider = ({ industries_title, industries_subtitle, industries_li
                 {industries_subtitle && <p dangerouslySetInnerHTML={{ __html: industries_subtitle }} />}
             </div>
             <div className="inner">
-                <OwlCarousel options={options} ref={owlCarouselRef}>
+                <OwlCarousel {...options} ref={owlCarouselRef}>
                     {industries_list.map((item, index) => (
                         <div key={index} className="colin">
                             <Link legacyBehavior href={`/industry/${item.button_url.post_name}`} passHref>

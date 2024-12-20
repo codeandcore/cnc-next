@@ -61,7 +61,7 @@ const Highlights = ({
       </div>
       <div className='inner'>
         {our_blogs && our_blogs.length > 0 ? (
-          <OwlCarousel options={options} ref={owlCarouselRef}>
+          <OwlCarousel {...options} ref={owlCarouselRef}>
             {our_blogs.map((item, index) => (
               <div className='col' key={index}>
                 <Link href={`/blog/${item.post_name}`} className='img'>

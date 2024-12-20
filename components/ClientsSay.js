@@ -53,7 +53,7 @@ const ClientsSay = ({ our_clients_title, our_clients_subtitle, our_clients_butto
                 </div>
                 <div className="right_col">
                     {our_clients_testimonials && our_clients_testimonials.length > 0 && (
-                        <OwlCarousel options={options} ref={owlCarouselRef}>
+                        <OwlCarousel {...options} ref={owlCarouselRef}>
                             {our_clients_testimonials.map((item, index) => (
                                 <div key={index} className="col">
                                     <h2 dangerouslySetInnerHTML={{ __html: item.testimonial }} />

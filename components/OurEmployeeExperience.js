@@ -21,7 +21,7 @@ const OurEmployeeExperience = ({ a_left_side_section_title, employee_experience_
       <h2>{a_left_side_section_title}</h2>
       {employee_experience_detail && (
         <>
-          <OwlCarousel ref={carouselRef} options={options}>
+          <OwlCarousel ref={carouselRef} {...options}>
             {employee_experience_detail.map((experience, index) => (
               <div key={index} className='colin'>
                 {experience.a_employee_image && (

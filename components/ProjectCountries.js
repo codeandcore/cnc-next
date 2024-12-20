@@ -112,7 +112,7 @@ const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
         <div className='inner'>
           <div className='contries_wrap'>
             <div className='contries_title'>
-              <OwlCarousel ref={thumbsCarouselRef} options={thumbsOptions}>
+              <OwlCarousel ref={thumbsCarouselRef} {...thumbsOptions}>
                 {countries_list.map((country, index) => (
                   <div
                     className="col"
@@ -128,7 +128,7 @@ const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
             </div>
           </div>
           <div className='contries_contain'>
-            <OwlCarousel ref={mainCarouselRef} options={mainOptions}>
+            <OwlCarousel ref={mainCarouselRef} {...mainOptions}>
               {countries_list.map((country, index) => (
                 <div key={index} className="colin d_flex">
                   <div className='left_col'>
