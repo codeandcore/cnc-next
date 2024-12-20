@@ -6,7 +6,7 @@ import DateIcon from '../public/images/date.svg';
 import dynamic from 'next/dynamic';
 import UseOnScreen from './UseOnScreen';
 
-const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
+// const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 
 const Highlights = ({
@@ -59,7 +59,7 @@ const Highlights = ({
         {our_blogs_title && <h2>{our_blogs_title}</h2>}
         {our_blogs_subtitle && <p>{our_blogs_subtitle}</p>}
       </div>
-      <div className='inner'>
+      {/* <div className='inner'>
         {our_blogs && our_blogs.length > 0 ? (
           <OwlCarousel options={options} ref={owlCarouselRef}>
             {our_blogs.map((item, index) => (
@@ -85,7 +85,7 @@ const Highlights = ({
         ) : (
           <div>No blogs available</div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
