@@ -40,7 +40,7 @@ export const fetchGeneralSettings = async () => {
 // Fetch Home Page
 export const fetchHomePage = async () => {
   const endpoint = env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
 
   return await fetchFromAPI(endpoint, {
@@ -51,7 +51,7 @@ export const fetchHomePage = async () => {
 // Fetch Contact Page
 export const fetchContactPage = async () => {
   const endpoint = env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages`
+    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`;
 
   return await fetchFromAPI(endpoint, {
