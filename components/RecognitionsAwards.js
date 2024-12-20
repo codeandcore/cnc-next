@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 import he from 'he';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-// const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { 
-//   ssr: false 
-// });
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), { 
+  ssr: false 
+});
 
 const RecognitionsAwards = ({ 
   a_ra_left_side_ttile, 
@@ -91,7 +91,7 @@ const RecognitionsAwards = ({
           {a_Indastry_slider && activeTab === 'development' && a_Indastry_slider.length > 0 && (
             shouldShowSlider ? (
               <div className='indastry_slider inner'>
-                {/* <OwlCarousel options={options}>
+                <OwlCarousel options={options}>
                   {a_Indastry_slider.map((indastry, index) => (
                     <div className='col' key={index}>
                       <span>
@@ -101,7 +101,7 @@ const RecognitionsAwards = ({
                       {indastry.a_is_label && <p dangerouslySetInnerHTML={{ __html: indastry.a_is_label }}></p>}
                     </div>
                   ))}
-                </OwlCarousel> */}
+                </OwlCarousel>
               </div>
             ) : (
               <div className='indastry_slider inner d_flex d_flex_at'>
@@ -121,7 +121,7 @@ const RecognitionsAwards = ({
           {a_award_slider && activeTab === 'design' && a_award_slider.length > 0 && (
             AwardsShowSlider ? (
               <div className='Award_slider inner'>
-                {/* <OwlCarousel options={options}>
+                <OwlCarousel options={options}>
                   {a_award_slider.map((Award, index) => (
                     <div className='col' key={index}>
                       <span>
@@ -132,7 +132,7 @@ const RecognitionsAwards = ({
                       {Award.a_as_label && <p dangerouslySetInnerHTML={{ __html: Award.a_as_label }}></p>}
                     </div>
                   ))}
-                </OwlCarousel> */}
+                </OwlCarousel>
               </div>
             ) : (
               <div className='Award_slider inner d_flex d_flex_at'>

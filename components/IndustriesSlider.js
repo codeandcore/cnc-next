@@ -6,7 +6,7 @@ import EllipseArrow from '../public/images/ellipse_arr.png';
 import UseOnScreen from './UseOnScreen';
 import dynamic from 'next/dynamic';
 // import OwlCarousel from './OwlCarousel';
-// const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { ssr: false });
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 
 const IndustriesSlider = ({ industries_title, industries_subtitle, industries_list, setPrefetchedData, setIsLoading, setIsDone, setIsFinish }) => {
@@ -64,7 +64,7 @@ const IndustriesSlider = ({ industries_title, industries_subtitle, industries_li
                 {industries_title && <h2>{industries_title}</h2>}
                 {industries_subtitle && <p dangerouslySetInnerHTML={{ __html: industries_subtitle }} />}
             </div>
-            {/* <div className="inner">
+            <div className="inner">
                 <OwlCarousel options={options} ref={owlCarouselRef}>
                     {industries_list.map((item, index) => (
                         <div key={index} className="colin">
@@ -96,7 +96,7 @@ const IndustriesSlider = ({ industries_title, industries_subtitle, industries_li
                         </div>
                     ))}
                 </OwlCarousel>
-            </div> */}
+            </div>
         </div>
     );
 };

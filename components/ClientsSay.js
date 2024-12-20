@@ -5,7 +5,7 @@ import Sarrow from '../public/images/arrow_ss1.svg';
 import UseOnScreen from './UseOnScreen';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-// const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { ssr: false });
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 
 const ClientsSay = ({ our_clients_title, our_clients_subtitle, our_clients_button_text, our_clients_button_url, our_clients_testimonials }) => {
@@ -51,7 +51,7 @@ const ClientsSay = ({ our_clients_title, our_clients_subtitle, our_clients_butto
                         </a>
                     )}
                 </div>
-                {/* <div className="right_col">
+                <div className="right_col">
                     {our_clients_testimonials && our_clients_testimonials.length > 0 && (
                         <OwlCarousel options={options} ref={owlCarouselRef}>
                             {our_clients_testimonials.map((item, index) => (
@@ -93,7 +93,7 @@ const ClientsSay = ({ our_clients_title, our_clients_subtitle, our_clients_butto
                             ))}
                        </OwlCarousel>
                     )}
-                </div> */}
+                </div>
             </div>
         </div>
     );
