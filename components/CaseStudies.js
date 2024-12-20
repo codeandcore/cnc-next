@@ -5,8 +5,7 @@ import GoogleIcon from '../public/images/google.png';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 import { Head } from 'next/document';
 
 
