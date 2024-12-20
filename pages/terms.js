@@ -81,14 +81,16 @@ export async function getServerSideProps() {
   let hireUs = null;
   let pageData = null;
   try {
-    const resPage = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/terms`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3621`);
+    // const resPage = await fetch(env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/terms`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3621`);
+    const resPage = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3621`);
     pageData = await resPage.json();
     
-    const resHome = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+    // const resHome = await fetch(env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+    const resHome = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     hireUs = await resHome.json();
   } catch (error) {
     console.error("Error fetching data:", error);

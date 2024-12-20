@@ -30,25 +30,28 @@ const fetchFromAPI = async (endpoint) => {
 };
 
 const fetchHomePage = async () => {
-  const endpoint = env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-  : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
+  // const endpoint = env !== "development"
+  // ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+  // : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
+  const endpoint = `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
 
   return await fetchFromAPI(endpoint);
 };
 
 const fetchContactPage = async () => {
-  const endpoint = env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-  : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp/v2/pages/1282`
+  // const endpoint = env !== "development"
+  // ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+  // : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp/v2/pages/1282`
+  const endpoint = `https://wordpress-1074629-4621962.cloudwaysapps.com/wp/v2/pages/1282`
 
   return await fetchFromAPI(endpoint);
 };
 
 const fetchServicesPage = async () => {
-  const endpoint = env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/services`
-  : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/609`; 
+  // const endpoint = env !== "development"
+  // ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/services`
+  // : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/609`; 
+  const endpoint = `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/609`; 
   return await fetchFromAPI(endpoint);
 };
 

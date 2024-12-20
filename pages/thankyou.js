@@ -73,14 +73,16 @@ const Thankyou = ({ GeneralSetting , initialHireUsData}) => {
 export const getServerSideProps = async () => {
   const env = process.env.NODE_ENV;    
 
-  const fetchGeneralSetting = await fetch(env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`);
+  // const fetchGeneralSetting = await fetch(env !== "development"
+  //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
+  //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`);
+  const fetchGeneralSetting = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`);
   const GeneralSetting = await fetchGeneralSetting.json();
 
-  const hireUsResponse = await fetch(env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-    : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+  // const hireUsResponse = await fetch(env !== "development"
+  //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+  //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+  const hireUsResponse = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
   const initialHireUsData = await hireUsResponse.json();
 
   return {

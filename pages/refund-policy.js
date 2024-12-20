@@ -70,9 +70,10 @@ const RefundPolicy = ({ pageData, initialHireUsData, contactData }) => {
 export const getServerSideProps = async (context) => {
   const env = process.env.NODE_ENV;    
 
-  const pageUrl = env !== "development"
-  ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/refund-policy`
-  : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2191`
+  // const pageUrl = env !== "development"
+  // ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/refund-policy`
+  // : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2191`
+  const pageUrl = `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/2191`
 
   let pageData = null;
   let contactData = null;
@@ -82,14 +83,16 @@ export const getServerSideProps = async (context) => {
     const pageResponse = await fetch(pageUrl);
     pageData = await pageResponse.json();
 
-    const contactResponse = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`);
+    // const contactResponse = await fetch(env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/contactus`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`);
+    const contactResponse = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`);
     contactData = await contactResponse.json();
 
-    const hireUsResponse = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+    // const hireUsResponse = await fetch(env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+    const hireUsResponse = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
 
     initialHireUsData = hireUsResponse.ok
       ? await hireUsResponse.json()

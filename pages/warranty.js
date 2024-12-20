@@ -10,9 +10,10 @@ const Warranty = ({ pageData, yoastData, initialHireUsData }) => {
 
   useEffect(() => {
     if (!currentPageData) {
-      fetch(env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/warranty`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3556`)
+      // fetch(env !== "development"
+      //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/warranty`
+      //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3556`)
+      fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3556`)
         .then((response) => response.json())
         .then((data) => {
           setCurrentPageData(data);
@@ -96,14 +97,16 @@ export async function getServerSideProps() {
   const env = process.env.NODE_ENV;    
 
   try {
-    const warrantyRes = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/warranty`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3556`);
+    // const warrantyRes = await fetch(env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/warranty`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3556`);
+    const warrantyRes = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3556`);
     const pageData = await warrantyRes.json();
 
-    const hireUsResponse = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+    // const hireUsResponse = await fetch(env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+    const hireUsResponse = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     const initialHireUsData = await hireUsResponse.json();
 
     return {

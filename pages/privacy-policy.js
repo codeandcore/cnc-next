@@ -87,14 +87,16 @@ export async function getServerSideProps() {
   const env = process.env.NODE_ENV;    
   
   try {
-    const response = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/privacy-policy`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3618`);
+    // const response = await fetch(env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/privacy-policy`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3618`);
+    const response = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3618`);
     const pageData = await response.json();
 
-    const hireUsResponse = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+    // const hireUsResponse = await fetch(env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
+    const hireUsResponse = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     const initialHireUsData = await hireUsResponse.json();
 
     return {

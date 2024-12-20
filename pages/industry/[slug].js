@@ -135,9 +135,10 @@ export async function getServerSideProps(context) {
 
 
   try {
-    const endpoint = env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/${slug}`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
+    // const endpoint = env !== "development"
+    //   ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/${slug}`
+    //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
+    const endpoint = `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/?slug=${slug}`
     const response = await fetch(endpoint, {
       next: { revalidate: 3600 }
     });
