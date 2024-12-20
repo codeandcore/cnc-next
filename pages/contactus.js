@@ -48,7 +48,6 @@ export default function ContactUs({ homePage, contactPage }) {
     yoast_head_json: yoast = {}
   } = contactPage || {};
   const canonicalUrl = yoast.canonical || (typeof window !== 'undefined' ? window.location.href : '');
-  console.log(contactPage)
   return (
     <div className='main_wrapper'>
       

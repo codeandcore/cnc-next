@@ -15,42 +15,59 @@ export default function LifeCnc({ initialCncData, initialCncPageData }) {
   
   const env = process.env.NEXT_PUBLIC_ENV;
 
+  const defaultTitle = "Codeandcore - Web development studio";
+  const defaultDescription = "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce.";
 
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="content-language" content="en-US" />
-        <title>{cncData.title?.rendered || "Codeandcore - Web development studio"}</title>
-        
-        <meta
-          property="og:title"
-          content={cncData.yoast_head_json.og_title || "Codeandcore - Web development studio"}
-        />
-        <meta
-          property="og:description"
-          content={
-            cncData.yoast_head_json.og_description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
-        />
-        <meta property="og:type" content={cncData.yoast_head_json.og_type || "website"} />
-        <meta
-          property="og:url"
-          content={cncData.yoast_head_json.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
-        />
-        <meta property="og:image" content={cncData.yoast_head_json.og_image[0].url} />
+      {/* Essential Meta Tags */}
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta httpEquiv="content-language" content={cncData.yoast_head_json?.og_locale || "en-US"} />
+      
+      {/* Primary Meta Tags */}
+      <title>{cncData.title?.rendered || defaultTitle}</title>
+      <meta name="description" content={cncData.yoast_head_json?.og_description || defaultDescription} />
+      
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={cncData.yoast_head_json?.og_title || defaultTitle} />
+      <meta property="og:description" content={cncData.yoast_head_json?.og_description || defaultDescription} />
+      <meta property="og:type" content={cncData.yoast_head_json?.og_type || "website"} />
+      <meta 
+        property="og:url" 
+        content={cncData.yoast_head_json?.og_url || (typeof window !== 'undefined' ? window.location.href : '')} 
+      />
+      {cncData.yoast_head_json?.og_image?.[0]?.url && (
+        <>
+          <meta property="og:image" content={cncData.yoast_head_json.og_image[0].url} />
+          <meta property="og:image:width" content={cncData.yoast_head_json.og_image[0].width} />
+          <meta property="og:image:height" content={cncData.yoast_head_json.og_image[0].height} />
+        </>
+      )}
+      <meta property="og:locale" content={cncData.yoast_head_json?.og_locale || "en-US"} />
+      
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content={cncData.yoast_head_json?.twitter_card || "summary_large_image"} />
+      <meta name="twitter:site" content={cncData.yoast_head_json?.twitter_site} />
+      <meta name="twitter:title" content={cncData.yoast_head_json?.twitter_title || defaultTitle} />
+      <meta name="twitter:description" content={cncData.yoast_head_json?.twitter_description || defaultDescription} />
+      
+      {/* Canonical Link */}
+      {cncData.yoast_head_json?.canonical && (
         <link rel="canonical" href={cncData.yoast_head_json.canonical} />
-        <meta name="twitter:card" content={cncData.yoast_head_json.twitter_card} />
-        <meta name="twitter:site" content={cncData.yoast_head_json.twitter_site} />
-        <meta name="twitter:title" content={cncData.yoast_head_json.twitter_title} />
-        <meta name="twitter:description" content={cncData.yoast_head_json.twitter_description} />
-        <meta property="og:locale" content={cncData.yoast_head_json.og_locale} />
+      )}
 
-        <script type="application/ld+json">
-          {JSON.stringify(cncData.yoast_head_json.schema)}
-        </script>
-      </Head>
+      {/* Schema.org JSON-LD */}
+      {cncData.yoast_head_json?.schema && (
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(cncData.yoast_head_json.schema)
+          }}
+        />
+      )}
+    </Head>
       <div className='main_wrapper'>
       {cncPageData && (cncPageData.acf.life_codeandcore_title || cncPageData.acf.life_codeandcore_button_text || cncPageData.acf.life_codeandcore_highlights || cncPageData.acf.life_codeandcore_bottom_text ) && ( 
         <Life

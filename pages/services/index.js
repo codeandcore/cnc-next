@@ -99,49 +99,74 @@ export default function Industry({
       : homepageData && homepageData?.acf
       ? homepageData?.acf
       : null; 
-
-  return (
+      
+      const seoData = servicesData?.yoast_head_json || {};
+      const defaultTitle = "Codeandcore - Web development studio";
+      const defaultDescription = 
+        "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce.";
+        return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="content-language" content="en-US" />
-        <title>{servicesData && servicesData.title?.rendered || "Codeandcore - Web development studio"}</title>
-        <meta
-          name="description"
-          content={
-            servicesData && servicesData.yoast_head_json.description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
+      {/* Essential Meta Tags */}
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="content-language" content="en-US" />
+      
+      {/* Primary Meta Tags */}
+      <title>{servicesData?.title?.rendered || defaultTitle}</title>
+      <meta
+        name="description"
+        content={seoData.description || defaultDescription}
+      />
+      {seoData.og_keywords && (
+        <meta name="keywords" content={seoData.og_keywords} />
+      )}
+      
+      {/* Open Graph Tags */}
+      <meta
+        property="og:title"
+        content={seoData.og_title || defaultTitle}
+      />
+      <meta
+        property="og:description"
+        content={seoData.og_description || defaultDescription}
+      />
+      <meta property="og:type" content={seoData.og_type || "website"} />
+      <meta
+        property="og:url"
+        content={seoData.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
+      />
+      {seoData.og_image?.[0]?.url && (
+        <>
+          <meta property="og:image" content={seoData.og_image[0].url} />
+          <meta property="og:image:alt" content={seoData.og_title || defaultTitle} />
+        </>
+      )}
+      <meta property="og:locale" content={seoData.og_locale || "en_US"} />
+      <meta property="og:site_name" content={seoData.og_site_name || "Codeandcore"} />
+      
+      {/* Twitter Card Tags */}
+      <meta name="twitter:card" content={seoData.twitter_card || "summary_large_image"} />
+      <meta name="twitter:site" content={seoData.twitter_site} />
+      <meta name="twitter:title" content={seoData.twitter_title || defaultTitle} />
+      <meta name="twitter:description" content={seoData.twitter_description || defaultDescription} />
+      
+      {/* Canonical URL */}
+      {seoData.canonical && (
+        <link rel="canonical" href={seoData.canonical} />
+      )}
+      
+      {/* Schema.org JSON-LD */}
+      {seoData.schema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(seoData.schema)
+          }}
         />
-        <meta name="keywords" content={servicesData && servicesData.yoast_head_json.og_keywords} />
-        <meta
-          property="og:title"
-          content={servicesData && servicesData.yoast_head_json.og_title || "Codeandcore - Web development studio"}
-        />
-        <meta
-          property="og:description"
-          content={
-            servicesData && servicesData.yoast_head_json.og_description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
-        />
-        <meta property="og:type" content={servicesData && servicesData.yoast_head_json.og_type || "website"} />
-        <meta
-          property="og:url"
-          content={servicesData && servicesData.yoast_head_json.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
-        />
-        <meta property="og:image" content={servicesData && servicesData.yoast_head_json.og_image[0].url} />
-        <link rel="canonical" href={servicesData && servicesData.yoast_head_json.canonical} />
-        <meta name="twitter:card" content={servicesData && servicesData.yoast_head_json.twitter_card} />
-        <meta name="twitter:site" content={servicesData && servicesData.yoast_head_json.twitter_site} />
-        <meta name="twitter:title" content={servicesData && servicesData.yoast_head_json.twitter_title} />
-        <meta name="twitter:description" content={servicesData && servicesData.yoast_head_json.twitter_description} />
-        <meta property="og:locale" content={servicesData && servicesData.yoast_head_json.og_locale} />
-
-        <script type="application/ld+json">
-          {JSON.stringify(servicesData && servicesData.yoast_head_json.schema)}
-        </script>
-      </Head>
+      )}
+    </Head>
 
       <div className="main_wrapper">
         {servicesData && (servicesData.acf.banner_gallery || servicesData.acf.banner_title) && (

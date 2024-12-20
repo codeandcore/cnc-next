@@ -68,49 +68,76 @@ export default function PortfolioHome({
     fetchData();
   }, [page, selectedIndustry, selectedService]);
 
-  
+  const defaultTitle = "Codeandcore - Web development studio"
+  const defaultDescription = "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
   return (
     <div className="main_wrapper">
-         <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="content-language" content="en-US" />
-        <title>{initialCaseStudyPageData && initialCaseStudyPageData.title?.rendered || "Codeandcore - Web development studio"}</title>
-        {/* <meta
-          name="description"
-          content={
-            initialCaseStudyPageData.yoast_head_json.description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
-        />
-        <meta name="keywords" content={initialCaseStudyPageData.yoast_head_json.og_keywords} /> */}
-        <meta
-          property="og:title"
-          content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.og_title || "Codeandcore - Web development studio"}
-        />
-        <meta
-          property="og:description"
-          content={
-            initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.og_description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
-        />
-        <meta property="og:type" content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.og_type || "website"} />
-        <meta
-          property="og:url"
-          content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
-        />
-        <meta property="og:image" content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.og_image[0].url} />
-        <link rel="canonical" href={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.canonical} />
-        <meta name="twitter:card" content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.twitter_card} />
-        <meta name="twitter:site" content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.twitter_site} />
-        <meta name="twitter:title" content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.twitter_title} />
-        <meta name="twitter:description" content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.twitter_description} />
-        <meta property="og:locale" content={initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.og_locale} />
+      <Head>
+      {/* Basic Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta httpEquiv="content-language" content="en-US" />
+      <title>{initialCaseStudyPageData?.title?.rendered || defaultTitle}</title>
+      <meta
+        name="description"
+        content={initialCaseStudyPageData?.yoast_head_json?.description || defaultDescription}
+      />
+      {initialCaseStudyPageData?.yoast_head_json?.og_keywords && (
+        <meta name="keywords" content={initialCaseStudyPageData.yoast_head_json.og_keywords} />
+      )}
 
-        <script type="application/ld+json">
-          {JSON.stringify(initialCaseStudyPageData && initialCaseStudyPageData.yoast_head_json.schema)}
-        </script>
-      </Head>
+      {/* Open Graph Tags */}
+      <meta
+        property="og:title"
+        content={initialCaseStudyPageData?.yoast_head_json?.og_title || defaultTitle}
+      />
+      <meta
+        property="og:description"
+        content={initialCaseStudyPageData?.yoast_head_json?.og_description || defaultDescription}
+      />
+      <meta
+        property="og:type"
+        content={initialCaseStudyPageData?.yoast_head_json?.og_type || "website"}
+      />
+      <meta
+        property="og:url"
+        content={initialCaseStudyPageData?.yoast_head_json?.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
+      />
+      {initialCaseStudyPageData?.yoast_head_json?.og_image?.[0]?.url && (
+        <meta property="og:image" content={initialCaseStudyPageData.yoast_head_json.og_image[0].url} />
+      )}
+      {initialCaseStudyPageData?.yoast_head_json?.canonical && (
+        <link rel="canonical" href={initialCaseStudyPageData.yoast_head_json.canonical} />
+      )}
+
+      {/* Twitter Tags */}
+      {initialCaseStudyPageData?.yoast_head_json?.twitter_card && (
+        <meta name="twitter:card" content={initialCaseStudyPageData.yoast_head_json.twitter_card} />
+      )}
+      {initialCaseStudyPageData?.yoast_head_json?.twitter_site && (
+        <meta name="twitter:site" content={initialCaseStudyPageData.yoast_head_json.twitter_site} />
+      )}
+      {initialCaseStudyPageData?.yoast_head_json?.twitter_title && (
+        <meta name="twitter:title" content={initialCaseStudyPageData.yoast_head_json.twitter_title} />
+      )}
+      {initialCaseStudyPageData?.yoast_head_json?.twitter_description && (
+        <meta name="twitter:description" content={initialCaseStudyPageData.yoast_head_json.twitter_description} />
+      )}
+
+      {/* Locale */}
+      {initialCaseStudyPageData?.yoast_head_json?.og_locale && (
+        <meta property="og:locale" content={initialCaseStudyPageData.yoast_head_json.og_locale} />
+      )}
+
+      {/* Schema.org JSON-LD */}
+      {initialCaseStudyPageData?.yoast_head_json?.schema && (
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(initialCaseStudyPageData.yoast_head_json.schema)
+          }}
+        />
+      )}
+    </Head>
 
       {initialCaseStudyPageData && (
         <CasestudingBanner

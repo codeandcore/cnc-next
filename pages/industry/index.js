@@ -77,7 +77,7 @@ const Industry = ({
   const [prefetchedData, setPrefetchedData] = useState(null);
   const [isDone, setIsDone] = useState(false);
   const [isFinish, setIsFinish] = useState(false);
-
+  console.log(industryData)
   useEffect(() => {
     if (pageData) {
       if (pageData.acf?.portfolio_list) {
@@ -124,50 +124,85 @@ const Industry = ({
     (industryData?.acf?.hireus_title ? industryData.acf : 
     (pageData?.acf ? pageData.acf : null));
 
+    const defaultTitle = "Codeandcore - Web development studio";
+  const defaultDescription = 
+    "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce.";
+    const title = industryData?.title?.rendered ?? defaultTitle;
+    const description = industryData?.yoast_head_json?.description ?? defaultDescription;
+    const ogImage = industryData?.yoast_head_json?.og_image?.[0]?.url;
+    const canonicalUrl = industryData?.yoast_head_json?.canonical;
+    
+    // Get current URL safely for og:url
+    const currentUrl = typeof window !== 'undefined' 
+      ? window.location.href 
+      : industryData?.yoast_head_json?.og_url ?? '';
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="content-language" content="en-US" />
-        <title>{industryData?.title?.rendered || "Codeandcore - Web development studio"}</title>
-        <meta
-          name="description"
-          content={
-            industryData?.yoast_head_json?.description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
-        />
-        <meta name="keywords" content={industryData?.yoast_head_json?.og_keywords} />
-        <meta
-          property="og:title"
-          content={industryData?.yoast_head_json?.og_title || "Codeandcore - Web development studio"}
-        />
-        <meta
-          property="og:description"
-          content={
-            industryData?.yoast_head_json?.og_description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
-        />
-        <meta property="og:type" content={industryData?.yoast_head_json?.og_type || "website"} />
-        <meta
-          property="og:url"
-          content={industryData?.yoast_head_json?.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
-        />
-        <meta property="og:image" content={industryData?.yoast_head_json?.og_image?.[0]?.url} />
-        <link rel="canonical" href={industryData?.yoast_head_json?.canonical} />
-        <meta name="twitter:card" content={industryData?.yoast_head_json?.twitter_card} />
-        <meta name="twitter:site" content={industryData?.yoast_head_json?.twitter_site} />
-        <meta name="twitter:title" content={industryData?.yoast_head_json?.twitter_title} />
-        <meta name="twitter:description" content={industryData?.yoast_head_json?.twitter_description} />
-        <meta property="og:locale" content={industryData?.yoast_head_json?.og_locale} />
+      {/* Essential Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta httpEquiv="content-language" content="en-US" />
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      
+      {/* Keywords - only if they exist */}
+      {industryData?.yoast_head_json?.og_keywords && (
+        <meta name="keywords" content={industryData.yoast_head_json.og_keywords} />
+      )}
 
-        {industryData?.yoast_head_json?.schema && (
-          <script type="application/ld+json">
-            {JSON.stringify(industryData.yoast_head_json.schema)}
-          </script>
-        )}
-      </Head>
+      {/* Open Graph Tags */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta 
+        property="og:type" 
+        content={industryData?.yoast_head_json?.og_type ?? "website"} 
+      />
+      <meta property="og:url" content={currentUrl} />
+      {ogImage && <meta property="og:image" content={ogImage} />}
+      
+      {/* Canonical URL */}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      
+      {/* Twitter Cards */}
+      {industryData?.yoast_head_json?.twitter_card && (
+        <>
+          <meta 
+            name="twitter:card" 
+            content={industryData.yoast_head_json.twitter_card} 
+          />
+          <meta 
+            name="twitter:site" 
+            content={industryData.yoast_head_json.twitter_site} 
+          />
+          <meta 
+            name="twitter:title" 
+            content={industryData.yoast_head_json.twitter_title ?? title} 
+          />
+          <meta 
+            name="twitter:description" 
+            content={industryData.yoast_head_json.twitter_description ?? description} 
+          />
+        </>
+      )}
+
+      {/* Locale */}
+      {industryData?.yoast_head_json?.og_locale && (
+        <meta 
+          property="og:locale" 
+          content={industryData.yoast_head_json.og_locale} 
+        />
+      )}
+
+      {/* Schema Markup */}
+      {industryData?.yoast_head_json?.schema && (
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ 
+            __html: JSON.stringify(industryData.yoast_head_json.schema) 
+          }}
+        />
+      )}
+    </Head>
       <div className="main_wrapper">
         {industryData?.acf && (
           <>
