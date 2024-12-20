@@ -26,7 +26,6 @@ function cleanHtmlString(htmlString) {
 }
 
 export default function Homepage({ pageData, contactData  }) {
-    console.log(pageData ,"pageData")
   const [prefetchedData, setPrefetchedData] = useState({});
   if (!pageData) {
     return <div className="error">Unable to load page data</div>;
@@ -43,7 +42,7 @@ export default function Homepage({ pageData, contactData  }) {
       
       <meta name="content-language" content={yoast.og_locale || 'en_US'} />
       
-      <title>{yoast.title || 'Default Website Title'}</title>
+      <title>{pageData.title.rendered || 'Default Website Title'}</title>
       <meta
         name="description"
         content={yoast.description || 'Default description for your website.'}
