@@ -27,11 +27,8 @@ const fetchFromAPI = async (endpoint, options = {}) => {
 // Fetch General Settings
 export const fetchGeneralSettings = async () => {
   const endpoint = env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/general-setting`
+    ? `/data/general-setting`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`;
-  // const endpoint = env !== "development"
-  //   ? `/data/general-setting`
-  //   : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/options/all`;
 
   const result = await fetchFromAPI(endpoint, {
     tags: ['general-settings'],
@@ -43,7 +40,7 @@ export const fetchGeneralSettings = async () => {
 // Fetch Home Page
 export const fetchHomePage = async () => {
   const endpoint = env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/home`
+    ? `/data/pages/home`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`;
 
   return await fetchFromAPI(endpoint, {
@@ -54,7 +51,7 @@ export const fetchHomePage = async () => {
 // Fetch Contact Page
 export const fetchContactPage = async () => {
   const endpoint = env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/contactus`
+    ? `/data/pages/contactus`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1282`;
 
   return await fetchFromAPI(endpoint, {
@@ -65,7 +62,7 @@ export const fetchContactPage = async () => {
 // Fetch Career Page
 export const fetchCareerPage = async () => {
   const endpoint = env !== "development"
-    ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/career`
+    ? `/data/pages/career`
     : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/655`;
 
   return await fetchFromAPI(endpoint, {
