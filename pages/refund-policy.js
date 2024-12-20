@@ -79,7 +79,6 @@ export const getServerSideProps = async (context) => {
   let initialHireUsData = null;
 
   try {
-    const env = process.env.NODE_ENV;    
     const pageResponse = await fetch(pageUrl);
     pageData = await pageResponse.json();
 

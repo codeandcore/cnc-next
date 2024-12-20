@@ -166,32 +166,58 @@ const AboutUs = ({ pageData }) => {
 };
 
 export async function getServerSideProps() {
-  const env = process.env.NODE_ENV;    
-
+  const env = process.env.NODE_ENV;
+  const WORDPRESS_URL = "https://wordpress-1074629-4621962.cloudwaysapps.com";
+  
   try {
-    const pageResponse = await fetch(
-      env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/about-us`
-        : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/389`
-    );
-    const pageData = await pageResponse.json();
-
-    // const contactResponse = await fetch(
-    //   `${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/contact-page-url`
-    // );
-    // const contactData = await contactResponse.json();
-
-    return {
-      props: {
-        pageData,
-      },
-    };
+    // In development, fetch directly from WordPress
+    if (env === "development") {
+      const response = await fetch(
+        `${WORDPRESS_URL}/wp-json/wp/v2/pages/389`
+      );
+      const pageData = await response.json();
+      return {
+        props: {
+          pageData,
+        },
+      };
+    }
+    
+    // In production, try to fetch from local API first
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/pages/about-us`
+      );
+      
+      if (!response.ok) {
+        throw new Error('Local API fetch failed');
+      }
+      
+      const pageData = await response.json();
+      return {
+        props: {
+          pageData,
+        },
+      };
+    } catch (localError) {
+      // If local API fails, fallback to WordPress API
+      console.log('Falling back to WordPress API:', localError);
+      const response = await fetch(
+        `${WORDPRESS_URL}/wp-json/wp/v2/pages/389`
+      );
+      const pageData = await response.json();
+      return {
+        props: {
+          pageData,
+        },
+      };
+    }
   } catch (error) {
     console.error("Error fetching data:", error);
-
     return {
       props: {
         pageData: null,
+        error: "Failed to fetch page data"
       },
     };
   }
