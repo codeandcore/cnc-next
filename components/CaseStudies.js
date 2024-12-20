@@ -193,7 +193,7 @@ const CaseStudies = ({
               </>
               </OwlCarousel>
             )}
-          </div> */}
+          </div>  */}
         </div>
       )}
     </>

@@ -70,16 +70,8 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
 
-
-// const Header = dynamic(() => import('@/components/Header'), { 
-//   ssr: false,
-//   loading: () => null 
-// })
-
-
 export default function App({ Component, pageProps }) {
   const [generalData, setGeneralData] = useState(null);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -90,9 +82,6 @@ export default function App({ Component, pageProps }) {
     fetchData(); 
   }, []); 
 
-  
-
-  
   return (
     <>
       <Header

@@ -109,7 +109,7 @@ export default function ContactUs({ homePage, contactPage }) {
         contactPageACF.contact_form_email_address || 
         contactPageACF.contact_form_social_label) && (
         <ContactForm
-          BASE_URL={process.env.NEXT_PUBLIC_BASE_URL}
+          // BASE_URL={process.env.NEXT_PUBLIC_BASE_URL}
           contact_form_location_label={contactPageACF.contact_form_location_label}
           contact_form_location_address={contactPageACF.contact_form_location_address}
           contact_form_email_label={contactPageACF.contact_form_email_label}

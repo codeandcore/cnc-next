@@ -9,8 +9,9 @@ import ServicesList from '@/components/ServicesList';
 import ServicesBanner from '@/components/ServicesBanner';
 
 // Constants
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://wordpress-1074629-4621962.cloudwaysapps.com';
 const env = process.env.NODE_ENV;    
+
+const BASE_URL = env || 'https://wordpress-1074629-4621962.cloudwaysapps.com';
 
 const fetchFromAPI = async (endpoint) => {
   try {
