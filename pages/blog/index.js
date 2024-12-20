@@ -76,14 +76,10 @@ export async function getServerSideProps() {
       `${BASE_URL}/wp-json/wp/v2/pages/1219?_fields=acf`
     );
 
-    const blogYoast = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/blog`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1219`
+    const blogYoast = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/1219`
     );
 
-    const hireUsResponse = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
+    const hireUsResponse = await fetch(`https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`
     );
     
 
