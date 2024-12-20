@@ -82,6 +82,8 @@ export default function App({ Component, pageProps }) {
     fetchData(); 
   }, []); 
 
+  console.log(generalData ,"generalData")
+
   return (
     <>
       <Header
