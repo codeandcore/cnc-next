@@ -16,121 +16,51 @@ const AboutUs = ({ pageData }) => {
     : pageData?.acf
     ? pageData.acf
     : null;
-  console.log(pageData)
+
+    const defaultTitle = "Codeandcore - Web development studio";
+    const defaultDescription = "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce.";
+    const seoData = pageData?.yoast_head_json || {};
+    const ogImage = seoData.og_image?.[0]?.url;
   return (
     <>
-      <Head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta httpEquiv="content-language" content="en-US" />
-  
-  <title>
-    {(pageData && pageData.title?.rendered) || "Codeandcore - Web development studio"}
-  </title>
-  
-  <meta
-    name="description"
-    content={
-      (pageData && pageData.yoast_head_json.description) ||
-      "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-    }
-  />
-  
-  <meta
-    name="keywords"
-    content={
-      (pageData && pageData.yoast_head_json.og_keywords) ||
-      "Web Development, WordPress, E-commerce, Frontend Development"
-    }
-  />
-  
-  <meta
-    property="og:title"
-    content={
-      (pageData && pageData.yoast_head_json.og_title) ||
-      "Codeandcore - Web development studio"
-    }
-  />
-  
-  <meta
-    property="og:description"
-    content={
-      (pageData && pageData.yoast_head_json.og_description) ||
-      "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-    }
-  />
-  
-  <meta
-    property="og:type"
-    content={
-      pageData && pageData.yoast_head_json.og_type || "website"
-    }
-  />
-  
-  <meta
-    property="og:url"
-    content={
-      (pageData && pageData.yoast_head_json.og_url) || 
-      (typeof window !== 'undefined' ? window.location.href : '')
-    }
-  />
-  
-  <meta
-    property="og:image"
-    content={
-      (pageData && pageData.yoast_head_json.og_image?.[0]?.url) || ""
-    }
-  />
-  
-  <link
-    rel="canonical"
-    href={
-      pageData && pageData.yoast_head_json.canonical || 
-      (typeof window !== 'undefined' ? window.location.href : '')
-    }
-  />
-  
-  <meta
-    name="twitter:card"
-    content={
-      pageData && pageData.yoast_head_json.twitter_card || "summary_large_image"
-    }
-  />
-  
-  <meta
-    name="twitter:site"
-    content={
-      pageData && pageData.yoast_head_json.twitter_site || "@codeandcore"
-    }
-  />
-  
-  <meta
-    name="twitter:title"
-    content={
-      pageData && pageData.yoast_head_json.twitter_title || 
-      "Codeandcore - Web development studio"
-    }
-  />
-  
-  <meta
-    name="twitter:description"
-    content={
-      pageData && pageData.yoast_head_json.twitter_description ||
-      "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-    }
-  />
-  
-  <meta
-    property="og:locale"
-    content={
-      pageData && pageData.yoast_head_json.og_locale || "en_US"
-    }
-  />
-
-  <script type="application/ld+json">
-    {JSON.stringify(pageData && pageData.yoast_head_json.schema || {})}
-  </script>
-      </Head>
-
+       <Head>
+      {/* Essential Meta Tags */}
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta httpEquiv="content-language" content={seoData.og_locale || "en-US"} />
+      
+      {/* Primary Meta Tags */}
+      <title>{pageData?.title?.rendered || defaultTitle}</title>
+      <meta name="description" content={seoData.description || defaultDescription} />
+      {seoData.keywords && <meta name="keywords" content={seoData.keywords} />}
+      
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content={seoData.og_type || "website"} />
+      <meta property="og:title" content={seoData.og_title || defaultTitle} />
+      <meta property="og:description" content={seoData.og_description || defaultDescription} />
+      <meta property="og:url" content={seoData.og_url || (typeof window !== 'undefined' ? window.location.href : '')} />
+      {ogImage && <meta property="og:image" content={ogImage} />}
+      {seoData.og_locale && <meta property="og:locale" content={seoData.og_locale} />}
+      
+      {/* Twitter */}
+      {seoData.twitter_card && <meta name="twitter:card" content={seoData.twitter_card} />}
+      {seoData.twitter_site && <meta name="twitter:site" content={seoData.twitter_site} />}
+      {seoData.twitter_title && <meta name="twitter:title" content={seoData.twitter_title} />}
+      {seoData.twitter_description && (
+        <meta name="twitter:description" content={seoData.twitter_description} />
+      )}
+      
+      {/* Canonical URL */}
+      {seoData.canonical && <link rel="canonical" href={seoData.canonical} />}
+      
+      {/* Schema.org JSON-LD */}
+      {seoData.schema && (
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(seoData.schema) }}
+        />
+      )}
+    </Head>
 
       <div className="main_wrapper">
         {pageData?.acf?.about_banner_background_image && (

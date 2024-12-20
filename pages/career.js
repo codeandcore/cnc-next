@@ -13,50 +13,106 @@ export default function Career({
   CareerpageData, 
   initialCncData
 }) {
-  
 
   return (
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
         <meta httpEquiv="content-language" content="en-US" />
+        
+        {/* Title */}
         <title>{CareerpageData?.title?.rendered || "Codeandcore - Web development studio"}</title>
+        
+        {/* Primary Meta Tags */}
         <meta
           name="description"
           content={
-            CareerpageData?.yoast_head_json.description ||
+            CareerpageData?.yoast_head_json?.description ||
             "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
           }
         />
-        <meta name="keywords" content={CareerpageData?.yoast_head_json.og_keywords} />
+        {CareerpageData?.yoast_head_json?.keywords && (
+          <meta name="keywords" content={CareerpageData.yoast_head_json.keywords} />
+        )}
+
+        {/* Open Graph Meta Tags */}
         <meta
           property="og:title"
-          content={CareerpageData?.yoast_head_json.og_title || "Codeandcore - Web development studio"}
+          content={CareerpageData?.yoast_head_json?.og_title || "Codeandcore - Web development studio"}
         />
         <meta
           property="og:description"
           content={
-            CareerpageData?.yoast_head_json.og_description ||
+            CareerpageData?.yoast_head_json?.og_description ||
             "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
           }
         />
-        <meta property="og:type" content={CareerpageData?.yoast_head_json.og_type || "website"} />
+        <meta 
+          property="og:type" 
+          content={CareerpageData?.yoast_head_json?.og_type || "website"} 
+        />
         <meta
           property="og:url"
-          content={CareerpageData?.yoast_head_json.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
+          content={CareerpageData?.yoast_head_json?.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
         />
-        <meta property="og:image" content={CareerpageData?.yoast_head_json.og_image[0].url} />
-        <link rel="canonical" href={CareerpageData?.yoast_head_json.canonical} />
-        <meta name="twitter:card" content={CareerpageData?.yoast_head_json.twitter_card} />
-        <meta name="twitter:site" content={CareerpageData?.yoast_head_json.twitter_site} />
-        <meta name="twitter:title" content={CareerpageData?.yoast_head_json.twitter_title} />
-        <meta name="twitter:description" content={CareerpageData?.yoast_head_json.twitter_description} />
-        <meta property="og:locale" content={CareerpageData?.yoast_head_json.og_locale} />
+        {CareerpageData?.yoast_head_json?.og_image?.[0]?.url && (
+          <meta 
+            property="og:image" 
+            content={CareerpageData.yoast_head_json.og_image[0].url} 
+          />
+        )}
+        {CareerpageData?.yoast_head_json?.og_locale && (
+          <meta 
+            property="og:locale" 
+            content={CareerpageData.yoast_head_json.og_locale} 
+          />
+        )}
 
-        <script type="application/ld+json">
-          {JSON.stringify(CareerpageData?.yoast_head_json.schema)}
-        </script>
-      </Head>
+        {/* Canonical URL */}
+        {CareerpageData?.yoast_head_json?.canonical && (
+          <link 
+            rel="canonical" 
+            href={CareerpageData.yoast_head_json.canonical} 
+          />
+        )}
+
+        {/* Twitter Meta Tags */}
+        {CareerpageData?.yoast_head_json?.twitter_card && (
+          <meta 
+            name="twitter:card" 
+            content={CareerpageData.yoast_head_json.twitter_card} 
+          />
+        )}
+        {CareerpageData?.yoast_head_json?.twitter_site && (
+          <meta 
+            name="twitter:site" 
+            content={CareerpageData.yoast_head_json.twitter_site} 
+          />
+        )}
+        {CareerpageData?.yoast_head_json?.twitter_title && (
+          <meta 
+            name="twitter:title" 
+            content={CareerpageData.yoast_head_json.twitter_title} 
+          />
+        )}
+        {CareerpageData?.yoast_head_json?.twitter_description && (
+          <meta 
+            name="twitter:description" 
+            content={CareerpageData.yoast_head_json.twitter_description} 
+          />
+        )}
+
+        {/* Schema.org JSON-LD */}
+        {CareerpageData?.yoast_head_json?.schema && (
+          <script 
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(CareerpageData.yoast_head_json.schema)
+            }}
+          />
+        )}
+</Head>
 
       <div className="main_wrapper">
         {CareerpageData && (

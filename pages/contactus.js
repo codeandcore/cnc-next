@@ -41,49 +41,60 @@ export default function ContactUs({ homePage, contactPage }) {
 
   const homePageACF = homePage.acf || {};
   const contactPageACF = contactPage.acf || {};
+  const defaultTitle = "Codeandcore - Web development studio";
+  const defaultDescription = "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce.";
+    const {
+    title,
+    yoast_head_json: yoast = {}
+  } = contactPage || {};
+  const canonicalUrl = yoast.canonical || (typeof window !== 'undefined' ? window.location.href : '');
+  console.log(contactPage)
   return (
     <div className='main_wrapper'>
       
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="content-language" content="en-US" />
-        <title>{contactPage && contactPage.title?.rendered || "Codeandcore - Web development studio"}</title>
-        <meta
-          name="description"
-          content={
-            contactPage && contactPage.yoast_head_json.description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
+      {/* Essential Meta Tags */}
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta httpEquiv="content-language" content="en-US" />
+      
+      {/* Primary Meta Tags */}
+      <title>{title?.rendered || defaultTitle}</title>
+      <meta name="description" content={yoast.description || defaultDescription} />
+      {yoast.og_keywords && <meta name="keywords" content={yoast.og_keywords} />}
+      
+      {/* Open Graph Meta Tags */}
+      <meta property="og:title" content={yoast.og_title || defaultTitle} />
+      <meta property="og:description" content={yoast.og_description || defaultDescription} />
+      <meta property="og:type" content={yoast.og_type || "website"} />
+      <meta property="og:url" content={yoast.og_url || canonicalUrl} />
+      {yoast.og_image?.[0]?.url && (
+        <>
+          <meta property="og:image" content={yoast.og_image[0].url} />
+          <meta property="og:image:width" content={yoast.og_image[0].width} />
+          <meta property="og:image:height" content={yoast.og_image[0].height} />
+        </>
+      )}
+      <meta property="og:locale" content={yoast.og_locale || "en_US"} />
+      <meta property="og:site_name" content={yoast.og_site_name || "Codeandcore"} />
+      
+      {/* Twitter Meta Tags */}
+      <meta name="twitter:card" content={yoast.twitter_card || "summary_large_image"} />
+      <meta name="twitter:site" content={yoast.twitter_site} />
+      <meta name="twitter:title" content={yoast.twitter_title || yoast.og_title || defaultTitle} />
+      <meta name="twitter:description" content={yoast.twitter_description || yoast.og_description || defaultDescription} />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={canonicalUrl} />
+      
+      {/* Schema.org JSON-LD */}
+      {yoast.schema && (
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(yoast.schema) }}
         />
-        <meta name="keywords" content={contactPage && contactPage.yoast_head_json.og_keywords} />
-        <meta
-          property="og:title"
-          content={contactPage && contactPage.yoast_head_json.og_title || "Codeandcore - Web development studio"}
-        />
-        <meta
-          property="og:description"
-          content={
-            contactPage && contactPage.yoast_head_json.og_description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
-        />
-        <meta property="og:type" content={contactPage && contactPage.yoast_head_json.og_type || "website"} />
-        <meta
-          property="og:url"
-          content={contactPage && contactPage.yoast_head_json.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
-        />
-        <meta property="og:image" content={contactPage && contactPage.yoast_head_json.og_image[0].url} />
-        <link rel="canonical" href={contactPage && contactPage.yoast_head_json.canonical} />
-        <meta name="twitter:card" content={contactPage && contactPage.yoast_head_json.twitter_card} />
-        <meta name="twitter:site" content={contactPage && contactPage.yoast_head_json.twitter_site} />
-        <meta name="twitter:title" content={contactPage && contactPage.yoast_head_json.twitter_title} />
-        <meta name="twitter:description" content={contactPage && contactPage.yoast_head_json.twitter_description} />
-        <meta property="og:locale" content={contactPage && contactPage.yoast_head_json.og_locale} />
-
-        <script type="application/ld+json">
-          {JSON.stringify(contactPage && contactPage.yoast_head_json.schema)}
-        </script>
-      </Head>
+      )}
+    </Head>
 
       {(contactPageACF.banner_background_image || 
         contactPageACF.banner_background_video || 

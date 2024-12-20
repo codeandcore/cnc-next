@@ -42,7 +42,7 @@ export default function Homepage({ pageData, contactData  }) {
       
       <meta name="content-language" content={yoast.og_locale || 'en_US'} />
       
-      <title>{pageData.title.rendered || 'Default Website Title'}</title>
+      <title>{pageData.title.rendered || 'Home'}</title>
       <meta
         name="description"
         content={yoast.description || 'Default description for your website.'}

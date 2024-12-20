@@ -6,45 +6,52 @@ const BlogList = dynamic(() => import('@/components/BlogList'), {
   ssr: false,
   loading: () => null 
 })
-
+const defaultTitle = "Codeandcore - Web development studio";
+const defaultDescription = "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce.";
 
 const BASE_URL = 'https://wordpress-1074629-4621962.cloudwaysapps.com';
 
+
 const Blog = ({ initialBlogPageData, initialHireUsData ,initialBlogblogYoastData }) => {
+  console.log(initialBlogblogYoastData)
+
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta httpEquiv="content-language" content="en-US" />
-        <title>{initialBlogblogYoastData && initialBlogblogYoastData.title?.rendered || "Codeandcore - Web development studio"}</title>
-        <meta
-          property="og:title"
-          content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.og_title || "Codeandcore - Web development studio"}
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta httpEquiv="content-language" content="en-US" />
+      
+      {/* Essential SEO tags */}
+      <title>{initialBlogblogYoastData?.title?.rendered || defaultTitle}</title>
+      <meta name="description" content={initialBlogblogYoastData?.yoast_head_json?.og_description || defaultDescription} />
+      <link rel="canonical" href={initialBlogblogYoastData?.yoast_head_json?.canonical || (typeof window !== 'undefined' ? window.location.href : '')} />
+      
+      {/* Open Graph tags */}
+      <meta property="og:title" content={initialBlogblogYoastData?.yoast_head_json?.og_title || defaultTitle} />
+      <meta property="og:description" content={initialBlogblogYoastData?.yoast_head_json?.og_description || defaultDescription} />
+      <meta property="og:type" content={initialBlogblogYoastData?.yoast_head_json?.og_type || "website"} />
+      <meta property="og:url" content={initialBlogblogYoastData?.yoast_head_json?.og_url || (typeof window !== 'undefined' ? window.location.href : '')} />
+      {initialBlogblogYoastData?.yoast_head_json?.og_image?.[0]?.url && (
+        <meta property="og:image" content={initialBlogblogYoastData.yoast_head_json.og_image[0].url} />
+      )}
+      <meta property="og:locale" content={initialBlogblogYoastData?.yoast_head_json?.og_locale || "en_US"} />
+      
+      {/* Twitter tags */}
+      <meta name="twitter:card" content={initialBlogblogYoastData?.yoast_head_json?.twitter_card || "summary_large_image"} />
+      <meta name="twitter:site" content={initialBlogblogYoastData?.yoast_head_json?.twitter_site || "@CodeandCore"} />
+      <meta name="twitter:title" content={initialBlogblogYoastData?.yoast_head_json?.twitter_title || defaultTitle} />
+      <meta name="twitter:description" content={initialBlogblogYoastData?.yoast_head_json?.twitter_description || defaultDescription} />
+      
+      {/* Schema.org JSON-LD */}
+      {initialBlogblogYoastData?.yoast_head_json?.schema && (
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(initialBlogblogYoastData.yoast_head_json.schema)
+          }}
         />
-        {/* <meta
-          property="og:description"
-          content={
-            initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.og_description ||
-            "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
-          }
-        /> */}
-        <meta property="og:type" content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.og_type || "website"} />
-        <meta
-          property="og:url"
-          content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
-        />
-        <meta property="og:image" content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.og_image[0].url} />
-        <link rel="canonical" href={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.canonical} />
-        <meta name="twitter:card" content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.twitter_card} />
-        <meta name="twitter:site" content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.twitter_site} />
-        <meta name="twitter:title" content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.twitter_title} />
-        <meta name="twitter:description" content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.twitter_description} />
-        <meta property="og:locale" content={initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.og_locale} />
-
-        <script type="application/ld+json">
-          {JSON.stringify(initialBlogblogYoastData && initialBlogblogYoastData.yoast_head_json.schema)}
-        </script>
-      </Head>
+      )}
+    </Head>
       <div className="main_wrapper">
       {initialBlogPageData?.acf && (
         <BlogList
