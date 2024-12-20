@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import EllipseIcon from '../public/images/ellipse_c.png';
 import Sarrow from '../public/images/arrow_ss1.svg';
-const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
+// const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 
 const CustomDots = ({ year_of_growing, activeIndex, handleClick }) => {
@@ -128,7 +128,7 @@ const YearOfGrowing = React.memo(({
                     </div>
                     {year_of_growing && (
                         <div className='year_of_contants'>
-                            <OwlCarousel {...options} ref={carouselRef}>
+                            {/* <OwlCarousel {...options} ref={carouselRef}>
                                 {year_of_growing.map((item, index) => (
                                     <div className='col d_flex d_flex_at' key={index}>
                                         <div className='left'>
@@ -147,7 +147,7 @@ const YearOfGrowing = React.memo(({
                                         </div>
                                     </div>
                                 ))}
-                            </OwlCarousel>
+                            </OwlCarousel> */}
                         </div>
                     )}
                 </div>

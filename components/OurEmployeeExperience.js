@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import quata from '../public/images/quata1.png';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
+// const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 
 const OurEmployeeExperience = ({ a_left_side_section_title, employee_experience_detail }) => {
@@ -21,7 +21,7 @@ const OurEmployeeExperience = ({ a_left_side_section_title, employee_experience_
       <h2>{a_left_side_section_title}</h2>
       {employee_experience_detail && (
         <>
-          <OwlCarousel ref={carouselRef} {...options}>
+          {/* <OwlCarousel ref={carouselRef} {...options}>
             {employee_experience_detail.map((experience, index) => (
               <div key={index} className='colin'>
                 {experience.a_employee_image && (
@@ -43,7 +43,7 @@ const OurEmployeeExperience = ({ a_left_side_section_title, employee_experience_
                 </div>
               </div>
             ))}
-          </OwlCarousel>
+          </OwlCarousel> */}
         </>
       )}
     </div>

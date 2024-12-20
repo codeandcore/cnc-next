@@ -3,7 +3,7 @@ import ArrowsIcon from '../public/images/arrow_ss1.svg';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
+// const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
   const [mainIndex, setMainIndex] = useState(0);
@@ -109,7 +109,7 @@ const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
         <div className='inner'>
           <div className='contries_wrap'>
             <div className='contries_title'>
-              <OwlCarousel ref={thumbsCarouselRef} {...thumbsOptions}>
+              {/* <OwlCarousel ref={thumbsCarouselRef} {...thumbsOptions}>
                 {countries_list.map((country, index) => (
                   <div
                     className="col"
@@ -121,11 +121,11 @@ const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
                     {country.country_title && (<h3>{country.country_title}</h3>)}
                   </div>
                 ))}
-              </OwlCarousel>
+              </OwlCarousel> */}
             </div>
           </div>
           <div className='contries_contain'>
-            <OwlCarousel ref={mainCarouselRef} {...mainOptions}>
+            {/* <OwlCarousel ref={mainCarouselRef} {...mainOptions}>
               {countries_list.map((country, index) => (
                 <div key={index} className="colin d_flex">
                   <div className='left_col'>
@@ -157,7 +157,7 @@ const ProjectCountries = React.memo(({ countries_title, countries_list }) => {
                   )}
                 </div>
               ))}
-            </OwlCarousel>
+            </OwlCarousel> */}
           </div>
         </div>
       </div>
