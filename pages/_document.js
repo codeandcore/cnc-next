@@ -13,6 +13,7 @@ export default function Document() {
           src="/js/main.f923fa5a.js"
           strategy="afterInteractive"
         />
+        
       </Head>
       <body>
         <Main />

@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-// import "react-owl-carousel2/src/owl.carousel.css";
+// import "react-owl-carousel/src/owl.carousel.css";
 import DateIcon from '../public/images/date.svg';
 import dynamic from 'next/dynamic';
-// import UseOnScreen from './UseOnScreen';
+import UseOnScreen from './UseOnScreen';
 
-// const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { ssr: false });
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
 
 
 const Highlights = ({
@@ -59,7 +59,7 @@ const Highlights = ({
         {our_blogs_title && <h2>{our_blogs_title}</h2>}
         {our_blogs_subtitle && <p>{our_blogs_subtitle}</p>}
       </div>
-      {/* <div className='inner'>
+      <div className='inner'>
         {our_blogs && our_blogs.length > 0 ? (
           <OwlCarousel options={options} ref={owlCarouselRef}>
             {our_blogs.map((item, index) => (
@@ -85,7 +85,7 @@ const Highlights = ({
         ) : (
           <div>No blogs available</div>
         )}
-      </div> */}
+      </div>
     </div>
   );
 };

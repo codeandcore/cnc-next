@@ -5,22 +5,21 @@ import GoogleIcon from '../public/images/google.png';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });
-
 
 const CaseStudies = ({ 
   case_studies_title, 
   case_studies_subtitle, 
   case_studies_list, 
-  
 }) => {
   const router = useRouter();
-  
   const owlCarouselRef = useRef(null);
   const [hoveredSlide, setHoveredSlide] = useState(null);
 
-  const handleLinkClick = async (url, slug, e = null) => {
+  const handleLinkClick = async (url) => {
     handleSmoothScroll();
     router.push(url); 
   };
@@ -30,17 +29,23 @@ const CaseStudies = ({
       items: 1,
       loop: false,
       nav: true,
+      navText: ['<', '>'],
       dots: false,
+      margin: 20,
       autoWidth: true,
-      slideSpeed: 500,
+      smartSpeed: 500,
       responsive: {
         0: {
+          items: 1,
           autoWidth: false,
-          margin: 20,
         },
         768: {
+          items: 2,
           autoWidth: true,
-          margin: 0,
+        },
+        1024: {
+          items: 3,
+          autoWidth: true,
         },
       },
     }),
@@ -57,11 +62,7 @@ const CaseStudies = ({
   return (
     <>
       {(case_studies_title || case_studies_subtitle) && (
-        <div
-          className="case_studies"
-          // ref={ref}
-          // className={`case_studies ${isVisible ? 'On-screen' : ''}`}
-        >
+        <div className="case_studies">
           <div className="wrapper">
             {case_studies_title && <h2>{case_studies_title}</h2>}
             {case_studies_subtitle && <p>{case_studies_subtitle}</p>}
@@ -69,12 +70,11 @@ const CaseStudies = ({
 
           <div className="inner">
             {case_studies_list && (
-              <OwlCarousel options={options} ref={owlCarouselRef}>
-              <>
+              <OwlCarousel {...options} ref={owlCarouselRef}>
                 {case_studies_list.map((item, index) => (
                   <div
                     key={index}
-                    className={`colin ${hoveredSlide === item.slug ? 'hovered' : ''}`} // Add hover class
+                    className={`colin ${hoveredSlide === item.slug ? 'hovered' : ''}`}
                   >
                     <div className="top_col d_flex">
                       <h3>{item.case_study_post_title}</h3>
@@ -100,34 +100,30 @@ const CaseStudies = ({
                         <Link
                           href={`/portfolio/${item.slug}`}
                           passHref
-                          onClick={(e) => {
-                            handleLinkClick(`/portfolio/${item.slug}`, item.slug, e);
-                          }}
+                          onClick={() => handleLinkClick(`/portfolio/${item.slug}`)}
                           className="bg"
                         >
                           <img
-                            style={{objectFit:'contain'}}
+                            style={{ objectFit: 'contain' }}
                             src={item.featured_image_url}
                             alt={item.case_study_post_title}
-                            
                           />
                         </Link>
                       )}
                     </div>
+
                     <div className="bottom_col d_flex">
                       <div className="lcol test">
-                        {item.acf &&
-                          item.acf.c_right_side_logo &&
-                          item.acf.c_right_side_logo.url && (
-                            <div className="lcol_logo">
-                              <Image
-                                src={item.acf.c_right_side_logo.url}
-                                alt={item.acf.c_right_side_logo.name}
-                                height={15}
-                                width={150}
-                              />
-                            </div>
-                          )}
+                        {item.acf?.c_right_side_logo?.url && (
+                          <div className="lcol_logo">
+                            <Image
+                              src={item.acf.c_right_side_logo.url}
+                              alt={item.acf.c_right_side_logo.name}
+                              height={15}
+                              width={150}
+                            />
+                          </div>
+                        )}
                         <ul className="d_flex">
                           {item.acf.case_total_visitors && (
                             <li>
@@ -141,58 +137,50 @@ const CaseStudies = ({
                               <h5>Order a day website</h5>
                             </li>
                           )}
-                          {item.acf.AwwardsIcongoogle_page_speed && (
+                          {item.acf.google_page_speed && (
                             <li>
                               <h4>{item.acf.google_page_speed}</h4>
                               <h5>
-                                <Image height={20}
-                                width={20} src={GoogleIcon} alt="Lighthouse speed" />
+                                <Image height={20} width={20} src={GoogleIcon} alt="Lighthouse speed" />
                                 Lighthouse speed
                               </h5>
                             </li>
                           )}
                         </ul>
                       </div>
+
                       <div className="awward_right_col">
-                        {item.acf.cases_location && (
+                        {item.acf?.cases_location && (
                           <div className="rcol d_flex">
                             <Image
                               src={LocationIcon}
                               alt="Location Icon"
                               height={20}
-                               width={20}
+                              width={20}
                             />
                             {item.acf.cases_location}
                           </div>
                         )}
 
-                        {item.acf &&
-                          item.acf.award_small_logo &&
-                          item.acf.award_small_logo.url &&
-                          item.acf.award_link &&
-                          item.acf.award_text && (
-                            <a
-                              href={item.acf.award_link}
-                              className="awward"
-                            >
-                              <span>{item.acf.award_text}</span>
-                              <Image
-                                src={item.acf.award_small_logo.url}
-                                alt={item.acf.award_small_logo.name}
-                                className="awwadicon"
-                                height={100}
-                                width={100}
-                              />
-                            </a>
-                          )}
+                        {item.acf?.award_small_logo?.url && item.acf.award_link && item.acf.award_text && (
+                          <a href={item.acf.award_link} className="awward">
+                            <span>{item.acf.award_text}</span>
+                            <Image
+                              src={item.acf.award_small_logo.url}
+                              alt={item.acf.award_small_logo.name}
+                              className="awwadicon"
+                              height={100}
+                              width={100}
+                            />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
                 ))}
-              </>
               </OwlCarousel>
             )}
-          </div> 
+          </div>
         </div>
       )}
     </>

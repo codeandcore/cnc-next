@@ -66,8 +66,9 @@ import { fetchGeneralSettings } from './api/fetchData';
 import { useEffect, useState } from 'react';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
 
 export default function App({ Component, pageProps }) {
   const [generalData, setGeneralData] = useState(null);

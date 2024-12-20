@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
-// import OwlCarousel from "react-owl-carousel2";
+import OwlCarousel from "react-owl-carousel";
 // import "react-owl-carousel2/src/owl.carousel.css";
 import EllipseIcon from '../public/images/ellipse_c.png';
 import Sarrow from '../public/images/arrow_ss1.svg';
@@ -128,7 +128,7 @@ const YearOfGrowing = React.memo(({
                     </div>
                     {year_of_growing && (
                         <div className='year_of_contants'>
-                            {/* <OwlCarousel options={options} ref={carouselRef}> */}
+                            <OwlCarousel options={options} ref={carouselRef}>
                                 {year_of_growing.map((item, index) => (
                                     <div className='col d_flex d_flex_at' key={index}>
                                         <div className='left'>
@@ -147,7 +147,7 @@ const YearOfGrowing = React.memo(({
                                         </div>
                                     </div>
                                 ))}
-                            {/* </OwlCarousel> */}
+                            </OwlCarousel>
                         </div>
                     )}
                 </div>
