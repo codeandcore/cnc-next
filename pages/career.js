@@ -119,46 +119,87 @@ export default function Career({
 }
 
 export async function getServerSideProps() {
-  const env = process.env.NODE_ENV;    
+  const env = process.env.NODE_ENV;
+  const WORDPRESS_URL = "https://wordpress-1074629-4621962.cloudwaysapps.com";
 
   try {
-    // const homePageRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/46`);
-    // const HomePage = await homePageRes.json();
+    // In development, fetch directly from WordPress
+    if (env === "development") {
+      const careerPageRes = await fetch(
+        `${WORDPRESS_URL}/wp-json/wp/v2/pages/655`
+      );
+      const CareerpageData = await careerPageRes.json();
 
-    // const contactPageRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/wp/v2/pages/49`);
-    // const ContactPage = await contactPageRes.json();
-    
+      const otherComponentsResponse = await fetch(
+        `${WORDPRESS_URL}/wp-json/wp/v2/pages/7`
+      );
+      const initialCncData = await otherComponentsResponse.json();
 
-    const careerPageRes = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}api/pages/career`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/655`);
+      return {
+        props: {
+          CareerpageData,
+          initialCncData,
+        },
+      };
+    }
 
-    const CareerpageData = await careerPageRes.json();
+    // In production, try to fetch from local API first
+    try {
+      const careerPageRes = await fetch(
+        `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/pages/career`
+      );
 
-    const otherComponentsResponse = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}api/pages/home`
-      : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
-
-    const initialCncData = await otherComponentsResponse.json();
-
-    return {
-      props: {
-        // HomePage,
-        // ContactPage,
-        CareerpageData,
-        initialCncData
+      if (!careerPageRes.ok) {
+        throw new Error("Local API fetch for career page failed");
       }
-    };
+
+      const CareerpageData = await careerPageRes.json();
+
+      const otherComponentsResponse = await fetch(
+        `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/pages/home`
+      );
+
+      if (!otherComponentsResponse.ok) {
+        throw new Error("Local API fetch for home page failed");
+      }
+
+      const initialCncData = await otherComponentsResponse.json();
+
+      return {
+        props: {
+          CareerpageData,
+          initialCncData,
+        },
+      };
+    } catch (localError) {
+      // If local API fails, fallback to WordPress API
+      console.log("Falling back to WordPress API:", localError);
+
+      const careerPageRes = await fetch(
+        `${WORDPRESS_URL}/wp-json/wp/v2/pages/655`
+      );
+      const CareerpageData = await careerPageRes.json();
+
+      const otherComponentsResponse = await fetch(
+        `${WORDPRESS_URL}/wp-json/wp/v2/pages/7`
+      );
+      const initialCncData = await otherComponentsResponse.json();
+
+      return {
+        props: {
+          CareerpageData,
+          initialCncData,
+        },
+      };
+    }
   } catch (error) {
-    console.error('Error fetching page data:', error);
+    console.error("Error fetching data:", error);
     return {
       props: {
-        // HomePage: null,
-        // ContactPage: null,
         CareerpageData: null,
-        yoastData: null,
-        initialCncData : null
-      }
+        initialCncData: null,
+        error: "Failed to fetch page data",
+      },
     };
   }
 }
