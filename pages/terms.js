@@ -85,12 +85,12 @@ export async function getServerSideProps() {
   try {
    
     const resPage = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/terms`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/terms`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/3621`);
     pageData = await resPage.json();
     
     const resHome = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/home`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     hireUs = await resHome.json();
 

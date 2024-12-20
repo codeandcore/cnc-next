@@ -104,17 +104,17 @@ export async function getServerSideProps(context) {
   let additionalPageData = null
   try {
     const caseStudyResponse = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/${slug}`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/${slug}`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/case_study/?slug=${slug}`);
     const caseStudyData = await caseStudyResponse.json();
 
     const pageDataResponse = await fetch(env !== "development"
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages`
+        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages`
         : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages`
     );
 
     const additionalPageResponse = await fetch(env !== "development"
-      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/data/pages/home`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     additionalPageData = await additionalPageResponse.json();
     
