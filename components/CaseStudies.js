@@ -1,13 +1,12 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { useRouter } from 'next/router';
-// import 'react-owl-carousel2/src/owl.carousel.css';
 import LocationIcon from '../public/images/location.svg';
 import GoogleIcon from '../public/images/google.png';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-// const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { ssr: false });
+const OwlCarousel = dynamic(() => import('react-owl-carousel2'), { ssr: false });
 
 
 const CaseStudies = ({ 
@@ -68,7 +67,7 @@ const CaseStudies = ({
             {case_studies_subtitle && <p>{case_studies_subtitle}</p>}
           </div>
 
-          {/* <div className="inner">
+          <div className="inner">
             {case_studies_list && (
               <OwlCarousel options={options} ref={owlCarouselRef}>
               <>
@@ -147,7 +146,7 @@ const CaseStudies = ({
                               <h4>{item.acf.google_page_speed}</h4>
                               <h5>
                                 <Image height={20}
-                      width={20} src={GoogleIcon} alt="Lighthouse speed" />
+                                width={20} src={GoogleIcon} alt="Lighthouse speed" />
                                 Lighthouse speed
                               </h5>
                             </li>
@@ -193,7 +192,7 @@ const CaseStudies = ({
               </>
               </OwlCarousel>
             )}
-          </div>  */}
+          </div> 
         </div>
       )}
     </>

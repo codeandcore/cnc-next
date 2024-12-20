@@ -4,6 +4,7 @@ import HireUs from '@/components/HireUs';
 import Head from 'next/head';
 
 const RefundPolicy = ({ pageData, initialHireUsData, contactData }) => {
+  console.log(pageData)
   return (
     <>
       <Head>

@@ -37,35 +37,37 @@ const Review = ({ initialReviewpage }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta httpEquiv="content-language" content="en-US" />
-        <title>{ReviewpageData && ReviewpageData.title?.rendered || "Codeandcore - Web development studio"}</title>
+        <title>{ReviewpageData?.title?.rendered || "Codeandcore - Web development studio"}</title>
         <meta
           property="og:title"
-          content={ReviewpageData && ReviewpageData.yoast_head_json.og_title || "Codeandcore - Web development studio"}
+          content={ReviewpageData?.yoast_head_json?.og_title || "Codeandcore - Web development studio"}
         />
         <meta
           property="og:description"
           content={
-            ReviewpageData && ReviewpageData.yoast_head_json.og_description ||
+            ReviewpageData?.yoast_head_json?.og_description ||
             "Affordable Web Development and Design Indian-based company which offers solid solutions in Frontend development, WordPress, and E-commerce."
           }
         />
-        <meta property="og:type" content={ReviewpageData && ReviewpageData.yoast_head_json.og_type || "website"} />
+        <meta property="og:type" content={ReviewpageData?.yoast_head_json?.og_type || "website"} />
         <meta
           property="og:url"
-          content={ReviewpageData && ReviewpageData.yoast_head_json.og_url || (typeof window !== 'undefined' ? window.location.href : '')}
+          content={ReviewpageData?.yoast_head_json?.og_url || (typeof window !== 'undefined' ? window.location.href : process.env.NEXT_PUBLIC_SITE_URL)}
         />
-        <meta property="og:image" content={ReviewpageData && ReviewpageData.yoast_head_json.og_image[0].url} />
-        <link rel="canonical" href={ReviewpageData && ReviewpageData.yoast_head_json.canonical} />
-        <meta name="twitter:card" content={ReviewpageData && ReviewpageData.yoast_head_json.twitter_card} />
-        <meta name="twitter:site" content={ReviewpageData && ReviewpageData.yoast_head_json.twitter_site} />
-        <meta name="twitter:title" content={ReviewpageData && ReviewpageData.yoast_head_json.twitter_title} />
-        <meta name="twitter:description" content={ReviewpageData && ReviewpageData.yoast_head_json.twitter_description} />
-        <meta property="og:locale" content={ReviewpageData && ReviewpageData.yoast_head_json.og_locale} />
+        <meta property="og:image" content={ReviewpageData?.yoast_head_json?.og_image?.[0]?.url} />
+        <link rel="canonical" href={ReviewpageData?.yoast_head_json?.canonical} />
+        <meta name="twitter:card" content={ReviewpageData?.yoast_head_json?.twitter_card} />
+        <meta name="twitter:site" content={ReviewpageData?.yoast_head_json?.twitter_site} />
+        <meta name="twitter:title" content={ReviewpageData?.yoast_head_json?.twitter_title} />
+        <meta name="twitter:description" content={ReviewpageData?.yoast_head_json?.twitter_description} />
+        <meta property="og:locale" content={ReviewpageData?.yoast_head_json?.og_locale} />
 
-        <script type="application/ld+json">
-          {JSON.stringify(ReviewpageData && ReviewpageData.yoast_head_json.schema)}
-        </script>
-      </Head>
+        <script type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(ReviewpageData?.yoast_head_json?.schema)
+          }}
+        />
+</Head>
       {ReviewpageData.acf.banner_title ||
         ReviewpageData.acf.banner_description ||
         ReviewpageData.acf.right_side_title ||
