@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
-// import OwlCarousel from "react-owl-carousel";
-// import "react-owl-carousel2/src/owl.carousel.css";
+
 import EllipseIcon from '../public/images/ellipse_c.png';
 import Sarrow from '../public/images/arrow_ss1.svg';
 const OwlCarousel = dynamic(() => import('react-owl-carousel'), { ssr: false });

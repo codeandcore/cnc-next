@@ -1,7 +1,4 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-// import OwlCarousel from 'react-owl-carousel2';
-// import 'react-owl-carousel2/lib/styles.css'; 
-// import 'react-owl-carousel2/src/owl.theme.default.css'; 
 import ArrowsIcon from '../public/images/arrow_ss1.svg';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
