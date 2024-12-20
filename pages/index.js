@@ -26,70 +26,70 @@ function cleanHtmlString(htmlString) {
 }
 
 export default function Homepage({ pageData, contactData  }) {
-    
+    console.log(pageData ,"pageData")
   const [prefetchedData, setPrefetchedData] = useState({});
   if (!pageData) {
     return <div className="error">Unable to load page data</div>;
   }
   const { acf } = pageData;
+  const yoast = pageData?.yoast_head_json || {};
+  const ogImage = yoast?.og_image?.[0]?.url;
   return (  
     <div className='main_wrapper'>
       <Head>
-  <meta charSet="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="content-language" content="en-US" />
-  <title>{pageData?.title?.rendered || "Default Website Title"}</title>
-  <meta
-    name="description"
-    content={pageData.yoast_head_json.description ||"Default description for your website."}
-  />
-  <meta 
-    name="keywords" 
-    content={pageData.yoast_head_json.og_keywords || "default, keywords"} 
-  />
-  <meta property="og:type" content="website" />
-  <meta 
-    property="og:title" 
-    content={pageData?.yoast_head_json?.og_title || 'Default OG Title'} 
-  />
-  <meta 
-    property="og:description" 
-    content={pageData?.yoast_head_json?.og_description || 'Default OG Description'} 
-  />
-  <meta 
-    property="og:url" 
-    content={pageData?.yoast_head_json?.canonical || 'https://yourdomain.com'} 
-  />
-  <meta 
-    property="og:image" 
-    content={pageData?.yoast_head_json?.og_image?.[0]?.url || '/default-og-image.jpg'} 
-  />
-  <meta property="og:locale" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta 
-    name="twitter:title" 
-    content={pageData?.yoast_head_json?.twitter_title || 'Default Twitter Title'} 
-  />
-  <meta 
-    name="twitter:description" 
-    content={pageData?.yoast_head_json?.twitter_description || 'Default Twitter Description'} 
-  />
-  <meta 
-    name="twitter:image" 
-    content={pageData?.yoast_head_json?.twitter_image || '/default-twitter-image.jpg'} 
-  />
-  <link 
-    rel="canonical" 
-    href={pageData?.yoast_head_json?.canonical || 'https://yourdomain.com'} 
-  />
-  <meta name="robots" content="index, follow" />
-  {pageData?.yoast_head_json?.schema && (
-    <script type="application/ld+json">
-      {JSON.stringify(pageData.yoast_head_json.schema)}
-    </script>
-  )}
-      </Head>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      
+      <meta name="content-language" content={yoast.og_locale || 'en_US'} />
+      
+      <title>{yoast.title || 'Default Website Title'}</title>
+      <meta
+        name="description"
+        content={yoast.description || 'Default description for your website.'}
+      />
+      
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={yoast.og_title || yoast.title || 'Default Title'} />
+      <meta 
+        property="og:description" 
+        content={yoast.og_description || yoast.description || 'Default Description'} 
+      />
+      <meta property="og:url" content={yoast.canonical || 'https://yourdomain.com'} />
+      {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:locale" content={yoast.og_locale || 'en_US'} />
+      <meta property="og:site_name" content={yoast.og_site_name} />
+      
+      <meta name="twitter:card" content={yoast.twitter_card || 'summary_large_image'} />
+      <meta 
+        name="twitter:title" 
+        content={yoast.twitter_title || yoast.og_title || yoast.title} 
+      />
+      <meta 
+        name="twitter:description" 
+        content={yoast.twitter_description || yoast.og_description || yoast.description} 
+      />
+      {yoast.twitter_image && (
+        <meta name="twitter:image" content={yoast.twitter_image} />
+      )}
+      {yoast.twitter_site && (
+        <meta name="twitter:site" content={yoast.twitter_site} />
+      )}
+      
+      <link rel="canonical" href={yoast.canonical} />
+      
+      <meta 
+        name="robots" 
+        content={yoast.robots?.index ? 'index, follow' : 'noindex, nofollow'} 
+      />
+      
+      {yoast.schema && (
+        <script 
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(yoast.schema) }}
+        />
+      )}
+    </Head>
       {acf?.banner_title && (
         <Banner 
           banner_background_image={acf.banner_background_image}
