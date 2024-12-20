@@ -95,14 +95,14 @@ export async function getServerSideProps({ params }) {
   let initialHireUsData = null;
   try {
     const res = await fetch(env !== "development"
-      ? `/data/pages/${slug}`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/${slug}`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/posts?slug=${slug}`
     );
     const data = await res.json();
     blogData = data.length > 0 ? data[0] : null; 
 
     const hireUsResponse = await fetch(env !== "development"
-      ? `/data/pages/home`
+      ? `${process.env.NEXT_PUBLIC_VERCEL_URL}data/pages/home`
       : `https://wordpress-1074629-4621962.cloudwaysapps.com/wp-json/wp/v2/pages/7`);
     initialHireUsData = await hireUsResponse.json();
 
